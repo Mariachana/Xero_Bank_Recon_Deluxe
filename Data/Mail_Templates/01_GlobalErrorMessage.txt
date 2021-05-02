@@ -1,0 +1,10 @@
+Hello Bot SuperVisor,
+
+While attempting to the Run Bank Reconcilation process, I encountered the following error:
+
+messageError
+
+Also attached is a screenshot of the state of the Job as at when this error happened. If this situation is something you cannot resolve yourself, kindly forward this to Sinnergy Support Desk. Thank you.
+
+Best Regards,
+SinnergyBot.
