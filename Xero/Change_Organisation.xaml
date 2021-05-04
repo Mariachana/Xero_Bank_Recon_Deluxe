@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>663.2,1015.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2588,3809</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Change_Organisation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -82,7 +82,6 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>dipoleDIAMOND_Reuseables</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -90,7 +89,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Change_Oraganisation" sap:VirtualizedContainerService.HintSize="542.4,950.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence DisplayName="Change_Oraganisation" sap:VirtualizedContainerService.HintSize="2598,3744" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="CompanyNameFound" />
       <Variable x:TypeArguments="s:String[]" Name="Array" />
@@ -107,15 +106,15 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2556,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,223.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="TO DELETE" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="TO DELETE" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -146,35 +145,35 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Delay DisplayName="Delay 3s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="500.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Page" sap:VirtualizedContainerService.HintSize="500.8,702.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[NAppOpenMode.Never]" Version="V1">
+    <Delay DisplayName="Delay 3s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="2556,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Page" sap:VirtualizedContainerService.HintSize="2556,3499" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[NAppOpenMode.Never]" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="When Logged In (Dashboard is Visible)" sap:VirtualizedContainerService.HintSize="467.2,485.6" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
+          <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="When Logged In (Dashboard is Visible)" sap:VirtualizedContainerService.HintSize="2522,3283" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
             <ui:OnUiElementAppear.Body>
-              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Xgo Log in Page" sap:VirtualizedContainerService.HintSize="433.6,308.8" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="a2003f29dc2ada3e0a52875e7360eb6e" Selector="&lt;html app='chrome.exe' title='Xero |*' /&gt;">
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Xgo Log in Page" sap:VirtualizedContainerService.HintSize="2488,3107" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="a2003f29dc2ada3e0a52875e7360eb6e" Selector="&lt;html app='chrome.exe' title='Xero |*' /&gt;">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="To Select Orgainsation" sap:VirtualizedContainerService.HintSize="241.6,161.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Sequence DisplayName="To Select Orgainsation" sap:VirtualizedContainerService.HintSize="2454,2961" sap2010:WorkflowViewState.IdRef="Sequence_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Select Orgaisation To Reconcile" sap:VirtualizedContainerService.HintSize="2092.8,2895.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <Sequence DisplayName="Select Orgaisation To Reconcile" sap:VirtualizedContainerService.HintSize="2412,2869" sap2010:WorkflowViewState.IdRef="Sequence_21">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="GetThe Current Company" sap:VirtualizedContainerService.HintSize="2051.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="GetThe Current Company" sap:VirtualizedContainerService.HintSize="2370,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9173f517-1d0a-41ed-854e-3674918cb2bf" InformativeScreenshot="8c0ae6ef4babe4e9c0e0a2d4c796aac9" Selector="&lt;webctrl tag='SPAN' class='xnav-appbutton--text' parentid='header' /&gt;&#xA;">
                               <ui:Target.TimeoutMS>
@@ -195,7 +194,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:GetValue>
-                        <If Condition="[CurrentCompanyName = in_Organisation_Name]" DisplayName="Condition To Select Company Name" sap:VirtualizedContainerService.HintSize="2051.2,2655.2" sap2010:WorkflowViewState.IdRef="If_14">
+                        <If Condition="[CurrentCompanyName = in_Organisation_Name]" DisplayName="Condition To Select Company Name" sap:VirtualizedContainerService.HintSize="2370,2631" sap2010:WorkflowViewState.IdRef="If_14">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,14 +202,14 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Company Name on Dashboard" sap:VirtualizedContainerService.HintSize="524.8,586.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                            <Sequence DisplayName="Company Name on Dashboard" sap:VirtualizedContainerService.HintSize="526,580" sap2010:WorkflowViewState.IdRef="Sequence_16">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:UiElementExists DisplayName="Check If The Company Is Selected" Exists="[CompanyNameFound]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                              <ui:UiElementExists DisplayName="Check If The Company Is Selected" Exists="[CompanyNameFound]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                                 <ui:UiElementExists.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="10f5bdaf-bd5e-4196-86f1-c4e9af152a6d" InformativeScreenshot="8f73731cd997aee33405dc918daac336" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;&lt;webctrl tag='H1' class='xui-pageheading--title' parentclass='xui-pageheading--content xui-pageheading--content-layout xui-page-width-standard xdash-pageHeading__page-heading--padding___3LmI_' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                                 </ui:UiElementExists.Target>
@@ -221,7 +220,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:UiElementExists>
-                              <If Condition="[CompanyNameFound]" DisplayName="Comfrim The Company Name" sap:VirtualizedContainerService.HintSize="483.2,346.4" sap2010:WorkflowViewState.IdRef="If_8">
+                              <If Condition="[CompanyNameFound]" DisplayName="Comfrim The Company Name" sap:VirtualizedContainerService.HintSize="484,342" sap2010:WorkflowViewState.IdRef="If_8">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,7 +228,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <uix:NClick ClickType="Single" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                                  <uix:NClick ClickType="Single" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
                                     <uix:NClick.Target>
                                       <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="414, 616, 165, 36" ElementType="Text" FriendlyName="'Reconcile 18 items'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' aaname='*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKkAAAAoCAYAAACFOdpSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANoSURBVHhe7Zw9bttAEIV9lZzRTc6QIifwMdy6SpPCQDp3KlwZUCOosRoBjJfaN9ydmSUpmaJGwHvAV5g/+zP8dkk3eugYJngoKRM+lJQJn0rS338+uh+//nUPP/8SchOSf8nDMiJpOuHdRMgtKEUVSbmDkkgkHxGR1LuQkFuCUFISFoSSkrAglJSEBaGkJCwIJSVhQSgpCQtCSUlYEEpKwoIsLOm2e8vtedlt3p17gvO873Zp8Id99+j9/S1Qr8/uSZ172vYnJGO1w7Vvr/75ewVZVdKUuyvkFSUdRKwlfdwc8/E6LVFdSdM4F1lItwO5kqR2Z5DCb7fV8btjEUnfu5dDX42csl7DOZHu9fN0YG6f514fFGQ1Sd3C4ViO2SkgBOIUffS1WApV9XXsXp6Ldsb60VK6kqo3iDPOgULQwzH3W9dL74xTC7y6XtU0xbSTU+68aGO32RdzyXUq66Pmpus/PvfzQFaTVCaDQjvFTBHJtDiIFEHvRkXQR6uNFLQz1Y+WUv/d+sSR85rTuHtBpG9dL69NZ+Fn5kja+oSAqEa2keAZNe9Z6G2JrPxNih3MeaUpwY3Uck9uQx5GsSvKQ7c7gPQj983sZ0JSb5erpMnHXFqSFuMeUsxTYfrDHM1CcmqVr5E66Hl+BVLquc6e54Ug60kqBZu4ri+kEqXq4wQKpj8RULj+uCtBuRim+9EPs/lwneixGdzxOQvYSFczKWkhnE29WIcxO2KjXSxIWfBDlhQWufrrfniIpQgrS+oukKiS2hr6xwauK2nRp5ZUH0eqel8Osso36fAgcdzZLRRyj3kN53ukMIVg8jDyMS1YTz3GyX50G+pv73U/GxlvWS+Mz5FO1RUYSc280WZ7MX5LUmG6n3NAVvrHaSi8TFCvPkTLYIK2B5lM0Id5WAk1xql+dBtNAXRmPCjpu66XiK/S2pmbkuak4602UavzJR2pf1Xvy0FWkvSLQkq7Q+ToyRmBbLuyE+ZUD9IIlXDGONaPbmO0TWTmTiL92nlpqVqCJoykSiDca0QtdsRLd1Jdf28ul4IsLCkhy4FQUhIWhJKSsCCUlIQFoaQkLAglJWFBKCkJC0JJSVgQSkrCglBSEhZEJOVPP5JIuD/9yB/RJZFwf0Q3JZ3gjkpuSfKvFDSlkpRh4qXr/gOpRHMDDos0rAAAAABJRU5ErkJggg==" InformativeScreenshot="69aa518ce7d5fbc9e52bd3856bb2a83b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector">
                                         <uix:TargetAnchorable.Anchors>
@@ -245,14 +244,14 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Company Name Not On  Dashboard" sap:VirtualizedContainerService.HintSize="1482.4,2496" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence DisplayName="Company Name Not On  Dashboard" sap:VirtualizedContainerService.HintSize="1799,2474" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click The Company On Dashboard" sap:VirtualizedContainerService.HintSize="1440.8,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                              <uix:NClick ClickType="Single" DisplayName="Click The Company On Dashboard" sap:VirtualizedContainerService.HintSize="1757,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="27, 208, 201, 38" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAqCAYAAAAQ/d9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASnSURBVHhe7Z09bhRBEIWdch2uwAkIgBvAATaAjANAQICILAeQERAQIo1kETm2pQ2RLDkgsUzgwNkwPf1b1VXd07szs2vptfTJbE//VFe917NEe3Ly7qIHADQgdgIAdMROAIAO+fDmR3/y8nN/8vwjAMBg/GB8kfqEGEaaBACgxgn/wBsGAB3jj8w00kAAQASmAaARmAaARmAaABqBaQBoBKYBoBGYBoBGYBoAGoFpAGgEpgGgkb1N0932ervtT6U5R81539278EN7jOdYj83VQ9/fX/cb8/nsur8bMnZ3dS6OzZ+7fPv5jNMbk3//3I7ddvm4VZnLNNJB7IEf+u4sf3aU+Avg5pL0+8IdvFjHyGiCpMYzmsbnnazF9zsES5om3tqP4KauFNsWEG8ciq1vLur9TSMaJn3GLrZVWdY0A+Jzb6bYyHOX2G132W/tY9vGRLG5wg01fl1I24QEV00xxHI67L1Jbzj/ZvKNxWLjGNZk48azujP6loqjOC9ZP45NG72Fw1qF/bSzj/1CfgNjfOzWn8E03jCqpsY1Dvi2Wdw0WZKcEdJi8DVCgZPEJAKKe7m1ElPYhKcJFfbLkG+7El6sMRZv5ii+IGhBEESk7PzRCPqYOI6KnRtAiiGLXayhzZsq/gHRVHuapmqYETencBm+/frbLlRpZpw0v8jipmHCtgXLbwlSbDHxuUHCPF84Ny+LpTHGOoqgWNziWScItJijINJyDH59eS0+Vzj/GGceQ0QRrli70vNoms4ZxjS9VhbRsIzXX37ZxZRmnkvzqqxrGnqrkHFpkUTxC4UdIMlTC60IjD2fbBoxPgMVkhUsfRNMNw2bF/plIdtLJza/vrxWng8+ri5KJae7msa1bec/lwyr54jz4sNPs1jWTL80fhKLm4YkiSYob/uZRheVUuBAwcwS6plnNE3tYvHjQpNzJ4tLyCWZV8vXQCb+Sr/6PGoi5MSNKdVDPpfMs/ff+7t7myvz13yWxk1mcdOQ51RUKqSAnrppuKgidRFUi5AWW4zPMKNphFhsPzVHdiYWm7yWlMskdjWPKVpOK7nOzu/25QZx4zStVOvFeLr51v/5+2/8Kz1vYlnT5AkpC8L172oaTUjFGB3aXIf9+uOFJMfC1xDPKsZChWbn5aLNL4j8THZu7JfzLcfvx27NPopYI9oFqJjAkcejj7c5l+tGcjGRJ68+if3NLGkaKjSPK1h6YC7YXU3jP5M9hf003FnEPYaWGoqLMxQ/EYQo2MmmGVoSc7afyxGJ1fcNzY8TY1ByGfqHRuOTUYUrxWZwZ0/zWDaZj4drSDPsSsxlGrGpQvUCi40UaQ/TGILoXKNFqhGFExsXnYOfncW2n2lu+46cI3/zpCaxzexF89RmGn9BKOfljPsLcY1IeZTGlkwzEM6YzC3uuwJ7mwbMjiz0NWi9wQ9z44/GXnlPAkxzfBzMNLvc4Gvf+od+yxhgmuNjddOEr0DT/i/DGeNVv4rPiX2z7RLjrMA0ADQC0wDQCEwDQCMwDQCNwDQANALTANAITANAI5lp8KNOAOiIP+qEnw8EQEf8+UBvHLxxAIgYP6SGMZAPAIAKF/1/1bexrFlY5McAAAAASUVORK5CYII=" InformativeScreenshot="0e81281f855bc4ef45700e84f48a9d70.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector">
                                     <uix:TargetAnchorable.Anchors>
@@ -269,7 +268,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uix:NClick>
-                              <ui:UiElementExists DisplayName="Check If Change Organisation Exist" Exists="[ChangeOrganisationExist]" sap:VirtualizedContainerService.HintSize="1440.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                              <ui:UiElementExists DisplayName="Check If Change Organisation Exist" Exists="[ChangeOrganisationExist]" sap:VirtualizedContainerService.HintSize="1757,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                                 <ui:UiElementExists.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="931e9ff6-c7d0-4ca7-9deb-a00ef7b08aea" InformativeScreenshot="a646977e2b07103c67784df1e551c6f6" Selector="&lt;webctrl aaname='Change organisation' tag='BUTTON' /&gt;">
                                     <ui:Target.TimeoutMS>
@@ -287,7 +286,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:UiElementExists>
-                              <If Condition="[ChangeOrganisationExist]" DisplayName="Check If Exixt" sap:VirtualizedContainerService.HintSize="1440.8,2048.8" sap2010:WorkflowViewState.IdRef="If_13">
+                              <If Condition="[ChangeOrganisationExist]" DisplayName="Check If Exixt" sap:VirtualizedContainerService.HintSize="1757,2030" sap2010:WorkflowViewState.IdRef="If_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -295,7 +294,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="More Than Three Company Registered" sap:VirtualizedContainerService.HintSize="660.8,1281.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="More Than Three Company Registered" sap:VirtualizedContainerService.HintSize="839,1271" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="NoCompanyNameFound" />
                                     </Sequence.Variables>
@@ -305,7 +304,7 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NClick ClickType="Single" DisplayName="Click Change organisation" sap:VirtualizedContainerService.HintSize="619.2,167.2" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+                                    <uix:NClick ClickType="Single" DisplayName="Click Change organisation" sap:VirtualizedContainerService.HintSize="797,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
                                       <uix:NClick.Target>
                                         <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="26, 283, 338, 45" ElementType="Button" FriendlyName="'Change organisation'" FullSelectorArgument="&lt;webctrl aaname='Change organisation' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Change organisation' tag='BUTTON' type='button' check:text='Change organisation' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVYAAAAxCAYAAACBKYHVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAWcSURBVHhe7dxPbiNFFMfx3ABuAjfgDnMBuAHb2cEi21mwZMUqG1iAxI6ZjBCDIqQgITEBzYJ/ERIhxgxCjIEFUuPX9aq7Xv3p7tiVtJ18P1JJ43ZXdVU77+dyYs3BYvF78+jx5w0AYHOSo5Knq9XfzcHlYtk8fPxEnwIAbEJyVPL0xYvVOlgvl80nxwQrAGxDclTytA3WXy9/I1gBYEuSo5KnQbB+pk8BADYhOSp5+lcXrI8IVgDYhuQowQoAFRGsAFAZwQoAlRGsAFAZwQoAlRGsAFAZwQoAlRGsAFAZwQoAlRGsAFDZTgbre18u9F8AsH92LlglVA/uf9G88cH3zR///KdHAWB/7OSO9fX3v2vD9dV3viZcAeydWYL1q19Wzac//DnYJFSrh+vZ03bMsN07XuqT3nlzmD2Oa9e+PqfNUe3fBC2eNfcePGsu9CGvMa7bLMH62rvfJgE31LYP12Vz9EDGiopWCk6uQdHdaidH8WsMXK+9CNY3P/5Je26mLaz7T5sTfWxouPZBSrDeNgQrbtoswTpGdqf+VwFbf0MgCc7Ysjk5WzYXizhYz3WX61sazBfHp8Hz0qIdcffR1o3ZnXd0rif0XPj7tr5W9mNxNM7kj81j/dzzh8e6g5fm5+h39dq6+xKtwc5fWni/9BPDuo+9Z6X7pY+7TxpBS+5dvLbwnLT/4Zkcd33sz0TpXK/vk7xWegbg7VywVg1Vob9XtUUypC/Uvo8WXbDrcQFhiyrZGeu1c8f6ovYFnesXhIwPuCBY3BxGwrXYL1yfX3Mu6HJzteOlO8L4fvX9xtft5xCPIeJAzARk5o00nV9+HHNOsnZ/jzL3zYwN7ECwSnjKH7O8D7953v7w1vou66TwMbRYop2RDdK4MJUWdVd4Wpw21DUw/PjZc3xI9/NOQruVCx8rDRUR98utuTB2HNTxmr3RkFwz58SPC/c4kHtzE/Gax4J1cJzoNR/+uQCcWYPVf2dVfuca+vH5v/qv7W0arHFBD43jCrBvNljjPjZYS4Vpr5cvajFc2PZaIdsvt+b8fRiaS3c9eb5tfv6FeQwGa3hfJwSXD3zfrhCs6fNqQtAP33/cVbMFqw/VV2p+nSqnLY7MjqpoqID6onePfSHr8eyONQiOlt292V1RIFPU/fXiVirscgiOBquuJQ3WNCTtG4uOaeY/FKwj90vPScZvRfdFx4+DcjhY7ethZF6DsZ8LQMwSrG89/LkthJffPm0+Wn/0z32PNWzbyRdEyIbbhAIqhc4GwWoDrmcLdnwNeYVAWxsN1uI13fFuzDgcPbP2LYI11O1K3bxLb0pXC9bc88rMJ38/CFbk3Hiwylenuh3GxLatUgG2fLF2RT+hgAph4s65WrCWxnJz7vuWir8YCiq/9niXlltzfI6K7lcpWOz8KwXrWn+9wvx88AfH03tk1zu8hqE3n3Jf3G03Hqzyh6qX1jtVKaipbXtahHEBRDsgZ0IBJWG81o11xWDt5hbMQQPHHMtdsxDKRqafW0vYL79mP35/3M81OJacs9bN369d+10pWDUgTR9772x4O+5Yf45w6x16jfVaYfgm65rwcwGoGw9WEYZrrb/+T+EDJWxxoUwuoCBIXZPCjcLABIUXB6vTBYIfq+0bhoHQ8bs2taDjfvlx03uxFq3Tf4/VnKsh1DVZm/Zz520SrCKet46tzwp739z1hl4rN5/cevs3Ddfie5u/RwQrcmYJVjFXuO6LtmCjENkNLmAGd8nAHTdbsAr5NoB8K0D+N6s7K961CbPbm8vQzjre8QIIzRqs4lq/arUncr+i2I0d4fhHcQCp2YMVAG4bghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaCyPlhXzf9zukr+HQ4pUQAAAABJRU5ErkJggg==" InformativeScreenshot="413aaa67dee2c2b419a2919c7c44798d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                                           <uix:TargetAnchorable.Anchors>
@@ -316,7 +315,7 @@
                                         </uix:TargetAnchorable>
                                       </uix:NClick.Target>
                                     </uix:NClick>
-                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search Comapany Name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="619.2,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" Text="[in_Organisation_Name + &quot;[k(enter)]&quot;]">
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search Comapany Name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="797,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" Text="[in_Organisation_Name + &quot;[k(enter)]&quot;]">
                                       <uix:NTypeInto.Target>
                                         <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="82, 272, 236, 68" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' aaname='Search organisations' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPAAAABICAYAAADIzHiKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASjSURBVHhe7dg9bttAEIZhXTNdLpCruEvnOxgu3RuBARspUgaGj5AgQNI5YLjc4f7MzlKUKMWa5H2ALSSRy/2Zj6S9e339PdBoNJ9t9/PXr4FGo/lsu08PTwONRvPZdgMAtwgw4BgBBhwjwIBjBBhwjAADjhFgwDECDDhGgAHHCDDgGAEGHCPAgGMEGHCMAAOOEWDAMQIMOEaAAccIMOAYAQYcI8CAYwQYcIwAA44RYMAxAgw4RoABxwgw4BgBBhzbHuDnu+Hd+w91+/g4fJefL8Y0zuvh/pt8/ie9DDfj+l89/JDPp/JjuP9Yrl34PO7z7Yt8xlvZFODvD9dGKGRzLy0s/0WAz4S1u1gbArx0tz/Xk2ADivB4rN3F2hzgQ16j4hNbXrM75zbH6MKZiuluuC+Ou3kufyvOLfufi/D5cbjqHdM1v1Xklq45ib9fPTzGNQkt/Rkh6zS38Xpfb8vfo33zjr/fDV+/1eOvb5LtjXO6VnG89edNc0y4jvxm75n9Cr28v/mc+rj2xrBmzIg2vULnhc4b3hOPLTervQGkIpXPQTyv+G4OaScAOViq/xTuoi8Jw/KbgvRTXk/6yuflgFfBnsNWzDGtWdHfmnmnom/Oa+c8j6tZOyN40zHVWsoxzXzLvev0Y+1v6ievUbtueYxrxoxs4z+x8qaUrQlELygShFiAdfElcm4q0uqcWefc6VgpBvO8/cVhhSuoC036qYJgFWOgC3vdvOM49NNKn1t+XlH4em1nOrD6s+57sZ/5e3uN6r5XjBmVjQEuSWGmljfcLr6gU7yjWPy5peJoimnUK6CSdV6vqArTOKzf9xZerxiXr9mbt30jWQpwfkLba6/JuOS61TnN2qm5mWsbrLihqHMPGzNOGODCtCnjJkiR5k2xW1twockGmk9gtblyvdMHeOH3qj+rOOWG1gS4vSmsmXc8pvM0T9fQgR5JP03/or5hSP96rZq1q+cbx1b3G60NsNq7PWNGdnSA7YLKYmHE3/cdO5FNq4oveNMA/4Un8Mp5Hx3gihw/j7u3bnqtmrVTczPXNjgywBU1ZlSOfwL3Ck9Uha9DOCu/72xkLNzie7NYOoXb9K/PU2Ey9J4u5Q2qV5z1MTMpyPmaK+d9mgCPiustz634vlk7Nd9eLVRzOzbAozXH/Kc2vULPRaY3ziqMpih0eKQIqg2evys3rymmSBd80795njrGpAIXSEHleXeK05hTXIfiu5XzPjzA9tyqm0ozj5F8V62VjKdZ22Ze5frqdeuskVwv9r1izKhs/xu4KLbUOoGYQ5aa3symr7BpqkjNIIpUfNLK/s3z7IJpyXGp704/ej4TGX8xpqkgy2NXzPvwAAd63KGpPvSahbWQ8Zj9TGtlz1fvb3Vj6K1RFeBgxZiRnOefWFgQC7QubuA4BPiMrFe/+JTqvEEAByLAZ8XrIM6LAAOOEWDAMQIMOEaAAccIMOAYAQYcI8CAYwQYcIwAA44RYMAxAgw4RoABxwgw4BgBBhwjwIBjBBhwjAADjhFgwDECDDhGgAHHCDDgGAEGHCPAgGMEGHCMAAOOEWDAsd3T5y8DjUbz2L4MfwBV/iWOXiQf/gAAAABJRU5ErkJggg==" InformativeScreenshot="64edff7b6d865eca56b715f6a086e7f2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                                           <uix:TargetAnchorable.Anchors>
@@ -327,7 +326,7 @@
                                         </uix:TargetAnchorable>
                                       </uix:NTypeInto.Target>
                                     </uix:NTypeInto>
-                                    <ui:UiElementExists DisplayName="Check If Exist" Exists="[NoCompanyNameFound]" sap:VirtualizedContainerService.HintSize="619.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                                    <ui:UiElementExists DisplayName="Check If Exist" Exists="[NoCompanyNameFound]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                                       <ui:UiElementExists.Target>
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fdd24493-d150-4821-b4a1-b95061e5e5fc" InformativeScreenshot="e693c4c5f17eee89d77726c03300eff6" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' idx='2' tag='svg' /&gt;" TimeoutMS="5000">
                                           <ui:Target.WaitForReady>
@@ -336,15 +335,15 @@
                                         </ui:Target>
                                       </ui:UiElementExists.Target>
                                     </ui:UiElementExists>
-                                    <If Condition="[not NoCompanyNameFound]" DisplayName="Check if Company Is Found" sap:VirtualizedContainerService.HintSize="619.2,566.4" sap2010:WorkflowViewState.IdRef="If_9">
+                                    <If Condition="[not NoCompanyNameFound]" DisplayName="Check if Company Is Found" sap:VirtualizedContainerService.HintSize="797,561" sap2010:WorkflowViewState.IdRef="If_9">
                                       <If.Then>
-                                        <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="375.2,407.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                        <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select Company From Dropdown" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select Company From Dropdown" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
                                             <ui:Click.CursorPosition>
                                               <ui:CursorPosition Position="Center">
                                                 <ui:CursorPosition.OffsetX>
@@ -366,7 +365,7 @@
                                               </ui:Target>
                                             </ui:Click.Target>
                                           </ui:Click>
-                                          <uix:NClick ClickType="Single" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
+                                          <uix:NClick ClickType="Single" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left">
                                             <uix:NClick.Target>
                                               <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="414, 616, 165, 36" ElementType="Text" FriendlyName="'Reconcile 18 items'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' aaname='*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKkAAAAoCAYAAACFOdpSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANoSURBVHhe7Zw9bttAEIV9lZzRTc6QIifwMdy6SpPCQDp3KlwZUCOosRoBjJfaN9ydmSUpmaJGwHvAV5g/+zP8dkk3eugYJngoKRM+lJQJn0rS338+uh+//nUPP/8SchOSf8nDMiJpOuHdRMgtKEUVSbmDkkgkHxGR1LuQkFuCUFISFoSSkrAglJSEBaGkJCwIJSVhQSgpCQtCSUlYEEpKwoIsLOm2e8vtedlt3p17gvO873Zp8Id99+j9/S1Qr8/uSZ172vYnJGO1w7Vvr/75ewVZVdKUuyvkFSUdRKwlfdwc8/E6LVFdSdM4F1lItwO5kqR2Z5DCb7fV8btjEUnfu5dDX42csl7DOZHu9fN0YG6f514fFGQ1Sd3C4ViO2SkgBOIUffS1WApV9XXsXp6Ldsb60VK6kqo3iDPOgULQwzH3W9dL74xTC7y6XtU0xbSTU+68aGO32RdzyXUq66Pmpus/PvfzQFaTVCaDQjvFTBHJtDiIFEHvRkXQR6uNFLQz1Y+WUv/d+sSR85rTuHtBpG9dL69NZ+Fn5kja+oSAqEa2keAZNe9Z6G2JrPxNih3MeaUpwY3Uck9uQx5GsSvKQ7c7gPQj983sZ0JSb5erpMnHXFqSFuMeUsxTYfrDHM1CcmqVr5E66Hl+BVLquc6e54Ug60kqBZu4ri+kEqXq4wQKpj8RULj+uCtBuRim+9EPs/lwneixGdzxOQvYSFczKWkhnE29WIcxO2KjXSxIWfBDlhQWufrrfniIpQgrS+oukKiS2hr6xwauK2nRp5ZUH0eqel8Osso36fAgcdzZLRRyj3kN53ukMIVg8jDyMS1YTz3GyX50G+pv73U/GxlvWS+Mz5FO1RUYSc280WZ7MX5LUmG6n3NAVvrHaSi8TFCvPkTLYIK2B5lM0Id5WAk1xql+dBtNAXRmPCjpu66XiK/S2pmbkuak4602UavzJR2pf1Xvy0FWkvSLQkq7Q+ToyRmBbLuyE+ZUD9IIlXDGONaPbmO0TWTmTiL92nlpqVqCJoykSiDca0QtdsRLd1Jdf28ul4IsLCkhy4FQUhIWhJKSsCCUlIQFoaQkLAglJWFBKCkJC0JJSVgQSkrCglBSEhZEJOVPP5JIuD/9yB/RJZFwf0Q3JZ3gjkpuSfKvFDSlkpRh4qXr/gOpRHMDDos0rAAAAABJRU5ErkJggg==" InformativeScreenshot="69aa518ce7d5fbc9e52bd3856bb2a83b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector">
                                                 <uix:TargetAnchorable.Anchors>
@@ -380,26 +379,45 @@
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
-                                        <Throw DisplayName="Throw Company Not Found Error" Exception="[new BusinessRuleException(&quot;The Company Name [&quot;+in_Organisation_Name+&quot;] is not Found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                                      </If.Else>
-                                    </If>
-                                  </Sequence>
-                                </If.Then>
-                                <If.Else>
-                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Only Three Company Registeed" sap:VirtualizedContainerService.HintSize="736,1889.6" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="2314e19b6b9ee7e63a1786be57e01283" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;">
-                                    <ui:BrowserScope.Body>
-                                      <ActivityAction x:TypeArguments="x:Object">
-                                        <ActivityAction.Argument>
-                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                                        </ActivityAction.Argument>
-                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702.4,1742.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                        <Sequence DisplayName="Click Dashboard And Throw BRE Sequence" sap:VirtualizedContainerService.HintSize="376,320" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:FindChildren Children="[FoundElement]" DisplayName="Get All the Name Company Name" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="660.8,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+                                          <uix:NClick ClickType="Single" DisplayName="Click  Dashboard" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="163, 149, 82, 45" ElementType="Button" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl aaname='Dashboard' tag='A' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;a' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Dashboard' tag='A' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;a' type='' check:text='Dashboard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAxCAYAAABAp14VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHxSURBVHhe7ZkxjsIwEEU52nZ7g70IzR6GY9CibSmo6Sho0yAaaJC8TmYcMsmHgD7RstK39ETynNjjj0kKZh+fX0m8HgU7EbPZ9zqJCYBS8EApeKAUPFAKHigFD5SCB0rBA6XggVLwQCl4oBQ8UAoeKAUPlIIHSsEDpeCBUvBAOUqVtqnfTmkBr32Q5TEd8ijbDejbnJoZYN9ELKo84fmY5qDvIaAcxYI97PatowtRsDXDYAeL93Nrl7Rauu/t9nYMD/ZwvlhHbm1fGbu6jhlCvjmXB1RaG5TXkOeq50xVld0+rc71Sd1Oea788RbBlmAaZ/22eC+4KX6d5rs6OFu8HfsjxO8v11kg3leCC2PE+0otw/vidVZTCfYaXLcu1P80UI4yFqy5sFs8lLi7OjsvLLwXXtmx5drOebgOjNOG5M28u1JTpv/T758/DZSj3A62KdyPrfC4Y43uzy7eUwJ5RbDWh8b/R8GGQkIQcREhCPBl2D042HtjoEdB9/heTdcx3+RREJsvoKG7I/MLoj5ui4y7tV3cA8E+/fLyMZvmLyr7AobBxrr+7OUlRoFS8EApeKAUPFAKHigFD5SCB0rBA6XggVLwQCl4oBQ8UAoeKAUPlIIHSsFTDn52R/ECFOxEKNiJaIO1/3jUXt0U7CQtpV+Ga7HKQIJLHgAAAABJRU5ErkJggg==" InformativeScreenshot="6eee847613a09150bacfb9e32c408bed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;" SearchSteps="Selector">
+                                                <uix:TargetAnchorable.Anchors>
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                    <uix:Target DesignTimeRectangle="28, 165, 108, 12" ElementType="Text" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl tag='SPAN' class='xnav-appbutton--text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='xnav-appbutton--text' type='' aaname='Demo Company (UK)' check:text='Demo Company (UK)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAAQCAYAAADOFPsRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJhSURBVFhH7VY7ksIwDOVqe6achY5T0FBxACo6Gqp0dBTM0Hol2bL1SzbZZZkJE8+8WVm2pSc9O+xm89WlFQtG6FyxHITOFctB6FyxHLCx65Mbl4PZ/Bbs0/FRCOB4XFMX7lsGdv0zHbdgH25QzC3t5Dr6uD63XvpA62ibsww2SMD+1Ba213QH13tFPKUL5Lyf99XXnZ/LFRFEqbXMEjCLJ/tAekh9GGw4AQHUvOrLzc2j3Cr0FxJHfsFIiMjgEPvU+YHbJAuq2EM8QJkTpzJUc37kkJtyOeeLiaNdzoFXT3Fv6cJrys88S1x30c2rIT5TBAzEK6ivWfrbIpy3CtcEhqRLzGtFJIojiWhSQ68q5CBRi8R5zkV5Z3DwDQN7e0o7ddHkZ4+bJvKRzWfxQhhh2C9rVNyFT/F5whn4E/QGgX1zwrIxLmBpihqySCamhcaYOaFoCu4bKFq/eA+7XuNP4qD9jhMLTGNabWTjnoiz9atYwqcEzFxDLXiP9bMRHWoNs8UKKGJ/E1AVVNFi/puApXl5zfrjuLQGXDB+iylQ1us8qhn3KAF5HTkEcW1MBBtOQErIQTL5ui6TqcTjzct2ESL8TGTivM/tHSpyBofBGlSOCQLiHH6TwouIsJ9QJ8oInzrXjwZ7IXtDYIMENKMlQ2QCeYjAI0W25tnzA0UT5D4YRmgStIwaexKH7L8/2vlWn8jZwz9DfH5UQP9F0MD9WgB+FHXI2qyAgFyrzG/iIdTko1EEtDf41/CCOoAoL8uH4keXxTk+Fq8UsLxY83XwGHg1szESxzlWLAuhc8VC0KVvlST2yzhmgaUAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                                  </scg:List>
+                                                </uix:TargetAnchorable.Anchors>
+                                              </uix:TargetAnchorable>
+                                            </uix:NClick.Target>
+                                          </uix:NClick>
+                                          <Throw DisplayName="Throw Company Not Found Error" Exception="[new BusinessRuleException(&quot;The Company Name [&quot;+in_Organisation_Name+&quot;] is not Found&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Only Three Company Registeed" sap:VirtualizedContainerService.HintSize="873,1873" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="2314e19b6b9ee7e63a1786be57e01283" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;">
+                                    <ui:BrowserScope.Body>
+                                      <ActivityAction x:TypeArguments="x:Object">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1727" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:FindChildren Children="[FoundElement]" DisplayName="Get All the Name Company Name" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
                                             <ui:FindChildren.Target>
                                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1aa4dda5-dafb-4ecc-94a2-ea9f06750a04" InformativeScreenshot="12ab413c1e9db7b0f783c3dba2ef1a20" Selector="&lt;webctrl idx='2' tag='OL' /&gt;">
                                                 <ui:Target.TimeoutMS>
@@ -417,20 +435,20 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:FindChildren>
-                                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="Checking The Company Name" sap:VirtualizedContainerService.HintSize="660.8,896" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FoundElement]">
+                                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="Checking The Company Name" sap:VirtualizedContainerService.HintSize="797,888" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FoundElement]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="ui:UiElement">
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Assige The Company Name" sap:VirtualizedContainerService.HintSize="524.8,761.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                <Sequence DisplayName="Assige The Company Name" sap:VirtualizedContainerService.HintSize="526,755" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innerText" DisplayName="Get The Company Name" sap:VirtualizedContainerService.HintSize="483.2,96.8" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                                                  <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innerText" DisplayName="Get The Company Name" sap:VirtualizedContainerService.HintSize="484,96" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
                                                     <ui:GetAttribute.Result>
                                                       <OutArgument x:TypeArguments="x:String">[name]</OutArgument>
                                                     </ui:GetAttribute.Result>
@@ -451,7 +469,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:GetAttribute>
-                                                  <Assign DisplayName="Comvert Company list to Array" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                  <Assign DisplayName="Comvert Company list to Array" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="s:String[]">[Array]</OutArgument>
                                                     </Assign.To>
@@ -459,7 +477,7 @@
                                                       <InArgument x:TypeArguments="s:String[]">[name.Split(" "c )]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <Assign DisplayName="Company found Count -1" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                  <Assign DisplayName="Company found Count -1" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Int32">[CountArray]</OutArgument>
                                                     </Assign.To>
@@ -467,7 +485,7 @@
                                                       <InArgument x:TypeArguments="x:Int32">[Array.Count]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[CountArray &gt; 3]" DisplayName="Remove Avater Logo Name" sap:VirtualizedContainerService.HintSize="483.2,52.8" sap2010:WorkflowViewState.IdRef="If_10">
+                                                  <If Condition="[CountArray &gt; 3]" DisplayName="Remove Avater Logo Name" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_10">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -495,7 +513,7 @@
                                                       </Assign>
                                                     </If.Else>
                                                   </If>
-                                                  <If Condition="[in_Organisation_Name  = name or in_Organisation_Name  = &quot;Demo Company (UK)&quot;]" DisplayName="Exist Loop If the Company Is Found" sap:VirtualizedContainerService.HintSize="483.2,239.2" sap2010:WorkflowViewState.IdRef="If_11">
+                                                  <If Condition="[in_Organisation_Name  = name or in_Organisation_Name  = &quot;Demo Company (UK)&quot;]" DisplayName="Exist Loop If the Company Is Found" sap:VirtualizedContainerService.HintSize="484,236" sap2010:WorkflowViewState.IdRef="If_11">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -503,7 +521,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <If.Then>
-                                                      <ui:Break sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                                      <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_2" />
                                                     </If.Then>
                                                   </If>
                                                 </Sequence>
@@ -516,7 +534,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:ForEach>
-                                          <If Condition="[in_Organisation_Name  = name or in_Organisation_Name  = &quot;Demo Company (UK)&quot;]" DisplayName="Seleect If Company Found " sap:VirtualizedContainerService.HintSize="660.8,566.4" sap2010:WorkflowViewState.IdRef="If_12">
+                                          <If Condition="[in_Organisation_Name  = name or in_Organisation_Name  = &quot;Demo Company (UK)&quot;]" DisplayName="Seleect If Company Found " sap:VirtualizedContainerService.HintSize="797,561" sap2010:WorkflowViewState.IdRef="If_12">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -524,13 +542,13 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="375.2,407.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                              <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Company" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Company" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                   <ui:Click.CursorPosition>
                                                     <ui:CursorPosition Position="Center">
                                                       <ui:CursorPosition.OffsetX>
@@ -552,7 +570,7 @@
                                                     </ui:Target>
                                                   </ui:Click.Target>
                                                 </ui:Click>
-                                                <uix:NClick ClickType="Single" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
+                                                <uix:NClick ClickType="Single" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
                                                   <uix:NClick.Target>
                                                     <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="414, 616, 165, 36" ElementType="Text" FriendlyName="'Reconcile 18 items'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' aaname='*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKkAAAAoCAYAAACFOdpSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANoSURBVHhe7Zw9bttAEIV9lZzRTc6QIifwMdy6SpPCQDp3KlwZUCOosRoBjJfaN9ydmSUpmaJGwHvAV5g/+zP8dkk3eugYJngoKRM+lJQJn0rS338+uh+//nUPP/8SchOSf8nDMiJpOuHdRMgtKEUVSbmDkkgkHxGR1LuQkFuCUFISFoSSkrAglJSEBaGkJCwIJSVhQSgpCQtCSUlYEEpKwoIsLOm2e8vtedlt3p17gvO873Zp8Id99+j9/S1Qr8/uSZ172vYnJGO1w7Vvr/75ewVZVdKUuyvkFSUdRKwlfdwc8/E6LVFdSdM4F1lItwO5kqR2Z5DCb7fV8btjEUnfu5dDX42csl7DOZHu9fN0YG6f514fFGQ1Sd3C4ViO2SkgBOIUffS1WApV9XXsXp6Ldsb60VK6kqo3iDPOgULQwzH3W9dL74xTC7y6XtU0xbSTU+68aGO32RdzyXUq66Pmpus/PvfzQFaTVCaDQjvFTBHJtDiIFEHvRkXQR6uNFLQz1Y+WUv/d+sSR85rTuHtBpG9dL69NZ+Fn5kja+oSAqEa2keAZNe9Z6G2JrPxNih3MeaUpwY3Uck9uQx5GsSvKQ7c7gPQj983sZ0JSb5erpMnHXFqSFuMeUsxTYfrDHM1CcmqVr5E66Hl+BVLquc6e54Ug60kqBZu4ri+kEqXq4wQKpj8RULj+uCtBuRim+9EPs/lwneixGdzxOQvYSFczKWkhnE29WIcxO2KjXSxIWfBDlhQWufrrfniIpQgrS+oukKiS2hr6xwauK2nRp5ZUH0eqel8Osso36fAgcdzZLRRyj3kN53ukMIVg8jDyMS1YTz3GyX50G+pv73U/GxlvWS+Mz5FO1RUYSc280WZ7MX5LUmG6n3NAVvrHaSi8TFCvPkTLYIK2B5lM0Id5WAk1xql+dBtNAXRmPCjpu66XiK/S2pmbkuak4602UavzJR2pf1Xvy0FWkvSLQkq7Q+ToyRmBbLuyE+ZUD9IIlXDGONaPbmO0TWTmTiL92nlpqVqCJoykSiDca0QtdsRLd1Jdf28ul4IsLCkhy4FQUhIWhJKSsCCUlIQFoaQkLAglJWFBKCkJC0JJSVgQSkrCglBSEhZEJOVPP5JIuD/9yB/RJZFwf0Q3JZ3gjkpuSfKvFDSlkpRh4qXr/gOpRHMDDos0rAAAAABJRU5ErkJggg==" InformativeScreenshot="69aa518ce7d5fbc9e52bd3856bb2a83b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector">
                                                       <uix:TargetAnchorable.Anchors>
@@ -566,13 +584,25 @@
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                              <Sequence DisplayName="Click Dashboard And Throw BRE Sequence" sap:VirtualizedContainerService.HintSize="376,320" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Throw DisplayName="Throw Company Not Found Error" Exception="[new BusinessRuleException(&quot;The Company Name [&quot;+in_Organisation_Name+&quot;] is not Found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                                <uix:NClick ClickType="Single" DisplayName="Click  Dashboard" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left">
+                                                  <uix:NClick.Target>
+                                                    <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="163, 149, 82, 45" ElementType="Button" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl aaname='Dashboard' tag='A' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;a' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Dashboard' tag='A' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;a' type='' check:text='Dashboard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAxCAYAAABAp14VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHxSURBVHhe7ZkxjsIwEEU52nZ7g70IzR6GY9CibSmo6Sho0yAaaJC8TmYcMsmHgD7RstK39ETynNjjj0kKZh+fX0m8HgU7EbPZ9zqJCYBS8EApeKAUPFAKHigFD5SCB0rBA6XggVLwQCl4oBQ8UAoeKAUPlIIHSsEDpeCBUvBAOUqVtqnfTmkBr32Q5TEd8ijbDejbnJoZYN9ELKo84fmY5qDvIaAcxYI97PatowtRsDXDYAeL93Nrl7Rauu/t9nYMD/ZwvlhHbm1fGbu6jhlCvjmXB1RaG5TXkOeq50xVld0+rc71Sd1Oea788RbBlmAaZ/22eC+4KX6d5rs6OFu8HfsjxO8v11kg3leCC2PE+0otw/vidVZTCfYaXLcu1P80UI4yFqy5sFs8lLi7OjsvLLwXXtmx5drOebgOjNOG5M28u1JTpv/T758/DZSj3A62KdyPrfC4Y43uzy7eUwJ5RbDWh8b/R8GGQkIQcREhCPBl2D042HtjoEdB9/heTdcx3+RREJsvoKG7I/MLoj5ui4y7tV3cA8E+/fLyMZvmLyr7AobBxrr+7OUlRoFS8EApeKAUPFAKHigFD5SCB0rBA6XggVLwQCl4oBQ8UAoeKAUPlIIHSsFTDn52R/ECFOxEKNiJaIO1/3jUXt0U7CQtpV+Ga7HKQIJLHgAAAABJRU5ErkJggg==" InformativeScreenshot="6eee847613a09150bacfb9e32c408bed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;" SearchSteps="Selector">
+                                                      <uix:TargetAnchorable.Anchors>
+                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                          <uix:Target DesignTimeRectangle="28, 165, 108, 12" ElementType="Text" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl tag='SPAN' class='xnav-appbutton--text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='xnav-appbutton--text' type='' aaname='Demo Company (UK)' check:text='Demo Company (UK)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAAQCAYAAADOFPsRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJhSURBVFhH7VY7ksIwDOVqe6achY5T0FBxACo6Gqp0dBTM0Hol2bL1SzbZZZkJE8+8WVm2pSc9O+xm89WlFQtG6FyxHITOFctB6FyxHLCx65Mbl4PZ/Bbs0/FRCOB4XFMX7lsGdv0zHbdgH25QzC3t5Dr6uD63XvpA62ibsww2SMD+1Ba213QH13tFPKUL5Lyf99XXnZ/LFRFEqbXMEjCLJ/tAekh9GGw4AQHUvOrLzc2j3Cr0FxJHfsFIiMjgEPvU+YHbJAuq2EM8QJkTpzJUc37kkJtyOeeLiaNdzoFXT3Fv6cJrys88S1x30c2rIT5TBAzEK6ivWfrbIpy3CtcEhqRLzGtFJIojiWhSQ68q5CBRi8R5zkV5Z3DwDQN7e0o7ddHkZ4+bJvKRzWfxQhhh2C9rVNyFT/F5whn4E/QGgX1zwrIxLmBpihqySCamhcaYOaFoCu4bKFq/eA+7XuNP4qD9jhMLTGNabWTjnoiz9atYwqcEzFxDLXiP9bMRHWoNs8UKKGJ/E1AVVNFi/puApXl5zfrjuLQGXDB+iylQ1us8qhn3KAF5HTkEcW1MBBtOQErIQTL5ui6TqcTjzct2ESL8TGTivM/tHSpyBofBGlSOCQLiHH6TwouIsJ9QJ8oInzrXjwZ7IXtDYIMENKMlQ2QCeYjAI0W25tnzA0UT5D4YRmgStIwaexKH7L8/2vlWn8jZwz9DfH5UQP9F0MD9WgB+FHXI2qyAgFyrzG/iIdTko1EEtDf41/CCOoAoL8uH4keXxTk+Fq8UsLxY83XwGHg1szESxzlWLAuhc8VC0KVvlST2yzhmgaUAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                                                        </scg:List>
+                                                      </uix:TargetAnchorable.Anchors>
+                                                    </uix:TargetAnchorable>
+                                                  </uix:NClick.Target>
+                                                </uix:NClick>
+                                                <Throw DisplayName="Throw Company Not Found Error" Exception="[new BusinessRuleException(&quot;The Company Name [&quot;+in_Organisation_Name+&quot;] is not Found&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                                               </Sequence>
                                             </If.Else>
                                           </If>
