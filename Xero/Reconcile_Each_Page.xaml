@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>840,1017.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1500.66666666667,5856</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -96,7 +96,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -105,7 +104,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="476,852.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_118">
+  <Sequence DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="1510.66666666667,5691.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_118">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="PayeeDetailsDT" />
       <Variable x:TypeArguments="x:String" Name="FindMatchRowID" />
@@ -140,20 +139,20 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="434,760.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1468.66666666667,5599.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,542.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_153">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1434.66666666667,5381.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_153">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FindChildren Children="[itemsToReconcile]" DisplayName="Find Children ItemsToReconcile" Filter="&lt;webctrl id='sl*' tag='DIV' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindChildren_12" Scope="FIND_DESCENDANTS">
+            <ui:FindChildren Children="[itemsToReconcile]" DisplayName="Find Children ItemsToReconcile" Filter="&lt;webctrl id='sl*' tag='DIV' /&gt;" sap:VirtualizedContainerService.HintSize="1392.66666666667,106" sap2010:WorkflowViewState.IdRef="FindChildren_12" Scope="FIND_DESCENDANTS">
               <ui:FindChildren.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd8dcfac-977b-4e6d-88f6-d251cbb4c395" InformativeScreenshot="0f9c9580bdd1ed83c6b142a04913036c" Selector="&lt;webctrl id='statementLines' parentid='ItemsToReconcile' parentname='frmMain' tag='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -171,24 +170,24 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:FindChildren>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Statement Line" sap:VirtualizedContainerService.HintSize="334,302" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[itemsToReconcile]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Statement Line" sap:VirtualizedContainerService.HintSize="1392.66666666667,5140.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[itemsToReconcile]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="For Each Statement Line Body" sap:VirtualizedContainerService.HintSize="242,164" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                  <Sequence DisplayName="For Each Statement Line Body" sap:VirtualizedContainerService.HintSize="1356,5002.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_152">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Each Statement Line Sequence" sap:VirtualizedContainerService.HintSize="1314,4897.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                    <Sequence DisplayName="Each Statement Line Sequence" sap:VirtualizedContainerService.HintSize="1314,4908" sap2010:WorkflowViewState.IdRef="Sequence_151">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get Main Row ID" sap:VirtualizedContainerService.HintSize="1272,96" sap2010:WorkflowViewState.IdRef="GetAttribute_33">
@@ -212,7 +211,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:GetAttribute>
-                      <Sequence DisplayName="Get Payee ID and Details" sap:VirtualizedContainerService.HintSize="1272,689.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                      <Sequence DisplayName="Get Payee ID and Details" sap:VirtualizedContainerService.HintSize="1272,692" sap2010:WorkflowViewState.IdRef="Sequence_119">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="Payee_Details_DIV_ID" />
                         </Sequence.Variables>
@@ -284,7 +283,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NGetText>
                       </Sequence>
-                      <Sequence DisplayName="Click Find and Match" sap:VirtualizedContainerService.HintSize="1272,539.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                      <Sequence DisplayName="Click Find and Match" sap:VirtualizedContainerService.HintSize="1272,542" sap2010:WorkflowViewState.IdRef="Sequence_120">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -333,7 +332,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
                       </Sequence>
-                      <Sequence DisplayName="Search Name in Dropdown" sap:VirtualizedContainerService.HintSize="1272,976.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                      <Sequence DisplayName="Search Name in Dropdown" sap:VirtualizedContainerService.HintSize="1272,979.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_121">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -363,7 +362,7 @@
                           </Assign.Value>
                         </Assign>
                         <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Payee Name Into Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,230" sap2010:WorkflowViewState.IdRef="NTypeInto_9" Text="[PayeeName]">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Payee Name Into Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,230" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" Text="[PayeeName]">
                           <uix:NTypeInto.Target>
                             <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="738, 478, 126, 19" ElementType="InputBox" FriendlyName="'INPUT searchNameText'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='searchNameText' tag='INPUT' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAXCAYAAADHqJcNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABtSURBVGhD7dKxDYAwDERRps7MtEwQ8BUoQWICvydd5dL/OK85zYRg2RbCGMOabP177Q2hjvTxjUEITQmBEAIhBEIIhBAIIRBCIIRACIEQAiEEQgiEEAghEEIgfkOo1dF6bP17bQvB+k4I9mzOGysKcN7h+rfoAAAAAElFTkSuQmCC" InformativeScreenshot="15f592543931ebf619c88efb719b96b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
                               <uix:TargetAnchorable.Anchors>
