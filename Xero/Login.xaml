@@ -312,7 +312,7 @@
                                           </ui:CursorPosition>
                                         </ui:Click.CursorPosition>
                                         <ui:Click.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2dfd5cde-7fea-40d2-b3a0-dd827aabc9c7" InformativeScreenshot="a9b5fa433de8658d8cbca5919a1ec290" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;&lt;webctrl parentid='header' tag='BUTTON' class='xnav-header-button xnav-addon--iconbutton xnav-header--iconbutton xnav-focusable--parent' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button' idx='*' /&gt;">
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2dfd5cde-7fea-40d2-b3a0-dd827aabc9c7" InformativeScreenshot="a9b5fa433de8658d8cbca5919a1ec290" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard*' /&gt;&lt;webctrl tag='ABBR' class='xnav-avatar xnav-avatar-color-8' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div&amp;gt;abbr' /&gt;">
                                             <ui:Target.TimeoutMS>
                                               <InArgument x:TypeArguments="x:Int32" />
                                             </ui:Target.TimeoutMS>
