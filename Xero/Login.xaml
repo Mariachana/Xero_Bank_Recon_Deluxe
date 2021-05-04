@@ -278,7 +278,7 @@
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">0,375.6</av:Point>
                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">100,375.6 100,300 420,300</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">100,375.6 100,299.1 420,299.1</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Sequence DisplayName="LogOut From Xero" sap:VirtualizedContainerService.HintSize="476,838" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -312,7 +312,7 @@
                                           </ui:CursorPosition>
                                         </ui:Click.CursorPosition>
                                         <ui:Click.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2dfd5cde-7fea-40d2-b3a0-dd827aabc9c7" InformativeScreenshot="a9b5fa433de8658d8cbca5919a1ec290" Selector="&lt;webctrl tag='ABBR' class='xnav-avatar xnav-avatar-color-8' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div&amp;gt;abbr' /&gt;">
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2dfd5cde-7fea-40d2-b3a0-dd827aabc9c7" InformativeScreenshot="a9b5fa433de8658d8cbca5919a1ec290" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;&lt;webctrl parentid='header' tag='BUTTON' class='xnav-header-button xnav-addon--iconbutton xnav-header--iconbutton xnav-focusable--parent' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button' idx='*' /&gt;">
                                             <ui:Target.TimeoutMS>
                                               <InArgument x:TypeArguments="x:Int32" />
                                             </ui:Target.TimeoutMS>
