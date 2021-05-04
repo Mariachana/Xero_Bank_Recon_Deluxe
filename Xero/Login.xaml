@@ -281,36 +281,47 @@
                                 <av:PointCollection x:Key="ConnectorLocation">100,375.6 100,300 420,300</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="LogOut From Xero" sap:VirtualizedContainerService.HintSize="476,898" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence DisplayName="LogOut From Xero" sap:VirtualizedContainerService.HintSize="476,838" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="open Xero Page" sap:VirtualizedContainerService.HintSize="434,806" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+                              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="open Xero Page" sap:VirtualizedContainerService.HintSize="434,746" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
                                 <uix:NApplicationCard.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                     </ActivityAction.Argument>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,590" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,530" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-                                      <uix:NClick ClickType="Single" DisplayName="Click Avater" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
-                                        <uix:NClick.Target>
-                                          <uix:TargetAnchorable BrowserURL="https://go.xero.com/Contacts/Search/?contactType=CONTYPE%2FALL" DesignTimeRectangle="1320, 156, 30, 30" FriendlyName="'SB'" FullSelectorArgument="&lt;webctrl tag='ABBR' aria-role='presentation' class='xnav-avatar xnav-avatar-*color-8*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='ABBR' aria-role='presentation' class='xnav-avatar xnav-avatar-*color-8*' type='' aaname='SB' check:text='SB' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHoSURBVFhHzZY9TsNAEIVTc4rcggPQJGVaqqTgABRJoEQ0CCUUSKmQIldUiXKNhIaCgi6ihwoOMPjF3nh/nr2OnZ8tPmn9dndmNDuz60bjZilBQMVTQMUCzu9WcvX0IQ8vXxK9fsts9rsBY2iYwxq2txAqWpzdLuXy8T129iPz+V8psBZ7sJfZdKCixsX9204B2GAvbDDbBlRMQZqZ8SrAFvOxhYox18+f1GAdYJP52sDEfWbCJjcztoDzZAb2Ca0Z/QMVXqcwywIfTjfpH2g3tvEQwJfu2wjkGNlQwJfuexsIbkO24ZAYN7Aa+DtlLYNWR5rNlF4W+Lin6YrWQiJjv4vRQWqAd4It3jKaxA76MpiqcUe6o2RuE4jueLqQdjzfHq5NGxbw6QSCR4stVkTDfhaINZcXiAo0D/h0AsELyhZnrKSr0q4dC6BHY61hwGeFQBKSzCTOco9GBe0JhgbiOxoT05EbSFrYnoKlR+Mr1iT9Exnj2yrGqhmhxepvX61GgOaY1ognG4C2bzAXGgjiigfBPHrB/AaAIH6MFP4Oqo7RKTpUjAni51mxz8zkZkJBRQ2cZ50Cxl5aEzZUtECFo912CQhrscfpjjyoWABuQ6QZ7wQeLbygAGNomDNuzLJQ8RRQ8egs5R9Ci628FgCdCwAAAABJRU5ErkJggg==" InformativeScreenshot="66139709ed8bdd0672bca6d3d4f22025.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;" SearchSteps="Selector">
-                                            <uix:TargetAnchorable.Anchors>
-                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                                <uix:Target DesignTimeRectangle="1281, 156, 30, 30" ElementType="Icon" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-role='presentation' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div' tag='DIV' class='xnav-focusable--child xnav-iconwrapper' idx='4' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div' tag='DIV' class='xnav-focusable--child xnav-iconwrapper' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFQSURBVFhHzZQxSgNBFIZzBI/gETyCR/EIlnamtdPWRntLSwUtLAIqEQu7xICioGC0EC2EZ/7RkWH4ZiZN9vnDx7LfzmMfO7Ov19sY2L8ApQcoPUDpAUoPUHqA0gOUHqD0AKUHKD1A2WCpf26bR3d2MnozRVfdy9P6uUBZYWXn2m5fPkMDeYYP7+E51TVBWeFq9jLl9ePLVndvglveGv55NZPXzAXKAv3j+/AyZf1wEhrQtugriBito/oqKAucjn/OhLJ38RRQ1g5GoakYraP6KigLaDvybJ89hmf7l8+/xmw6W5fXNkFZgBqRVzNptC6vbYKyQLo1MToj+gJpFr416WFV4gvzBnWQ89omKCvE31TRPNEgS+eKnlNdE5QV9JtOpjzQ1ERnA01olGub4pboqvtOR/zCQOkBSg9QeoDSA5QeoPQApQcoPUDpAcrOGdg36528hLgD4cIAAAAASUVORK5CYII=" SearchSteps="Selector" />
-                                              </scg:List>
-                                            </uix:TargetAnchorable.Anchors>
-                                          </uix:TargetAnchorable>
-                                        </uix:NClick.Target>
-                                      </uix:NClick>
+                                      <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Avater" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2dfd5cde-7fea-40d2-b3a0-dd827aabc9c7" InformativeScreenshot="a9b5fa433de8658d8cbca5919a1ec290" Selector="&lt;webctrl tag='ABBR' class='xnav-avatar xnav-avatar-color-8' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div&amp;gt;abbr' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:Click.Target>
+                                      </ui:Click>
                                       <uix:NClick ClickType="Single" DisplayName="Click LogOut" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable BrowserURL="https://go.xero.com/Contacts/Search/?contactType=CONTYPE%2FALL" DesignTimeRectangle="1199, 310, 150, 30" ElementType="Text" FriendlyName="'Log out'" FullSelectorArgument="&lt;webctrl aaname='Log out' parentid='header' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log out' parentid='header' tag='A' type='' check:text='Log out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOUAAAAxCAYAAAAlZm4vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALjSURBVHhe7ds/axRBGIDx1H6IfBY7G6sI0SIKogSihY1aWxykj4WlgZAiRjRNEIIgKAZOCP6BfINANCljP947++7eZHc2s8ix897d84PhsrtzlwTuucnebRZ+/zl3Bx8/OwB5SYfSI1ECRhAlYAxRAsYQJWAMUQLGECVgDFECxhAlYAxRAsYQJWAMUQLGECVgDFECxhAlYAxRAsaYifLi4q/b3Np1d+49dtdvLPtb2Zb9wDwxEaWE9/DRcx9jfch+wsQ8MRHl7rv9KsLXW2/c95/H/rbc9+Hgk84EZp+JKJ88feHje/lqU/cUZFv2y3FgXpiKUlbI0Jev3/JHOdxwC9cW3WCo29NOfp/1I92ARaajlG2inKQzt72ySJTGEWUKUaJn2aOU8Mp3Xt++33c/fh1XQ7ZlvxyX7Sw6R6lP+NHccsTuc7qzGsxZddvDPbfUMvcS/TmqsbLnTvWQKB53wx3qduHIDWSuj1C/rsboe58Us2BL1ihv3y0+k+w65LPL3nWKUp/wYSh6v6WdM93h3OF6LYaTIsjU45chj+eULwDjCNNRClbKaZA1ylh4qdG7DlHGgygj1P0aYBipaAZXV4RVv1/98YhydhBlSocofXy1Pyc9f19dGcOvQ6nH1/iaxy8HRpSzgyhTklHqEz0RZRFNJMrW6FTr9yfKWWUuygdrz/wVPHIbO967ZJSslJgsc1HK5XUivMwuHL3rEGXbKjjJc8pGSF3OKXUOUU4Xc1HevHXf/3eI3MaO965DlFU4//3ua2QFDTTD1bjCCBvRl3NGI4iwdVWHGeaiTI3eaVzxEcYURNA4NlYGVs3xn1NeHaVX/zliq11tzmAYWRmDOVe/0CAXoszNR1I/F8Q8I8q+RM8pW84XMdeyRlle89p1ZL0GdhIifwrX3/gBskYJoIkoAWOIEjCGKAFjiBIwhigBY4gSMIYoAWOIEjCGKAFjiBIwhigBY4gSMIYoAWOKKM/dP7R9/Wl1ThyfAAAAAElFTkSuQmCC" InformativeScreenshot="b985d110e881084390fe682048b892f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Contacts | FIX HUB' /&gt;" SearchSteps="FuzzySelector, Image">
