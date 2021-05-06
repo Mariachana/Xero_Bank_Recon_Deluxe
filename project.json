@@ -4,6 +4,8 @@
   "main": "Main.xaml",
   "dependencies": {
     "dipoleDIAMOND_Reuseables": "[1.0.3]",
+    "Microsoft.Activities": "[1.0.1]",
+    "SelfClosingAlertBox.Activities": "[1.0.0]",
     "UiPath.Excel.Activities": "[2.10.4]",
     "UiPath.Mail.Activities": "[1.10.4]",
     "UiPath.System.Activities": "[21.4.0]",
