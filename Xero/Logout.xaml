@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>772,515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>733,903</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Logout_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,19 +75,19 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Log Out" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence DisplayName="Log Out" sap:VirtualizedContainerService.HintSize="476,838" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Open Xero Page" sap:VirtualizedContainerService.HintSize="434,744" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Open Xero Page" sap:VirtualizedContainerService.HintSize="434,746" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,528" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,530" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:Browser" Name="chorme" />
             </Sequence.Variables>
@@ -96,17 +96,29 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click Logout Avater" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="1320, 156, 30, 30" FriendlyName="'SB'" FullSelectorArgument="&lt;webctrl tag='ABBR' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div&amp;gt;abbr' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='ABBR' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;button&amp;gt;div&amp;gt;abbr' type='' aaname='SB' check:text='SB' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVFhHzZY9asNAEIVd5xS+RQ6Qxi7dprKLHCCFfyAXSMCugkkRMCJdIMbXsHOAQBpDIFWqQA4w0ZO08uzqSWtJ/lHxwWp2Z2eYfbOrVmuylkZAjeeAGgu4fPiQm6cvuX/5keD1V96WfxEYw4Y5rGG+hVCjw8Xdu1w/bqNgyzDoPmAtfODL9sxAjYqr6WepBFzgiz3Y3hbUmIAys82rgL1YjBRqDLl9/qYb1gF7slgRzHjISrjkVsY14DzZBoeEakZ/QOF1hLkviJHpJv2BdmOOxwCxdGwrkVNUw4BYOnaaCG5D5nBMrBvYDPydspVRpyftdsJgk87NBspu6KwksPyzWB1kBngn2OKU6TwMMJTRwox70p/Gc1EiOvBiJd1wvjsu1hxiZhLx6SMYD3eJOHN5iZhE87B0YgZ4QdniHRvpm7KrYwH0aJw1DMSskEhMXJk4WO7RmKQ9ydBEyrWuHSibSCJsj2Dp0fjEGpd/LjN8O2KsWhEqVn/7Ko0AFZhqxFMNQNu3MRcaKKeTelj6APqjMY9eY34DQCN+jAz+DqqO1SkaagxpxM+z4ZCVya2EgRoVOM86AoYv1YQLNTpA4Wi3MglhLXwy3ZEHNRaA2xBlxjuBYHhBAcawYc66MfeFGs8BNZ6ctfwD4mOzFOmFOf8AAAAASUVORK5CYII=" InformativeScreenshot="9e8ee98dec0696ffc45f634fc57219b3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="22, 125, 11, 10" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl tag='path' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='path' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB7SURBVDhPY3BwD/tPLqaN5o6eaf+379qPVQ6GsWoGaQSBO3cf/PcJTsSQh2EMzcRqBGEUzaRoBGG4ZphGELh95/7/8xev4sR4NYNsvnDpKk6MoRnZAJDNJDkbhkkxAEMzCBNrAFbNIAwyYMeuA1jlYBinZmIwBZrD/gMAd+fLdo0nGUQAAAAASUVORK5CYII=" SearchSteps="Selector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Logout Avater" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f435be92-20d0-4bdf-a4b0-b44950183fea" InformativeScreenshot="29f75bd1209dd75c1e5a0c0872acb0f6" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol' parentid='header' tag='OL' idx='2' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;ol&amp;gt;li' parentid='header' tabindex='-1' tag='LI' idx='5' /&gt;&lt;webctrl aaname='*' parentid='header' tag='BUTTON' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
             <uix:NClick ClickType="Single" DisplayName="Click Log out Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="1199, 310, 150, 30" ElementType="Text" FriendlyName="'Log out'" FullSelectorArgument="&lt;webctrl aaname='Log out' parentid='header' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log out' parentid='header' tag='A' type='' check:text='Log out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAiCAYAAACnZsAPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVHhe7dg/TgJBFIBxag7BWews7CjUAo2FodDGRmsLEnouoAmhQBtOgaEgxsIbkGAolf65b/YPs8CGGHdeCPv9kskys7s0fpldrH3/LOVtMhUgBG1LGyM0BEVoMEFoMEFoMEFoMEFoMEFoMEFoMEFoMEFoMBE8tPePT7m+eZCj41N31DmqJ2ho86+FC+zs4lae+i/uqHNdR7UEDU3j8sNKw9P1Mo27Dal19+GxP5VOvS2DWTJFxiQ030GHNhtJk9C2OvjQ5sO21OrR+Wg0h6tHtrtH11s96bQa0pkkJ3IWMojOxfevAnLf2RrJ3M3SXcy7NjuHVLDQNKbzy/id7O7+MRs61/Xn/mty5f8VhjbpRX/4nozdRINIgvLX3S60PbTc93r3bA8t+siOVihYaBrUrlGWotBcEN66Xqe7Wv76eCfaDG19fRUUof0doRGaCZPQTppX7lGqR3+9LEWhhXp0bn4mtF1MQtN3Mv3XRvrOlo6yuCD0JdwbaThu90nWyvoxkEbr1rvR/dm5ZJ0fAxtMQisae4FdyEQ1Q3OPu3Snyu90CCNYaOvvY+tDz6M6goUG+AgNJggNJggNJggNJggNJggNJggNJggNJggNJuLQlvIL1VapSfG+BTcAAAAASUVORK5CYII=" InformativeScreenshot="f1d6b4fa65df5c75a1c36104aa318f42.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
@@ -118,7 +130,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <Delay DisplayName="Delay 3s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <Delay DisplayName="Delay 5s" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -127,7 +139,7 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

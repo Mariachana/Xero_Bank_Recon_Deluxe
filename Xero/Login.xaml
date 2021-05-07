@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_DashboardExists" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_AuthCodeFound" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>706,2786</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>733,2786</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -309,7 +310,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logout " sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Logout.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                <InArgument x:TypeArguments="x:String" x:Key="in_LoginUrl">[LoginUrl]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -398,6 +399,9 @@
         </InArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_DashboardExists">
           <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_DashboardExists" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_AuthCodeFound">
+          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_AuthCodeFound" />
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

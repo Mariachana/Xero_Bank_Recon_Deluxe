@@ -3,7 +3,7 @@ Hello Bot Supervisor,
 
 I am unable to login successfully due to a 2FA feature on your Xero account.
 
-For me to continue working, you will have to start this process from the 'Assistant' app, and when you see my message prompt, kindly do the following:
+For me to continue working, you will have to start this process from the 'Assistant' app.
 
 1. Enter the Authentication code
 2. Click on the "Skip this step for 30 days" checkbox
