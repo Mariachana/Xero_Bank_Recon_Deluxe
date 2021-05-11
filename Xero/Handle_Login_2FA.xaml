@@ -2,12 +2,11 @@
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_DashboardExists" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="out_AuthCodeFound" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>733,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>761,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Handle_Login_2FA_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -74,19 +73,24 @@
       <AssemblyReference>SelfClosingAlertBox</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Handle_Login_2FA" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Handle_Login_2FA" sap:VirtualizedContainerService.HintSize="648,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="AuthCodeFound" />
+    </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">30,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">90,40 210,40</av:PointCollection>
+        <x:Double x:Key="Width">614</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
@@ -137,15 +141,6 @@
         </ui:BrowserScope>
       </Sequence>
     </FlowStep>
-    <FlowDecision x:Name="__ReferenceID1" Condition="[out_DashboardExists]" DisplayName="DashboardExists ??" sap:VirtualizedContainerService.HintSize="105,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">427.5,336.5</av:Point>
-          <av:Size x:Key="ShapeSize">105,87</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </FlowDecision>
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -230,37 +225,69 @@
         </ui:CommentOut.Body>
       </ui:CommentOut>
     </FlowStep>
-    <FlowDecision x:Name="__ReferenceID2" Condition="[out_AuthCodeFound]" DisplayName="AuthCodeFound ???" sap:VirtualizedContainerService.HintSize="112,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID0}">
+    <FlowDecision x:Name="__ReferenceID1" Condition="[AuthCodeFound]" DisplayName="AuthCodeFound ???" sap:VirtualizedContainerService.HintSize="112,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID0}">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">254,106.5</av:Point>
           <av:Size x:Key="ShapeSize">112,87</av:Size>
           <av:PointCollection x:Key="TrueConnector">254,150 140,150 140,167</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">366,150 480,150 480,224.5</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">366,150 480,150 480,199</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.False>
         <FlowStep x:Name="__ReferenceID3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">380,224.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">480,275.5 480,336.5</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">380,199</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">480,221 480,264.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:UiElementExists DisplayName="Confirm Successful Login" Exists="[out_DashboardExists]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
-            <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aeac6604-a0f9-4339-8639-4272e7feb256" InformativeScreenshot="6ca40bab7c8bf928f21c6769eb4663cd" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard*' /&gt;&lt;webctrl aaname='Dashboard' tag='A' class='xnav-focusable xnav-tab--body xnav-tab--body-is-selected xnav-tab--body-is-selected' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
-            </ui:UiElementExists.Target>
-          </ui:UiElementExists>
+          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Delay>
           <FlowStep.Next>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <FlowStep x:Name="__ReferenceID2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">380,264.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">480,315.5 480,364.5</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:UiElementExists DisplayName="Confirm Successful Login" Exists="[out_DashboardExists]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aeac6604-a0f9-4339-8639-4272e7feb256" InformativeScreenshot="6ca40bab7c8bf928f21c6769eb4663cd" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard*' /&gt;&lt;webctrl aaname='Dashboard' tag='A' class='xnav-focusable xnav-tab--body xnav-tab--body-is-selected xnav-tab--body-is-selected' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">380,364.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Login is Successful&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
           </FlowStep.Next>
         </FlowStep>
       </FlowDecision.False>
     </FlowDecision>
-    <FlowStep x:Name="__ReferenceID4">
+    <FlowStep x:Name="__ReferenceID5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">210,14.5</av:Point>
@@ -268,15 +295,17 @@
           <av:PointCollection x:Key="ConnectorLocation">310,65.5 310,106.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:UiElementExists DisplayName="is Auth Page Found " Exists="[out_AuthCodeFound]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+      <ui:UiElementExists DisplayName="is Auth Page Found " Exists="[AuthCodeFound]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1c23417a-5f35-488b-bd7f-e0ad456dc012" InformativeScreenshot="510892ae5b3aa1c9c725953ffee609ba" Selector="&lt;html app='chrome.exe' title='Login | Xero Accounting Software' /&gt;&lt;webctrl tag='H1' aaname='Enter the 6-digit code found in your authenticator app' parentclass='*auth-layout*' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID2</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
   </Flowchart>
 </Activity>

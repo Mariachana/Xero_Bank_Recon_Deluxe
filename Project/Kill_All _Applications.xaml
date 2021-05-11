@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>735.333333333333,514</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>761,515</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Kill_All__Application_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -34,6 +34,8 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -60,20 +62,27 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Kill_All__Application" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Kill_All__Application" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CloseApplication DisplayName="Close Application 'Menu Item'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+    <ui:CloseApplication ContinueOnError="True" DisplayName="Close All Excel Application" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
       <ui:CloseApplication.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a6d00b6a-9229-4143-8ab8-aa78d4472470" InformativeScreenshot="840514a6dc4acb86ce1c3c3300b8da9e" Selector="&lt;wnd app='excel.exe' title='*Excel*' /&gt;&lt;uia name='*' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="411431f3-9656-426d-a816-c5eed4d7eb59" InformativeScreenshot="f70bfdf05ea740a68067c824f8b43256" Selector="&lt;wnd app='excel.exe' cls='*XLMAIN*' title='*Excel*' /&gt;" TimeoutMS="3000">
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:CloseApplication.Target>
+    </ui:CloseApplication>
+    <ui:CloseApplication ContinueOnError="True" DisplayName="Close Browser Application" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_3">
+      <ui:CloseApplication.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49ea69fc-86ef-4f82-b41b-fd25584b40cf" InformativeScreenshot="b00df947ccc5fdbce7a91618e2002dc1" Selector="&lt;wnd app='chrome.exe' title='*Xero*' /&gt;" TimeoutMS="3000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
