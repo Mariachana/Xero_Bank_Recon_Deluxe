@@ -80,7 +80,6 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="864,955" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -109,13 +108,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">0,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">60,40 200,40</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">60,40 90,40 90,-20 500,-20 500,40 530,40</av:PointCollection>
               <x:Double x:Key="Width">750</x:Double>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID6</x:Reference>
+            <x:Reference>__ReferenceID5</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
@@ -155,11 +154,11 @@
                         <av:PointCollection x:Key="ConnectorLocation">100,185.5 100,274.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run_Bank_Reconcillation" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Project\Run_Bank_Reconcillation.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run_Bank_Reconcillation" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Run_Bank_Reconcillation.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sysfig">[Sysfig]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="In_WorkLogFilePath">[WorkLogFilePath]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">[WorkLogFilePath]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -222,7 +221,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">630,73 630,124.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Prologue" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Prologue" sap:VirtualizedContainerService.HintSize="242,478" sap2010:WorkflowViewState.IdRef="Sequence_18">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -274,7 +273,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create WorkLog in Processing" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Project\Create_WorkLog_in_Processing.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create WorkLog in Processing" sap:VirtualizedContainerService.HintSize="342,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Project\Create_WorkLog_in_Processing.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">[WorkLogFilePath]</InArgument>
@@ -295,15 +294,14 @@
           <x:Reference>__ReferenceID2</x:Reference>
           <x:Reference>__ReferenceID3</x:Reference>
           <x:Reference>__ReferenceID4</x:Reference>
-          <FlowStep x:Name="__ReferenceID6">
+          <FlowStep>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">200,14.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">400,40 530,40</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Kill_All _Applications workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Project\Kill_All _Applications.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Kill_All _Applications" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Project\Kill_All _Applications.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
@@ -313,9 +311,6 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <FlowStep.Next>
-              <x:Reference>__ReferenceID5</x:Reference>
-            </FlowStep.Next>
           </FlowStep>
         </Flowchart>
       </TryCatch.Try>

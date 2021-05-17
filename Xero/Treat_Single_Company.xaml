@@ -1,18 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Treat_Single_Company" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Treat_Single_Company" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Sysfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_CompanyName" Type="InArgument(x:String)" />
     <x:Property Name="in_WorkLogFilePath" Type="InArgument(x:String)" />
-    <x:Property Name="out_WorkLogCurrentExcelRowNumber" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="in_AccountsTreatedDT" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="io_CurrentAccountExcelRowNumber" Type="InOutArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>761,515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723,891</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Treat_Single_Company_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -37,10 +38,21 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
-    </sco:Collection>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -68,40 +80,89 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This process Invoke Change Organisation Module and Navigate All Recon Button Module&#xD;&#xA;" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="376,413" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This process Invoke Change Organisation Module and Navigate All Recon Button Module&#xA;" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="412,826" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(x:String)" Name="ListBankAccountsName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="AccountsExclusionDT" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Change_Organisation" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Change_Organisation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Change_Organisation" sap:VirtualizedContainerService.HintSize="370,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Change_Organisation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_Config("LoginUrl").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Organisation_Name">[in_CompanyName]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigate_All_Recon_Button" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Navigate_All_Recon_Button.xaml">
+    <ui:ReadRange AddHeaders="True" DataTable="[AccountsExclusionDT]" DisplayName="Read Exclusion Data" sap:VirtualizedContainerService.HintSize="370,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_ExclusionList&quot;).ToString]" WorkbookPath="[in_Config(&quot;ProcessDataExcelFilePath&quot;).ToString]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="List Bank Accounts to Treat" sap:VirtualizedContainerService.HintSize="370,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\List_BankAccounts_to_Treat.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
           <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
         </InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_SisFig">
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Sysfig" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_WorkLogFilePath" />
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsExclusionDT">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="AccountsExclusionDT" />
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CompanyName" />
         </InArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="in_WorkLogCurrentExcelRowNumber">
-          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="out_WorkLogCurrentExcelRowNumber" />
-        </InOutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_ListBankAccountsName">
+          <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="ListBankAccountsName" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Bank Account" sap:VirtualizedContainerService.HintSize="370,246" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListBankAccountsName]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="BankAccount" />
+          </ActivityAction.Argument>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Treat_Single_Bank_Account workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Treat_Single_Bank_Account.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+              </InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_SisFig">
+                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Sysfig" />
+              </InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsTreatedDT">
+                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_AccountsTreatedDT" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_WorkLogFilePath" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CompanyName" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_BankAccount">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="BankAccount" />
+              </InArgument>
+              <InOutArgument x:TypeArguments="x:Int32" x:Key="io_CurrentAccountExcelRowNumber">
+                <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_CurrentAccountExcelRowNumber" />
+              </InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
   </Sequence>
 </Activity>
