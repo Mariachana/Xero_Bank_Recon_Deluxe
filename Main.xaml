@@ -82,7 +82,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Main workflow hub..." DisplayName="Main" sap:VirtualizedContainerService.HintSize="480,410" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Main workflow hub ...Prerealse Version" DisplayName="Main" sap:VirtualizedContainerService.HintSize="480,410" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Sysfig" />
