@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>723,1005</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>756,965</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Logout_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,14 +75,14 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This Process Log the Xero Account" DisplayName="Log Out" sap:VirtualizedContainerService.HintSize="476,940" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap2010:Annotation.AnnotationText="This Process Log the Xero Account" DisplayName="Log Out" sap:VirtualizedContainerService.HintSize="476,900" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Xero | Bank Reconciliation" sap:VirtualizedContainerService.HintSize="434,817" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Xero | Bank Reconciliation" sap:VirtualizedContainerService.HintSize="434,777" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -121,7 +121,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <uix:NClick ClickType="Single" DisplayName="Click Log out Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left">
+            <uix:NClick ClickType="Single" DisplayName="Click Log out Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="1199, 310, 150, 30" ElementType="Text" FriendlyName="'Log out'" FullSelectorArgument="&lt;webctrl aaname='Log out' parentid='header' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log out' parentid='header' tag='A' type='' check:text='Log out' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAiCAYAAACnZsAPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVHhe7dg/TgJBFIBxag7BWews7CjUAo2FodDGRmsLEnouoAmhQBtOgaEgxsIbkGAolf65b/YPs8CGGHdeCPv9kskys7s0fpldrH3/LOVtMhUgBG1LGyM0BEVoMEFoMEFoMEFoMEFoMEFoMEFoMEFoMEFoMBE8tPePT7m+eZCj41N31DmqJ2ho86+FC+zs4lae+i/uqHNdR7UEDU3j8sNKw9P1Mo27Dal19+GxP5VOvS2DWTJFxiQ030GHNhtJk9C2OvjQ5sO21OrR+Wg0h6tHtrtH11s96bQa0pkkJ3IWMojOxfevAnLf2RrJ3M3SXcy7NjuHVLDQNKbzy/id7O7+MRs61/Xn/mty5f8VhjbpRX/4nozdRINIgvLX3S60PbTc93r3bA8t+siOVihYaBrUrlGWotBcEN66Xqe7Wv76eCfaDG19fRUUof0doRGaCZPQTppX7lGqR3+9LEWhhXp0bn4mtF1MQtN3Mv3XRvrOlo6yuCD0JdwbaThu90nWyvoxkEbr1rvR/dm5ZJ0fAxtMQisae4FdyEQ1Q3OPu3Snyu90CCNYaOvvY+tDz6M6goUG+AgNJggNJggNJggNJggNJggNJggNJggNJggNJuLQlvIL1VapSfG+BTcAAAAASUVORK5CYII=" InformativeScreenshot="f1d6b4fa65df5c75a1c36104aa318f42.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
                   <uix:TargetAnchorable.Anchors>

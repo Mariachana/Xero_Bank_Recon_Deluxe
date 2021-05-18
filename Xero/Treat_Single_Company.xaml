@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>723,891</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723,809</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Treat_Single_Company_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -87,10 +87,9 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This process Invoke Change Organisation Module and Navigate All Recon Button Module&#xA;" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="412,826" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. This process Invoke Change Organisation Module &#xD;&#xA;2.  The Bot Filter out Account that is blacklisted &#xD;&#xA;3. The Treat Single Bank Account Module Is Invoke&#xA;" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="412,744" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListBankAccountsName" />
       <Variable x:TypeArguments="sd:DataTable" Name="AccountsExclusionDT" />
@@ -101,28 +100,39 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Change_Organisation" sap:VirtualizedContainerService.HintSize="370,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Change_Organisation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Change_Organisation" sap:VirtualizedContainerService.HintSize="370,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Change_Organisation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_Config("LoginUrl").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Organisation_Name">[in_CompanyName]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:ReadRange AddHeaders="True" DataTable="[AccountsExclusionDT]" DisplayName="Read Exclusion Data" sap:VirtualizedContainerService.HintSize="370,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_ExclusionList&quot;).ToString]" WorkbookPath="[in_Config(&quot;ProcessDataExcelFilePath&quot;).ToString]" />
+    <ui:ReadRange AddHeaders="True" DataTable="[AccountsExclusionDT]" DisplayName="Read Exclusion Data" sap:VirtualizedContainerService.HintSize="370,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_ExclusionList&quot;).ToString]" WorkbookPath="[in_Config(&quot;ProcessDataExcelFilePath&quot;).ToString]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="List Bank Accounts to Treat" sap:VirtualizedContainerService.HintSize="370,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\List_BankAccounts_to_Treat.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsExclusionDT">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="AccountsExclusionDT" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CompanyName" />
-        </InArgument>
-        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_ListBankAccountsName">
-          <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="ListBankAccountsName" />
-        </OutArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsExclusionDT">[AccountsExclusionDT]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">[in_CompanyName]</InArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_ListBankAccountsName">[ListBankAccountsName]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
     <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Bank Account" sap:VirtualizedContainerService.HintSize="370,246" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListBankAccountsName]">
       <ui:ForEach.Body>
@@ -130,29 +140,15 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="BankAccount" />
           </ActivityAction.Argument>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Treat_Single_Bank_Account workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Treat_Single_Bank_Account.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Treat_Single_Bank_Account" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Treat_Single_Bank_Account.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-              </InArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_SisFig">
-                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Sysfig" />
-              </InArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsTreatedDT">
-                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_AccountsTreatedDT" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_WorkLogFilePath" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CompanyName" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_BankAccount">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="BankAccount" />
-              </InArgument>
-              <InOutArgument x:TypeArguments="x:Int32" x:Key="io_CurrentAccountExcelRowNumber">
-                <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="io_CurrentAccountExcelRowNumber" />
-              </InOutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_SisFig">[in_Sysfig]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsTreatedDT">[in_AccountsTreatedDT]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">[in_WorkLogFilePath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">[in_CompanyName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_BankAccount">[BankAccount]</InArgument>
+              <InOutArgument x:TypeArguments="x:Int32" x:Key="io_CurrentAccountExcelRowNumber">[io_CurrentAccountExcelRowNumber]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </ActivityAction>

@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1499,5629</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2004,6559</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -96,15 +96,16 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="This Process Recocile Each Statment Line with the Following Rule:&#xA;1. If a transaction item has an ‘Ok’ button, the bot will confirm that two out of following three items match before clicking the button:   &#xA;         i. The Name of the payer or payee&#xA;         ii. The Reference number&#xA;         iii. The Amount&#xA;2. If no two details match exactly or the transaction item does not have an ‘Ok’ button, the bot will perform a ‘Find &amp; Match’ using the Reference Number (or Name if Ref # returns a nil value):&#xA;          i. If there is a corresponding record in Xero with the exact amount, the bot clicks ‘Reconcile’&#xA;          ii. if the amount in the Bank is less than the amount in Xero, and their references match, then split and reconcile and clicks reconcile&#xA;          iii. If there is a corresponding record in Xero and if there is a difference between the amount, the bot will leave a note for the supervisor. However, if there is already a comment in ‘Discuss’, the bot will not overwrite the existing comment!&#xA;3. If no transaction is matched exactly and there is already a comment in ‘Discuss’, the bot will ignore the transaction and will not overwrite the comment.&#xA;           i. If there is no corresponding record in Xero or the transaction doesn’t meet any of the business rules above, the bot will leave a note (e.g. awaiting invoice, no invoice, etc.).  &#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="1509,5564" sap2010:WorkflowViewState.IdRef="Sequence_118">
+  <Sequence sap2010:Annotation.AnnotationText="This Process Recocile Each Statment Line with the Following Rule:&#xA;1. If a transaction item has an ‘Ok’ button, the bot will confirm that two out of following three items match before clicking the button:   &#xA;         i. The Name of the payer or payee&#xA;         ii. The Reference number&#xA;         iii. The Amount&#xA;2. If no two details match exactly or the transaction item does not have an ‘Ok’ button, the bot will perform a ‘Find &amp; Match’ using the Reference Number (or Name if Ref # returns a nil value):&#xA;          i. If there is a corresponding record in Xero with the exact amount, the bot clicks ‘Reconcile’&#xA;          ii. if the amount in the Bank is less than the amount in Xero, and their references match, then split and reconcile and clicks reconcile&#xA;          iii. If there is a corresponding record in Xero and if there is a difference between the amount, the bot will leave a note for the supervisor. However, if there is already a comment in ‘Discuss’, the bot will not overwrite the existing comment!&#xA;3. If no transaction is matched exactly and there is already a comment in ‘Discuss’, the bot will ignore the transaction and will not overwrite the comment.&#xA;           i. If there is no corresponding record in Xero or the transaction doesn’t meet any of the business rules above, the bot will leave a note (e.g. awaiting invoice, no invoice, etc.).  &#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="2014,6494" sap2010:WorkflowViewState.IdRef="Sequence_118">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="PayeeDetailsDT" />
       <Variable x:TypeArguments="x:String" Name="FindMatchRowID" />
@@ -140,20 +141,50 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1467,5280" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1972,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_79">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[in_Sisfig]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary (of String, object)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_80">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[in_Sisfig("CurrencyCode")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">["GBP"]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_81">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Object">[in_Sisfig("MinorAdjustment")]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Object">["YES"]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1972,6010" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1433,5064" sap2010:WorkflowViewState.IdRef="Sequence_153">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1938,5754" sap2010:WorkflowViewState.IdRef="Sequence_153">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FindChildren Children="[itemsToReconcile]" DisplayName="Find Children ItemsToReconcile" Filter="&lt;webctrl id='sl*' tag='DIV' /&gt;" sap:VirtualizedContainerService.HintSize="1391,106" sap2010:WorkflowViewState.IdRef="FindChildren_12" Scope="FIND_DESCENDANTS">
+            <ui:FindChildren Children="[itemsToReconcile]" DisplayName="Find Children ItemsToReconcile" Filter="&lt;webctrl id='sl*' tag='DIV' /&gt;" sap:VirtualizedContainerService.HintSize="1896,106" sap2010:WorkflowViewState.IdRef="FindChildren_12" Scope="FIND_DESCENDANTS">
               <ui:FindChildren.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd8dcfac-977b-4e6d-88f6-d251cbb4c395" InformativeScreenshot="b5fd7d88a4ea9cd8c758a20bcabd7f82" Selector="&lt;webctrl id='statementLines' parentid='ItemsToReconcile' parentname='frmMain' tag='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -171,27 +202,27 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:FindChildren>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Statement Line" sap:VirtualizedContainerService.HintSize="1391,4824" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[itemsToReconcile]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Statement Line" sap:VirtualizedContainerService.HintSize="1896,5514" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[itemsToReconcile]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="For Each Statement Line Body" sap:VirtualizedContainerService.HintSize="1355,4689" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                  <Sequence DisplayName="For Each Statement Line Body" sap:VirtualizedContainerService.HintSize="1860,5379" sap2010:WorkflowViewState.IdRef="Sequence_152">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Each Statement Line Sequence" sap:VirtualizedContainerService.HintSize="1313,4595" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                    <Sequence DisplayName="Each Statement Line Sequence" sap:VirtualizedContainerService.HintSize="1818,5285" sap2010:WorkflowViewState.IdRef="Sequence_151">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get Main Row ID" sap:VirtualizedContainerService.HintSize="1271,51" sap2010:WorkflowViewState.IdRef="GetAttribute_33">
+                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get Main Row ID" sap:VirtualizedContainerService.HintSize="1776,96" sap2010:WorkflowViewState.IdRef="GetAttribute_33">
                         <ui:GetAttribute.Result>
                           <OutArgument x:TypeArguments="x:String">[MainRow_ID]</OutArgument>
                         </ui:GetAttribute.Result>
@@ -212,7 +243,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:GetAttribute>
-                      <Sequence DisplayName="Get Payee ID and Details" sap:VirtualizedContainerService.HintSize="1271,620" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                      <Sequence DisplayName="Get Payee ID and Details" sap:VirtualizedContainerService.HintSize="1776,684" sap2010:WorkflowViewState.IdRef="Sequence_119">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="Payee_Details_DIV_ID" />
                         </Sequence.Variables>
@@ -268,11 +299,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NGetText>
-                        <uix:NGetText DisplayName="Get Payee Description" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NGetText_20" InUiElement="[PayeeDetails(2)]">
+                        <uix:NGetText DisplayName="Get Payee Description" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="NGetText_20" InUiElement="[PayeeDetails(2)]">
                           <uix:NGetText.Text>
                             <OutArgument x:TypeArguments="x:String">[PayeeDescrip]</OutArgument>
                           </uix:NGetText.Text>
@@ -284,7 +315,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NGetText>
                       </Sequence>
-                      <Sequence DisplayName="Click Find and Match" sap:VirtualizedContainerService.HintSize="1271,423" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                      <Sequence DisplayName="Click Find and Match" sap:VirtualizedContainerService.HintSize="1776,538" sap2010:WorkflowViewState.IdRef="Sequence_120">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -315,32 +346,26 @@
 "&lt;webctrl id='ext-gen*' tag='A' class='t5 find' /&gt;"]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <uix:NClick ClickType="Single" DisplayName="Click Find &amp; Match " sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_24" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Find &amp; Match'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_35" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                           <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="18, -247, 174, 28" ElementType="Text" FriendlyName="'Go back'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='*' tag='A' type='' aaname='Go back to last organisation' check:text='Go back to last organisation' /&gt;" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="18, -247, 174, 28" ElementType="Text" FriendlyName="'Go back'" FullSelectorArgument="&lt;webctrl tag='A' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' aaname='Go back to last organisation' check:text='Go back to last organisation' /&gt;" ImageBase64="" SearchSteps="Selector, Image" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
+                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="963, 512, 61, 17" ElementType="Text" FriendlyName="'Find &amp; Match'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen19' tag='A' type='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Find &amp;amp; Match &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' check:text='Find &amp;amp; Match' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAAVCAYAAAAZ6IOkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVFhH7ZQ7bsMwDIaDXtFn8tgTZPfkA3TKaKBrtiyFhwD2kskHYH9KpMQocpIGaQu0/AEj0YuPj5Q25CKHADkEyCFADgFyCNDdEKbdSC+vH/nbzjTRidrwe0PzTE1/kkFWslm1AdtYa3aLjKH9EftH6mYZX2ihaWWNfbV7GRT6EoQ1IzdVhbBQtz3SgH9DX0uMAY/UGEC8r8HcGoRrMX4jBO2EWDXtEt039No1CL7SCTH5tW6K810CVIxDV6hPhqkxxPXkO6xJ/L2cKfw9fB1iopoABxCdparb6nPAVQg5yEtF24PChw2+Gto105yvSZrTvexbE5VzIX6Joey853WCOtXkxXlQ5TowAE2OgysDS7blrK7nfQxei1JAsL5FNv6fg2ATl0StEgTIVilLbfLbgUTFfkwgvyfxbSkgsO8int+BAF19E3ifVhJnue3Pq5dtWkiaQJiTLmgxF2Jj2KYrql1ibKjuhvCX5RAghwA5BMghQA4BcgjQ5u39QP/7O9AnOrxndEQlJxsAAAAASUVORK5CYII=" InformativeScreenshot="6e9707617bd0d5d9fce74d67437845f1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;" SearchSteps="Selector" />
                           </uix:NClick.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
                       </Sequence>
-                      <Sequence DisplayName="Search Name in Dropdown" sap:VirtualizedContainerService.HintSize="1271,594" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                      <Sequence DisplayName="Search Name in Dropdown" sap:VirtualizedContainerService.HintSize="1776,792" sap2010:WorkflowViewState.IdRef="Sequence_121">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get ID Attribute for the DropDown DIV" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="GetAttribute_36">
+                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get ID Attribute for the DropDown DIV" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="GetAttribute_36">
                           <ui:GetAttribute.Result>
                             <OutArgument x:TypeArguments="x:String">[Find_Match_DropDown_ID]</OutArgument>
                           </ui:GetAttribute.Result>
@@ -358,7 +383,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:GetAttribute>
-                        <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_94">
+                        <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_94">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[selector]</OutArgument>
                           </Assign.To>
@@ -366,13 +391,13 @@
                             <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' id='"+Find_Match_DropDown_ID+"' parentid='"+MainRow_ID+"' parentname='frmMain' tag='DIV' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='"+Find_Match_DropDown_ID+"' parentname='frmMain' tag='DIV' parentclass='findMatch' idx='*' /&gt;&lt;webctrl id='searchNameText' tag='INPUT' css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input'  parentid='"+Find_Match_DropDown_ID+"' tabindex='"+MainRow_ID.Substring(2)+"' /&gt;"]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Payee Name Into Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" Text="[PayeeName]">
+                        <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Payee Name Into Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NTypeInto_13" InteractionMode="Simulate" Text="[PayeeName]">
                           <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="738, 478, 126, 19" ElementType="InputBox" FriendlyName="'INPUT searchNameText'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='searchNameText' tag='INPUT' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAXCAYAAADHqJcNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABtSURBVGhD7dKxDYAwDERRps7MtEwQ8BUoQWICvydd5dL/OK85zYRg2RbCGMOabP177Q2hjvTxjUEITQmBEAIhBEIIhBAIIRBCIIRACIEQAiEEQgiEEAghEEIgfkOo1dF6bP17bQvB+k4I9mzOGysKcN7h+rfoAAAAAElFTkSuQmCC" InformativeScreenshot="15f592543931ebf619c88efb719b96b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector, Image">
+                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="735, 527, 118, 18" ElementType="InputBox" FriendlyName="'INPUT searchNameText'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='searchNameText' tag='INPUT' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAWCAYAAAAPb4jFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABsSURBVGhD7dGxDcAwDAPBTK2Z02YCBWoMO0AW4P8DrFjedT/dLn9CQ3ZAV5UL2e46W9BzWk5fbKFDExqS0JCEhiQ0JKEhCQ1JaEhCQxIaktCQhIYkNCShIQkN6Rd6NqfL2O46O6Bd7oRGrPsFCwbPmqx6ti8AAAAASUVORK5CYII=" InformativeScreenshot="16e49b70c0a2f4563d830f9e2fbc3003.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector">
                               <uix:TargetAnchorable.Anchors>
                                 <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="738, 463, 126, 11" ElementType="Text" FriendlyName="'Search by'" FullSelectorArgument="&lt;webctrl aaname='Search by name or reference' parentid='ext-gen83' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Search by name or reference' parentid='ext-gen83' tag='LABEL' type='' check:text='Search by name or reference' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAPCAYAAAAoLRf7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ5SURBVFhH7VY7bkJBDMxp3yVA4goUSJwhRcqkREpBkYaGMn2UNifY2F7P2t5nQEpAItEWI3j2+jee93n4/CplYGAIYUAwhDAgGEIYEAQh7DZTmSZgVR7f4+FfY78ti6eP3Me45P9nOD6thOt7mNmEQEuYNgdzvj+XxfK5HHF9DQwhBOw2N7jZfggTwpnFQ7lBvXy+PT2mst6TjRe5rGf5ehbH/g3B23ytzE82E+ihrKdt2bkYroGaDOlDztVrq/NRHpfbssZTj3K2/jA310KcvykA79cYqx+XGu2+n9q/cZP7ZQaKFy64l6S3fHaeU8+1njJbRPxGCMvVgE4g/PqQJe+JSMRhWX5pkssNxf/Zj1yZ8Ly/LR2/6u8WJITC1vo4aF1Cq1PJ8GSZQLAM9KskB6Gy30iEf34u+vk/OBOfmxtPhNzv+8l7499+9lM26zHmAs58LGoAJ2viqKhJvcoIsgC6m1GQB0JDgPdz/kQI5jeieJD1Hgtz5wnVp9euZvjeaUIAATGX1HmjWJwHQv9dv47kVt/B7B1PgtpHne+U39XjuYKf0NfW2bN+4rcfY85jEwIn8EuoA1BDTaEWxAjvNyVlJoQWp8S/XBaCka9C5P+Si/pL+rhIRutD55E47ccLoXsizMF+iwFfGfHwwx7ueAdwmPs9P3lvp2bvd/DqbScQngi9clCEk/f2YKP3ujTd3dH+jNiD3w+qYD8tCDFGTr1rsmEyMkRQmmPi7wIRwCUh0H8fR5jVC3lr76G+Q7TzIi0vYu1myvwdP0lv6ezKVT2H/N7GmIvqzKvhnhAXN3B9/AEh6N3SXhkDt8AfeSIM3BpDCAOEUr4Btat5AgCxX08AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
+                                  <uix:Target DesignTimeRectangle="735, 513, 118, 10" ElementType="Text" FriendlyName="'Search by'" FullSelectorArgument="&lt;webctrl aaname='Search by name or reference' parentid='ext-gen33' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Search by name or reference' parentid='ext-gen33' tag='LABEL' type='' check:text='Search by name or reference' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAOCAYAAADg6ggzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI4SURBVFhH7VY7jsJADN3T5hJB4gopkDgDBSVtpC1ot6GkR9tygll7xp55npgEAVohkuJpw9hjv+dPsl+/1xAWfD6WRs8ES6NngtLo8yG0TROaiHXYna3jUzhuQ7u/+LbrJexW29C7tk/AT+i4pqtDOLn2/4E0mosNzeWmb36M41OYc6NfXcsHkTe63zShOw4dTvu1bHmxs6+eNVEENWuzjm8Ebmi5I8PDjd4Q4lnd1DRk7SrFiwNB/iku2blQZhvYX3KrP527nGiAOjnvjrJZ+W2lvwnetjEHsSfdViP6tcQ/6apjFq62Ln5M1+5oHdR3SgvBfKNLsSBAvpgK19Pfk25+trMNk0ozdZq5aBKHSdqBwrslh245+5vC1rkkv89JChY/Szae4cHNMjlAQ37GvAAYSjdm3mjlxXbUOV7roR24SexxLQk3/hmTYLFA2nwYABanZ7moNrmJB8kNqQi4S+hpwjlH8kOhnj8U515OwsW8ARjIudKQOFmeGaDNjamx3FpWHMfsqrXidjMv2BnSaJiSCE0AhVRgIn6ui2piyf3JRmszK+F0bl/blY8n3uOEduEy5IGoNMRnzAsY1UbIuYUr2jwtk/aKG519j2pJKBtNhHEq9CKTL+cqWH4TiS4SqYoAsWKcOxptvtH5vPCw/rX4CU5Oo+Nd4WjzCmoNJq/1K3edmJDbr2WJOW5XrSmn+iVuE1oIN17d7wAm7xR2wUN400anCfUmc8FjeOONXvBKLI2eBUL4A80g/kp3YnJiAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
                                 </scg:List>
                               </uix:TargetAnchorable.Anchors>
                             </uix:TargetAnchorable>
@@ -380,11 +405,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NTypeInto>
-                        <Assign sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="Assign_95">
+                        <Assign sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="Assign_95">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[selector]</OutArgument>
                           </Assign.To>
@@ -393,25 +418,19 @@
 "&lt;webctrl aaname='Go' parentid='"+Find_Match_DropDown_ID+"' tag='A' /&gt;"]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <uix:NClick ClickType="Single" DisplayName="Click GO Button" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NClick_25" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                        <uix:NClick ClickType="Single" DisplayName="Click GO Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_36" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                           <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="1005, 479, 25, 18" ElementType="Text" FriendlyName="'Go'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl aaname='Go' parentid='ext-gen83' tag='A' type='' check:text='Go' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAWCAYAAAA8VJfMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJISURBVEhLzZXJbtNQFIYRD8IOHsADjXewZhIIVEBig1ix4QVY8ARgsQJVRFSlQ9KGDFAK6UDDUKUuJCHQBqdOXBeRpEUoJVIqWlr9nOuk4Ma+K6yWK31y7vU55/M9tuMDtR/AXrO/0sjCd1wdLeB0OOs7rO74Yt0tZSeuTRi4lVnBjXQF12e++kb3cx1H1DG3lF3RldQXHHtWxtGEAdlnDt4c9JZenl6G8rTkmfSvcKWX/jvp8gacw7SK3nEcuNKLUxaUJxQUX9yNxYTb0N5pEIKvIRSbNF9HLLLgjuXAlXZPLkFJUFCMduEg3gAaNQtC7wwkJooUIPbNQnykQc43QadbY7MJNaq78hlc6YUJE0qcBbHEHVahbZK0akIKf4D6bbttoBYv1WHSsVzOQnhQgkYNaVQtyNFCRw2dLz2fNKBEP0N+TEkOYmynlRKkoRzkkU8QHtZQZrLVOu1yC1o6BWkwC3VlC1ir0u/31A3qiKMGV3ruRREKC7Jb+BfJ/EmKX9AyGZLOQ7bnJNUrLbk+DSlUwVy7I6z1dpyjBld6dkxHIELBtJtdDH+EWFy3RX8G7UjomYJoONY3Grjd8xJS/5yd46zBlZ6hv8LACAUP592EchCDryDcH4dwL2kj9aVb671vW+uEGExBDtNt6MjnSk8l5tFFDwsr5MlQlqAW7xCiuWu9vdYBV3oynkdXZ2Gf4EpPRHMIsCdvwH88pezTdnxgFoF+euHZS+8jh+4mvT9tk8YaDt8Zta/Ib1hd9U3JLd1L9kEK/AbYdcOg8wXjjwAAAABJRU5ErkJggg==" InformativeScreenshot="d5515fdb8f3728eafed80e63cfb412c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="871, 478, 126, 19" ElementType="InputBox" FriendlyName="'INPUT searchAmountText'" FullSelectorArgument="&lt;webctrl id='searchAmountText' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchAmountText' tag='INPUT' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAXCAYAAADHqJcNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVGhD7dLBCQJBEEVBo56YvRrB6D5QZsEMugr+qY/9Hs/X3mZCsHYLYa1lg3b+/hfCdWCWMwYhDCYEIgQiBCIEIgQiBCIEIgQiBCIEIgQiBCIEIgQiBPI3hG8MNmfn728h2NwJwT7b+w0gg3Bnb30wbwAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
+                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="985, 528, 24, 17" ElementType="Text" FriendlyName="'Go'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl aaname='Go' parentid='ext-gen33' tag='A' type='' check:text='Go' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAVCAYAAABVAo5cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVEhLxZVdT9NQGMcNX0Pu+AZdD267MfGOaJAYownxAxC/An4CTYA7ohcCCTAHY7RDCVlwkvBi2LJ1jpUBG1WXgEWMpls0ASF/n9PBXmiPNzazye9iT8//+T2nZ02vmRbQTv6fcEwz8Simo3dG8xTeU9G/OoX8xsCKgcG0iccbhxhYP/CE/ngJnc8WnEI+Tf9KGTcXDXTHSmAe0vEk5C58+K6M4Ot919C/IBQ+EAnzv1DB5XWOVL7oXPMXxMKEm9DCR9IYRgbS2CqkvZ/AiYURZbd+z76qFv12H0QovP/2E4ILFFL3Gnw+AU6rGBpfgzyng80X4JvchC+UgUrbrhwdQHr5BQZ+I6llwfggzXlCLFw2EIzRIh66hAtpR8NTKYwcn19s5wyp3BGSp7TzIg0SzkKhHkZxHSy63ZonhMJ78X0EVVo0v9Mg+oOmp2alJFhEhzRu1naTXLMllUMD8ux3qp3ZNTmSb80TQmHfUhEBpVCbso4OOV1p+tOQxCzb5ylr1UbdOrZrLLJ1Jb8tFt5d3EWABIxP2czsFnwTG5CeL9d4kYA8naZ6jurv63V5kp4Crb2aFwp73+wgMFcTOJjJER8auNVpgJbMBULhnVgeft4gTGEPEQpvKzn4wxrYq4ynCIU90Sxu0PvF+Pl4iKuQfy1uhVLw0/vGpujwPaJrNOH+tVAL39D5VLWn8ZLr1HMwrjuF7aLNQuAPqlop6daaoAoAAAAASUVORK5CYII=" InformativeScreenshot="3eb2218c7dd643de0c63f98cccd4d65f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                           </uix:NClick.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
                       </Sequence>
-                      <Sequence DisplayName="Result Check" sap:VirtualizedContainerService.HintSize="1271,304" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                      <Sequence DisplayName="Result Check" sap:VirtualizedContainerService.HintSize="1776,304" sap2010:WorkflowViewState.IdRef="Sequence_122">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -437,14 +456,14 @@
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
                       </Sequence>
-                      <If Condition="[isResultsFound]" DisplayName="Check if Result is found " sap:VirtualizedContainerService.HintSize="1271,2309" sap2010:WorkflowViewState.IdRef="If_29">
+                      <If Condition="[isResultsFound]" DisplayName="Check if Result is found " sap:VirtualizedContainerService.HintSize="1776,2577" sap2010:WorkflowViewState.IdRef="If_29">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="376,757" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                          <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="881,1745" sap2010:WorkflowViewState.IdRef="Sequence_126">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="DiscussText" />
                               <Variable x:TypeArguments="x:String" Name="TextAreaSelector" />
@@ -456,7 +475,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_22">
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="839,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_22">
                               <ui:MultipleAssign.AssignOperations>
                                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_59">
@@ -494,44 +513,20 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:MultipleAssign>
-                            <uix:NClick ClickType="Single" DisplayName="Click 'Discuss'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick ClickType="Single" DisplayName="Click Discuss" sap:VirtualizedContainerService.HintSize="839,166" sap2010:WorkflowViewState.IdRef="NClick_37" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                               <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="774, 168, 60, 19" ElementType="Text" FriendlyName="'Discuss'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='*' tag='A' type='' aaname='             Discuss           ' check:text='Discuss' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEkSURBVFhH7Zi/DoJADMYJr+gzMfoE7E48gBMjiaMMJjogA8YbZDDGUT8p94cDzgGDit59SROupQ39tbkBj50Bm80BkA/7Q4nNLrPCqNceAArcbnf8u6hH6tUIwBY5AA6AAzASAMYwm2fwNZvFFx5Li+Z5YhoXQFSKA+mCRZghSMVxonojgErV5H3yyQ1obUmOBaOXOCjdd4zzBpysa8ql+spXIOEZg/ReANInALQaEyJfDYkkgJkAmHKTSEJ8XZ/dAJQIOlN8BqW3AYbcOqZ8k9sA7Q5QADRp01YxqhEyrHWfhKjL4GvVGaBxAahpcFNTFADoI5u4XN/+HdCqFVaNCVDd3CSSZ7Jvb8CPygFwABwAMwAr/wcsV1vYbN7pCthslgMAHpfc8+2CPYEMAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="18, -881, 174, 28" ElementType="Text" FriendlyName="'Go back'" FullSelectorArgument="&lt;webctrl tag='A' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' aaname='Go back to last organisation' check:text='Go back to last organisation' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
+                                <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="893, 300, 62, 18" ElementType="Text" FriendlyName="'Discuss *'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen190' tag='A' type='' aaname='Discuss *' check:text='Discuss *' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAWCAYAAAB0S0oJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVFhH7ZhBagJBEEXnTDmEh/AEs/AO7lzOFdy48gRhVmEIQnARCBIIA9G1ZJt1ZUp/lzU9RSDaI4Sugo/0dBf2f/UZwYK8TuUgUALi+e1Ajy8fWYk9hxIQT6+f9PVNWYk9h3IQKAeBchCoG0AcaTWb0sPkosUGe5slletjdH5M7WhR7YznvyshiCU1su4uM5nTaq/P3EP8vRjGH2GMBKJTSEL43NdURpds13MkCNBUenjvlCqjr6mwHsDGPa5I4d1AiDE5w9NDD5tlkwYIs29WUyvrNBoNhBgQcyq2bCSYVz1mIuI+7J0Tod5FN2okELwexj2oqXhPJSJMWZ3l+Mcmz33qmQXzSiUEganFk4I5PUV5kXV7/fOX6ZcdSH427FMJSfhCTgTi/8tBQA4CchCQg4BMEO+H/s9dDmLPoQrrn5scVG/b3rqwSOUnoh+TKSiTqngLCgAAAABJRU5ErkJggg==" InformativeScreenshot="4d0cd13c022877aae62a4cc927b9ba31.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                               </uix:NClick.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
                             </uix:NClick>
-                            <uix:NGetText DisplayName="Get Text Area" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_21">
+                            <uix:NGetText DisplayName="Get Text Area" sap:VirtualizedContainerService.HintSize="839,166" sap2010:WorkflowViewState.IdRef="NGetText_28">
                               <uix:NGetText.Target>
-                                <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="719, 265, 318, 42" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" InformativeScreenshot="3460af506c7e6baf45a7366496615a74.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;" SearchSteps="Selector">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="672, 268, 41, 23" ElementType="Text" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl tag='A' class='xbtn skip saveButton exclude' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' class='xbtn skip saveButton exclude' type='' aaname='Save' check:text='Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAbCAYAAADoOQYqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVFhH1ZbdMitBEMeVFxQvxPEAXkDKx7nl0o0qEm5VKYqoU6UirGSxPpasFQlBn+7paWYluzN3O1T9/bunu3d+M7sXmYgSAJ+1sXsC9z3I6HdDt26GUG88wPrerVcqhCbg9l0f6O9T/UfXQZl5LvR191Odipo+UDREsQ+5Ffr9g4d8cido0dCIy8yt0G/v3OyTO0G/oshFZedW6MGQh3xyJ2hR34jN/GIrgMn5M6W5g+/6zhqvTW+lmKfwtyqxUa9GcHEQfs2LqC9vPyv0yxs35zvD/EHYgOARIlDrMczh5pUqr51jf7bOcxWCU9Ah7Ix9/qg7QfdQ5KJsnsKy3jxT1yDbYQSV+QBWQlzT8bIR03pPes15Qz9zK/TzKw8VugLg1zq7z+v1VcxXY6zrQ22muP59wNYm33qL5kc+DzxYZ8w+2p2gRakRj833+cbqGjQDgoCn2MOwIczqg6hZPVcznqWel5NboZ8G3JzrbX7Ni23MZfNOBFO4toS3pfoMKO7n2xxbz9vHcCfoBEUu+pk36fb0jU7h7al8IYKmrieDGGawNoOfztMghcUF7MVPR+YTBa3fiPGcr7p2kRW6iz/yaMgnd4IWPRpxmbkV+uGFm31yJ+gYRS4qO7dC0wIN+eRO0KI7Iy4zL4SuNWL4d9lXzbfPPOSDF0IfBwnUjmJ14z4pF1rAm50uNJoRHJ5ceaNCaAH3TaPQAP8BG2rTUWFwLW4AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
+                                <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="717, 442, 298, 40" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" ImageBase64="" InformativeScreenshot="2618efd748935696d4108803390c7bfb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                               </uix:NGetText.Target>
                               <uix:NGetText.Text>
                                 <OutArgument x:TypeArguments="x:String">[ResultText]</OutArgument>
                               </uix:NGetText.Text>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
                             </uix:NGetText>
-                            <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_21">
+                            <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="839,1039" sap2010:WorkflowViewState.IdRef="If_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -539,31 +534,19 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Sequence DisplayName="Input Text To Text Area" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                <Sequence DisplayName="Input Text To Text Area" sap:VirtualizedContainerService.HintSize="418,880" sap2010:WorkflowViewState.IdRef="Sequence_124">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Text Area" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="NTypeInto_10" Text="[DiscussText]">
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Text Area" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="NTypeInto_15" InteractionMode="Simulate" Text="[DiscussText]">
                                     <uix:NTypeInto.Target>
-                                      <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="8, 111, 0, 0" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAdSURBVBhXY4CB/1AA5UIEbt15gCoAAlAuTOD/fwCtyB96AxZYxAAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;" SearchSteps="Selector, Image">
-                                        <uix:TargetAnchorable.Anchors>
-                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                            <uix:Target DesignTimeRectangle="672, 202, 41, 23" ElementType="Text" FriendlyName="'Save'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Save' type='' check:text='Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAbCAYAAADoOQYqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVFhH1ZbdMitBEMeVFxQvxPEAXkDKx7nl0o0qEm5VKYqoU6UirGSxPpasFQlBn+7paWYluzN3O1T9/bunu3d+M7sXmYgSAJ+1sXsC9z3I6HdDt26GUG88wPrerVcqhCbg9l0f6O9T/UfXQZl5LvR191Odipo+UDREsQ+5Ffr9g4d8cido0dCIy8yt0G/v3OyTO0G/oshFZedW6MGQh3xyJ2hR34jN/GIrgMn5M6W5g+/6zhqvTW+lmKfwtyqxUa9GcHEQfs2LqC9vPyv0yxs35zvD/EHYgOARIlDrMczh5pUqr51jf7bOcxWCU9Ah7Ix9/qg7QfdQ5KJsnsKy3jxT1yDbYQSV+QBWQlzT8bIR03pPes15Qz9zK/TzKw8VugLg1zq7z+v1VcxXY6zrQ22muP59wNYm33qL5kc+DzxYZ8w+2p2gRakRj833+cbqGjQDgoCn2MOwIczqg6hZPVcznqWel5NboZ8G3JzrbX7Ni23MZfNOBFO4toS3pfoMKO7n2xxbz9vHcCfoBEUu+pk36fb0jU7h7al8IYKmrieDGGawNoOfztMghcUF7MVPR+YTBa3fiPGcr7p2kRW6iz/yaMgnd4IWPRpxmbkV+uGFm31yJ+gYRS4qO7dC0wIN+eRO0KI7Iy4zL4SuNWL4d9lXzbfPPOSDF0IfBwnUjmJ14z4pF1rAm50uNJoRHJ5ceaNCaAH3TaPQAP8BG2rTUWFwLW4AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
-                                          </scg:List>
-                                        </uix:TargetAnchorable.Anchors>
-                                      </uix:TargetAnchorable>
+                                      <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="725, 280, 298, 40" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAS4AAAAsCAYAAADb/1X8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADASURBVHhe7dShDYRQFADB679AxAkqwKIfDgP4v8lMsi3s7zhnJKmUcUnKdY9r+++StHSv4wJYlXEBOcYF5BgXkGNcQI5xATnGBeQYF5BjXECOcQE5xgXkGBeQY1xAjnEBOcYF5BgXkGNcQI5xATnGBeQYF5BjXECOcQE5xgXkGBeQY1xAjnEBOcYF5BgXkGNcQI5xATnGBeQYF5BjXECOcQE5xgXkGBeQY1xAzue4JGnlHuOSpErGJSmXcUmKNXMBw4r9GdhFLbAAAAAASUVORK5CYII=" InformativeScreenshot="1a485bc3f27976794d94d0da17ca65b4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                     </uix:NTypeInto.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
                                   </uix:NTypeInto>
-                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Save with Ctrl + S" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="s" KeyModifiers="Ctrl">
+                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Save with Ctrl + S" sap:VirtualizedContainerService.HintSize="376,116" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="s" KeyModifiers="Ctrl">
                                     <ui:SendHotkey.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6e229250-10ff-4823-a46e-967ae2b2329b" Selector="[TextAreaSelector]" WaitForReady="COMPLETE">
                                         <ui:Target.TimeoutMS>
@@ -596,27 +579,16 @@
 "&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+Find_Match_DropDown_ID+"' class='cancelButton*' /&gt;"]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left">
+                                    <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_38" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                                       <uix:NClick.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="963, 628, 83, 23" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen1746' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAbCAYAAAAJUhN7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7ZnbTxpBFIf7r5vUWN9UbgHkslwEQaoGo4VGE8tFY62aNAWhxRdBNE0A31hffp1zFnDRXaNbxqcZ8oV15swy++2Z2TH7od4FFHJQciUyJfdr+ScS6c/QEhnFGyFv5M/scyKXGpKpHMqVKkqlEg4PDxVvYH//AFosiWz+4LlcMv+lUMTW1hay2azCAclkEgufFp/LpdQuFovI5XKWHRWvY25uTsmVhZIrEVu5hUIBGxsbyGQyCofYyt3b22P76+vr8rm6x2O5Ryudto77Ly5w9yDOfiXj3NbYyt3d3X0fued3eBCfm5MIfD4fqu0hoHdwtrZmHe+YC9zqQL8RQCKRsGifPbZyd3Z2OCCVSknl/E5c8aDJYuPxOG9hgsEgVldX8ceU0PrtmYhvibzWoYsuo0q+CUb9qIzrTLPhvkUx5+iKfr26D7FYbPL7MrGVm8/nOWBNDFQmLLB/yTJJLNXRN0EZ5vf74a71gOE1TiJNDER4r+6Bp9zGUHw6x6ObMGjA7S7jWiR+v9EQcTrPBiOuh2bkZCJX07Rn45CBrdzt7W0OGF+oLE55rtY5W0nmVHvLnLodHPnr6Atp7bIH0WjTOBb/Rd6IUwzbFYRCIUQiYnmptEWLuVBcheN6da/oG53+HUnYyt3c3OQAumCZxE+74tJ1dI4CvCz8INl6F6dcP8BlIADXKHOrvke5mvZ7JNeLBqfzL4TDRnbq3b/cdv1tBSsrBi5XGR2W6+EbYDWWWWMrl/a4dLG0Pskm2OgbCcbFEObzVVmGUaXz1K55a4a0knuSuXQcCjVE66iIDC+7XDimNB0XsaZHo9+NzK25OMOtxjFrbOXSToECaH2SDU1TeqAtLS0xlGnhcJhZXl6e1LmENF6D3W7OvoDIajqmODoe96dz8fJgOqfX62WpdA5a363GMWts5dJOgQLowt8DkmHmpfqn7VaxT/82143jZWMrNy12ClEalMgKhTNs5dLDjKYbTSWFM2zl0tOOAmh9UjjDVi6tt7T3pAeFwhmWculNRFTIteqgeB20U7F8E0Hv0IIhjQOsOipehrx9nJ+3fodGUMPCwiKntuJtkDezWGJKrmK2KLnSAP4BTz551BOM710AAAAASUVORK5CYII=" InformativeScreenshot="288e578d12104c3de7e775341840f2d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
-                                          <uix:TargetAnchorable.Anchors>
-                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                              <uix:Target DesignTimeRectangle="852, 628, 99, 23" ElementType="Text" FriendlyName="'Reconcile'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' type='' check:text='Reconcile' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAbCAYAAABhoZFDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANKSURBVGhD7ZlZU+JAFIXn//8dZd8URFl8mFVAGZVlQFlFIlZJas7c053WQDE+aewq+1Yd09W5SYf73dNE/dIYAk52ysGxWBtwqt/ayOULyGQyThGLdWf9wzye4dS/n6NYLKJWq+H09NQpYrHurD85bMBpivJCzoH5WLH+5EAeITh/lbV2XeAUrciBPBwcC+XgWCwHx2LZA2fyiO1YjWuo1+u7899YvXsfeBzLemM8wsd9N5p1X5M1cOpjwnlANxZDjOotgacJrsrlnflvLb4dZbNZlEo38hRrTFuZD39jtQ5OP5VCpVJBZyGdvJ7hIpdDl12t4qWjVacHQYdxTt0iCO26Lpjm+yZ3hbFyIt0RhL9AV+a0c0YCZKThNFOojlZBUrQuNrIMTjh8zM6zyJ3PZLRCP51GnG5aT9HpLGTOl+5Oa4fJ3JwwpdAtk4clbspXWKx5uoVEoiczgNdPQdX8YYh4vIHJE4cF3QzenxfnNPuyqo/57yLiZxM8ydVD/mIYISDrnNPZ20OXVZRi9OJxHN++dK8OD4Phgxy1y05OTpATd6kpKS63pkol6P5WC3cCZ9lPyG/cl8G4gbkC1sTh4SGOjo6QFqDXPOn1JW+or72dys9waDfR1bue/z1kHRwWvFy+EQQSXg+V64WUxUN3f19/F4kyLRaOxZfvhTHhrbBU2+AU7UIhuNcKvWRTAfH6SbmndhHHAwWyp+bUtrfoBM4JwRHn8Dg5i2E/WDvOZjk+3vn87yEr4VSrVVyxqrKZzC7yuphBsJA832b7B+ENZPvLXWAaanVuVem0ds4zHFX/pDhmqOEz1ndoyZqX284Rl+hnCGI1Uut+zm1NPvTBwYFam29J5u0pmUyqrYdHdi+P7F4WituRmeP2Rpm8RCIhQMpqjnm8hlsSx5znHxbpBKogbuP9uHapVFLimHM8Z/K4fX5KOBQ/ePjDc2xeZw0wyuSY8ybntbzwePva7Tyj/+VFJavgOG3KwbFYDo7FcnAs1k44+XxefQHuusApGrH+5LAFB/j6o6FeNR2gjxHrzvqTw8a/qan27Ro/fv5S5Ggtp2jFurP+5GCYPMMxgAYTD9PZ3Clise5hMNQGHIqW4p7nFLU2OTSGwD+uO5XplR7ZSQAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
-                                            </scg:List>
-                                          </uix:TargetAnchorable.Anchors>
-                                        </uix:TargetAnchorable>
+                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="946, 425, 78, 22" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen558' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAaCAYAAAAkJwuaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVGhD7ZjPU9pAFMf7rzuj3pXB8EsSCEZAFIdxEA51dCrQai291BShXgpFLiA9AZdv39skijbsdGxy2535TMjmLdn95O1uJu/sIaD4f5TIgHghsnp2BdMqIZMrKlbAftjTsjfmSSRftAplNBpNXFxc4Pz8XOHD+7MzmDkLZqHiL5JN12p1lMtlHBwcKCTk83msb2z4i+S0rdfrODw89G2seMna2poSGQRSkbVaTYn8R6QiT09PUSqVUCwWQ+P+N57K9L7gG/N27jHFAqN20P/7N1KR1WpV2C4UCqHwdbQgez3E43FojT7mmKC3t4dCe0TDd8pi1KZYR8jCrXTq3PaiTPGDFnwnzileu0f610ErAcuyRJuwkIo8OTkRtnlXCp42HubApJOAYRhioOl0Gru7u+hN5/j1KY1Gf0YBtzDNLgkBxrYGzR4Dsz6uM12SNsX3ZFLEzQctagfMh5/FQ5lhjDvjTojsN2PYowfk349gkIqsVCrC9v7+fgi0MSSRLCeXy4k6lsnkPg9p+G6Z2CTaFdLYgdElpfMBPrYGVPMIm7LZNE0kSegd234qLNB22z3fIyykIo+Pj0WQN8CguWaTIuNMWDcPNOQ5Hm6+UKbydEzikjNy/A26/iwy23NEtuI2LQSOpBtObVoiupSRs34DkQ8/RUbeRm/dmB3nHj59CAqpyKOjIyGSp0UY8ODsiZtAVCadJGKxGDpeZpHQGU3jq3THEXkZRcbNyCbFXfGDcAIxaMaRoCwl9aJMOilomiub2mWzWd8+BIVUJO/YHMQDDgtd1xGJRLC1tSWOfM5r5nJdIpEQa2c0GhXX+FzTNGQyGXH04vhaKpUS59vb22LNZbx2fvcPCqlI3mg4iDscJjxID786r375+Pq3d/76unfu/Q4LqUjejXhKeB1TrEYq0qJpbdBU02l6KORIRfIrg/dup5AjFcnrIwfxAq6Qs1Ikf480jIx40eVdUrEafmVb+T2Sv5AnUroI8muscGA/m5ubq7+QM9l8BevrGyJtFf6wH/a07I15IVLxdpTIgFAiAwH4A+SgPoNvb08jAAAAAElFTkSuQmCC" InformativeScreenshot="06320c9e9d94b34b5056a1978d6558fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                       </uix:NClick.Target>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
                                     </uix:NClick>
                                   </Sequence>
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="376,364" sap2010:WorkflowViewState.IdRef="Sequence_125">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -634,22 +606,10 @@
 "&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+Find_Match_DropDown_ID+"' class='cancelButton*' /&gt;"]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left">
+                                  <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_39" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                                     <uix:NClick.Target>
-                                      <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="963, 628, 83, 23" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen1746' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAbCAYAAAAJUhN7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7ZnbTxpBFIf7r5vUWN9UbgHkslwEQaoGo4VGE8tFY62aNAWhxRdBNE0A31hffp1zFnDRXaNbxqcZ8oV15swy++2Z2TH7od4FFHJQciUyJfdr+ScS6c/QEhnFGyFv5M/scyKXGpKpHMqVKkqlEg4PDxVvYH//AFosiWz+4LlcMv+lUMTW1hay2azCAclkEgufFp/LpdQuFovI5XKWHRWvY25uTsmVhZIrEVu5hUIBGxsbyGQyCofYyt3b22P76+vr8rm6x2O5Ryudto77Ly5w9yDOfiXj3NbYyt3d3X0fued3eBCfm5MIfD4fqu0hoHdwtrZmHe+YC9zqQL8RQCKRsGifPbZyd3Z2OCCVSknl/E5c8aDJYuPxOG9hgsEgVldX8ceU0PrtmYhvibzWoYsuo0q+CUb9qIzrTLPhvkUx5+iKfr26D7FYbPL7MrGVm8/nOWBNDFQmLLB/yTJJLNXRN0EZ5vf74a71gOE1TiJNDER4r+6Bp9zGUHw6x6ObMGjA7S7jWiR+v9EQcTrPBiOuh2bkZCJX07Rn45CBrdzt7W0OGF+oLE55rtY5W0nmVHvLnLodHPnr6Atp7bIH0WjTOBb/Rd6IUwzbFYRCIUQiYnmptEWLuVBcheN6da/oG53+HUnYyt3c3OQAumCZxE+74tJ1dI4CvCz8INl6F6dcP8BlIADXKHOrvke5mvZ7JNeLBqfzL4TDRnbq3b/cdv1tBSsrBi5XGR2W6+EbYDWWWWMrl/a4dLG0Pskm2OgbCcbFEObzVVmGUaXz1K55a4a0knuSuXQcCjVE66iIDC+7XDimNB0XsaZHo9+NzK25OMOtxjFrbOXSToECaH2SDU1TeqAtLS0xlGnhcJhZXl6e1LmENF6D3W7OvoDIajqmODoe96dz8fJgOqfX62WpdA5a363GMWts5dJOgQLowt8DkmHmpfqn7VaxT/82143jZWMrNy12ClEalMgKhTNs5dLDjKYbTSWFM2zl0tOOAmh9UjjDVi6tt7T3pAeFwhmWculNRFTIteqgeB20U7F8E0Hv0IIhjQOsOipehrx9nJ+3fodGUMPCwiKntuJtkDezWGJKrmK2KLnSAP4BTz551BOM710AAAAASUVORK5CYII=" InformativeScreenshot="288e578d12104c3de7e775341840f2d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
-                                        <uix:TargetAnchorable.Anchors>
-                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                            <uix:Target DesignTimeRectangle="852, 628, 99, 23" ElementType="Text" FriendlyName="'Reconcile'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' type='' check:text='Reconcile' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAbCAYAAABhoZFDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANKSURBVGhD7ZlZU+JAFIXn//8dZd8URFl8mFVAGZVlQFlFIlZJas7c053WQDE+aewq+1Yd09W5SYf73dNE/dIYAk52ysGxWBtwqt/ayOULyGQyThGLdWf9wzye4dS/n6NYLKJWq+H09NQpYrHurD85bMBpivJCzoH5WLH+5EAeITh/lbV2XeAUrciBPBwcC+XgWCwHx2LZA2fyiO1YjWuo1+u7899YvXsfeBzLemM8wsd9N5p1X5M1cOpjwnlANxZDjOotgacJrsrlnflvLb4dZbNZlEo38hRrTFuZD39jtQ5OP5VCpVJBZyGdvJ7hIpdDl12t4qWjVacHQYdxTt0iCO26Lpjm+yZ3hbFyIt0RhL9AV+a0c0YCZKThNFOojlZBUrQuNrIMTjh8zM6zyJ3PZLRCP51GnG5aT9HpLGTOl+5Oa4fJ3JwwpdAtk4clbspXWKx5uoVEoiczgNdPQdX8YYh4vIHJE4cF3QzenxfnNPuyqo/57yLiZxM8ydVD/mIYISDrnNPZ20OXVZRi9OJxHN++dK8OD4Phgxy1y05OTpATd6kpKS63pkol6P5WC3cCZ9lPyG/cl8G4gbkC1sTh4SGOjo6QFqDXPOn1JW+or72dys9waDfR1bue/z1kHRwWvFy+EQQSXg+V64WUxUN3f19/F4kyLRaOxZfvhTHhrbBU2+AU7UIhuNcKvWRTAfH6SbmndhHHAwWyp+bUtrfoBM4JwRHn8Dg5i2E/WDvOZjk+3vn87yEr4VSrVVyxqrKZzC7yuphBsJA832b7B+ENZPvLXWAaanVuVem0ds4zHFX/pDhmqOEz1ndoyZqX284Rl+hnCGI1Uut+zm1NPvTBwYFam29J5u0pmUyqrYdHdi+P7F4WituRmeP2Rpm8RCIhQMpqjnm8hlsSx5znHxbpBKogbuP9uHapVFLimHM8Z/K4fX5KOBQ/ePjDc2xeZw0wyuSY8ybntbzwePva7Tyj/+VFJavgOG3KwbFYDo7FcnAs1k44+XxefQHuusApGrH+5LAFB/j6o6FeNR2gjxHrzvqTw8a/qan27Ro/fv5S5Ggtp2jFurP+5GCYPMMxgAYTD9PZ3Clise5hMNQGHIqW4p7nFLU2OTSGwD+uO5XplR7ZSQAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
-                                          </scg:List>
-                                        </uix:TargetAnchorable.Anchors>
-                                      </uix:TargetAnchorable>
+                                      <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="946, 425, 78, 22" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen558' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAaCAYAAAAkJwuaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVGhD7ZjPU9pAFMf7rzuj3pXB8EsSCEZAFIdxEA51dCrQai291BShXgpFLiA9AZdv39skijbsdGxy2535TMjmLdn95O1uJu/sIaD4f5TIgHghsnp2BdMqIZMrKlbAftjTsjfmSSRftAplNBpNXFxc4Pz8XOHD+7MzmDkLZqHiL5JN12p1lMtlHBwcKCTk83msb2z4i+S0rdfrODw89G2seMna2poSGQRSkbVaTYn8R6QiT09PUSqVUCwWQ+P+N57K9L7gG/N27jHFAqN20P/7N1KR1WpV2C4UCqHwdbQgez3E43FojT7mmKC3t4dCe0TDd8pi1KZYR8jCrXTq3PaiTPGDFnwnzileu0f610ErAcuyRJuwkIo8OTkRtnlXCp42HubApJOAYRhioOl0Gru7u+hN5/j1KY1Gf0YBtzDNLgkBxrYGzR4Dsz6uM12SNsX3ZFLEzQctagfMh5/FQ5lhjDvjTojsN2PYowfk349gkIqsVCrC9v7+fgi0MSSRLCeXy4k6lsnkPg9p+G6Z2CTaFdLYgdElpfMBPrYGVPMIm7LZNE0kSegd234qLNB22z3fIyykIo+Pj0WQN8CguWaTIuNMWDcPNOQ5Hm6+UKbydEzikjNy/A26/iwy23NEtuI2LQSOpBtObVoiupSRs34DkQ8/RUbeRm/dmB3nHj59CAqpyKOjIyGSp0UY8ODsiZtAVCadJGKxGDpeZpHQGU3jq3THEXkZRcbNyCbFXfGDcAIxaMaRoCwl9aJMOilomiub2mWzWd8+BIVUJO/YHMQDDgtd1xGJRLC1tSWOfM5r5nJdIpEQa2c0GhXX+FzTNGQyGXH04vhaKpUS59vb22LNZbx2fvcPCqlI3mg4iDscJjxID786r375+Pq3d/76unfu/Q4LqUjejXhKeB1TrEYq0qJpbdBU02l6KORIRfIrg/dup5AjFcnrIwfxAq6Qs1Ikf480jIx40eVdUrEafmVb+T2Sv5AnUroI8muscGA/m5ubq7+QM9l8BevrGyJtFf6wH/a07I15IVLxdpTIgFAiAwH4A+SgPoNvb08jAAAAAElFTkSuQmCC" InformativeScreenshot="06320c9e9d94b34b5056a1978d6558fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                     </uix:NClick.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
                                   </uix:NClick>
                                 </Sequence>
                               </If.Else>
@@ -657,7 +617,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Get Payee Amount" sap:VirtualizedContainerService.HintSize="850,2150" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                          <Sequence DisplayName="Get Payee Amount" sap:VirtualizedContainerService.HintSize="850,2418" sap2010:WorkflowViewState.IdRef="Sequence_150">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -704,7 +664,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </uix:NGetText>
-                            <If Condition="[Received.Trim.Replace(&quot; &quot;,&quot;&quot;).Length &gt; 0]" DisplayName="Assing Amount to Spend Or Received and Trim " sap:VirtualizedContainerService.HintSize="808,51" sap2010:WorkflowViewState.IdRef="If_22">
+                            <If Condition="[Received.Trim.Replace(&quot; &quot;,&quot;&quot;).Length &gt; 0]" DisplayName="Assing Amount to Spend Or Received and Trim " sap:VirtualizedContainerService.HintSize="808,319" sap2010:WorkflowViewState.IdRef="If_22">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -712,7 +672,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <ui:MultipleAssign DisplayName="Multiple  Assign For Received" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_23">
+                                <ui:MultipleAssign DisplayName="Multiple  Assign For Received" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_23">
                                   <ui:MultipleAssign.AssignOperations>
                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
@@ -750,7 +710,7 @@
                                 </ui:MultipleAssign>
                               </If.Then>
                               <If.Else>
-                                <ui:MultipleAssign DisplayName="Multiple  Assign For Spent" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_24">
+                                <ui:MultipleAssign DisplayName="Multiple  Assign For Spent" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_24">
                                   <ui:MultipleAssign.AssignOperations>
                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_65">
@@ -1958,7 +1918,7 @@ FirstOrDefault())]</InArgument>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_28">
+                                                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="839,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_28">
                                                                 <ui:MultipleAssign.AssignOperations>
                                                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_76">
@@ -1996,44 +1956,20 @@ FirstOrDefault())]</InArgument>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:MultipleAssign>
-                                                              <uix:NClick ClickType="Single" DisplayName="Click 'Discuss'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_32" KeyModifiers="None" MouseButton="Left">
+                                                              <uix:NClick ClickType="Single" DisplayName="Click Discuss" sap:VirtualizedContainerService.HintSize="839,166" sap2010:WorkflowViewState.IdRef="NClick_42" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                                                                 <uix:NClick.Target>
-                                                                  <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="774, 168, 60, 19" ElementType="Text" FriendlyName="'Discuss'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='*' tag='A' type='' aaname='             Discuss           ' check:text='Discuss' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEkSURBVFhH7Zi/DoJADMYJr+gzMfoE7E48gBMjiaMMJjogA8YbZDDGUT8p94cDzgGDit59SROupQ39tbkBj50Bm80BkA/7Q4nNLrPCqNceAArcbnf8u6hH6tUIwBY5AA6AAzASAMYwm2fwNZvFFx5Li+Z5YhoXQFSKA+mCRZghSMVxonojgErV5H3yyQ1obUmOBaOXOCjdd4zzBpysa8ql+spXIOEZg/ReANInALQaEyJfDYkkgJkAmHKTSEJ8XZ/dAJQIOlN8BqW3AYbcOqZ8k9sA7Q5QADRp01YxqhEyrHWfhKjL4GvVGaBxAahpcFNTFADoI5u4XN/+HdCqFVaNCVDd3CSSZ7Jvb8CPygFwABwAMwAr/wcsV1vYbN7pCthslgMAHpfc8+2CPYEMAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
-                                                                    <uix:TargetAnchorable.Anchors>
-                                                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                        <uix:Target DesignTimeRectangle="18, -881, 174, 28" ElementType="Text" FriendlyName="'Go back'" FullSelectorArgument="&lt;webctrl tag='A' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' aaname='Go back to last organisation' check:text='Go back to last organisation' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
-                                                                      </scg:List>
-                                                                    </uix:TargetAnchorable.Anchors>
-                                                                  </uix:TargetAnchorable>
+                                                                  <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="893, 300, 62, 18" ElementType="Text" FriendlyName="'Discuss *'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen190' tag='A' type='' aaname='Discuss *' check:text='Discuss *' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAWCAYAAAB0S0oJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVFhH7ZhBagJBEEXnTDmEh/AEs/AO7lzOFdy48gRhVmEIQnARCBIIA9G1ZJt1ZUp/lzU9RSDaI4Sugo/0dBf2f/UZwYK8TuUgUALi+e1Ajy8fWYk9hxIQT6+f9PVNWYk9h3IQKAeBchCoG0AcaTWb0sPkosUGe5slletjdH5M7WhR7YznvyshiCU1su4uM5nTaq/P3EP8vRjGH2GMBKJTSEL43NdURpds13MkCNBUenjvlCqjr6mwHsDGPa5I4d1AiDE5w9NDD5tlkwYIs29WUyvrNBoNhBgQcyq2bCSYVz1mIuI+7J0Tod5FN2okELwexj2oqXhPJSJMWZ3l+Mcmz33qmQXzSiUEganFk4I5PUV5kXV7/fOX6ZcdSH427FMJSfhCTgTi/8tBQA4CchCQg4BMEO+H/s9dDmLPoQrrn5scVG/b3rqwSOUnoh+TKSiTqngLCgAAAABJRU5ErkJggg==" InformativeScreenshot="4d0cd13c022877aae62a4cc927b9ba31.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                                                 </uix:NClick.Target>
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
                                                               </uix:NClick>
-                                                              <uix:NGetText DisplayName="Get Text Area" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_25">
+                                                              <uix:NGetText DisplayName="Get Text Area" sap:VirtualizedContainerService.HintSize="839,166" sap2010:WorkflowViewState.IdRef="NGetText_27">
                                                                 <uix:NGetText.Target>
-                                                                  <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="719, 265, 318, 42" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" InformativeScreenshot="3460af506c7e6baf45a7366496615a74.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;" SearchSteps="Selector">
-                                                                    <uix:TargetAnchorable.Anchors>
-                                                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                        <uix:Target DesignTimeRectangle="672, 268, 41, 23" ElementType="Text" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl tag='A' class='xbtn skip saveButton exclude' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' class='xbtn skip saveButton exclude' type='' aaname='Save' check:text='Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAbCAYAAADoOQYqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVFhH1ZbdMitBEMeVFxQvxPEAXkDKx7nl0o0qEm5VKYqoU6UirGSxPpasFQlBn+7paWYluzN3O1T9/bunu3d+M7sXmYgSAJ+1sXsC9z3I6HdDt26GUG88wPrerVcqhCbg9l0f6O9T/UfXQZl5LvR191Odipo+UDREsQ+5Ffr9g4d8cido0dCIy8yt0G/v3OyTO0G/oshFZedW6MGQh3xyJ2hR34jN/GIrgMn5M6W5g+/6zhqvTW+lmKfwtyqxUa9GcHEQfs2LqC9vPyv0yxs35zvD/EHYgOARIlDrMczh5pUqr51jf7bOcxWCU9Ah7Ix9/qg7QfdQ5KJsnsKy3jxT1yDbYQSV+QBWQlzT8bIR03pPes15Qz9zK/TzKw8VugLg1zq7z+v1VcxXY6zrQ22muP59wNYm33qL5kc+DzxYZ8w+2p2gRakRj833+cbqGjQDgoCn2MOwIczqg6hZPVcznqWel5NboZ8G3JzrbX7Ni23MZfNOBFO4toS3pfoMKO7n2xxbz9vHcCfoBEUu+pk36fb0jU7h7al8IYKmrieDGGawNoOfztMghcUF7MVPR+YTBa3fiPGcr7p2kRW6iz/yaMgnd4IWPRpxmbkV+uGFm31yJ+gYRS4qO7dC0wIN+eRO0KI7Iy4zL4SuNWL4d9lXzbfPPOSDF0IfBwnUjmJ14z4pF1rAm50uNJoRHJ5ceaNCaAH3TaPQAP8BG2rTUWFwLW4AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
-                                                                      </scg:List>
-                                                                    </uix:TargetAnchorable.Anchors>
-                                                                  </uix:TargetAnchorable>
+                                                                  <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="725, 330, 298, 40" ElementType="InputBox" FriendlyName="'Awaiting invoice'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl id='commentsTextfa9ffc8ca74b4d6b8e192acc8f3a3bed' tag='TEXTAREA' type='' aaname='' /&gt;" InformativeScreenshot="049722f316a387987add0e607303d592.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                                                 </uix:NGetText.Target>
                                                                 <uix:NGetText.Text>
                                                                   <OutArgument x:TypeArguments="x:String">[ResultText]</OutArgument>
                                                                 </uix:NGetText.Text>
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
                                                               </uix:NGetText>
-                                                              <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_28">
+                                                              <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="839,1034" sap2010:WorkflowViewState.IdRef="If_28">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2041,31 +1977,19 @@ FirstOrDefault())]</InArgument>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <If.Then>
-                                                                  <Sequence DisplayName="Input Text To Text Area" sap:VirtualizedContainerService.HintSize="242,340" sap2010:WorkflowViewState.IdRef="Sequence_145">
+                                                                  <Sequence DisplayName="Input Text To Text Area" sap:VirtualizedContainerService.HintSize="418,876" sap2010:WorkflowViewState.IdRef="Sequence_145">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Text Area" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NTypeInto_12" Text="[DiscussText]">
+                                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Text Area" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="NTypeInto_16" InteractionMode="Simulate" Text="[DiscussText]">
                                                                       <uix:NTypeInto.Target>
-                                                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="8, 111, 0, 0" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAdSURBVBhXY4CB/1AA5UIEbt15gCoAAlAuTOD/fwCtyB96AxZYxAAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation *' /&gt;" SearchSteps="Selector, Image">
-                                                                          <uix:TargetAnchorable.Anchors>
-                                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                              <uix:Target DesignTimeRectangle="672, 202, 41, 23" ElementType="Text" FriendlyName="'Save'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Save' type='' check:text='Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAbCAYAAADoOQYqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVFhH1ZbdMitBEMeVFxQvxPEAXkDKx7nl0o0qEm5VKYqoU6UirGSxPpasFQlBn+7paWYluzN3O1T9/bunu3d+M7sXmYgSAJ+1sXsC9z3I6HdDt26GUG88wPrerVcqhCbg9l0f6O9T/UfXQZl5LvR191Odipo+UDREsQ+5Ffr9g4d8cido0dCIy8yt0G/v3OyTO0G/oshFZedW6MGQh3xyJ2hR34jN/GIrgMn5M6W5g+/6zhqvTW+lmKfwtyqxUa9GcHEQfs2LqC9vPyv0yxs35zvD/EHYgOARIlDrMczh5pUqr51jf7bOcxWCU9Ah7Ix9/qg7QfdQ5KJsnsKy3jxT1yDbYQSV+QBWQlzT8bIR03pPes15Qz9zK/TzKw8VugLg1zq7z+v1VcxXY6zrQ22muP59wNYm33qL5kc+DzxYZ8w+2p2gRakRj833+cbqGjQDgoCn2MOwIczqg6hZPVcznqWel5NboZ8G3JzrbX7Ni23MZfNOBFO4toS3pfoMKO7n2xxbz9vHcCfoBEUu+pk36fb0jU7h7al8IYKmrieDGGawNoOfztMghcUF7MVPR+YTBa3fiPGcr7p2kRW6iz/yaMgnd4IWPRpxmbkV+uGFm31yJ+gYRS4qO7dC0wIN+eRO0KI7Iy4zL4SuNWL4d9lXzbfPPOSDF0IfBwnUjmJ14z4pF1rAm50uNJoRHJ5ceaNCaAH3TaPQAP8BG2rTUWFwLW4AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
-                                                                            </scg:List>
-                                                                          </uix:TargetAnchorable.Anchors>
-                                                                        </uix:TargetAnchorable>
+                                                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="725, 280, 298, 40" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAS4AAAAsCAYAAADb/1X8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADASURBVHhe7dShDYRQFADB679AxAkqwKIfDgP4v8lMsi3s7zhnJKmUcUnKdY9r+++StHSv4wJYlXEBOcYF5BgXkGNcQI5xATnGBeQYF5BjXECOcQE5xgXkGBeQY1xAjnEBOcYF5BgXkGNcQI5xATnGBeQYF5BjXECOcQE5xgXkGBeQY1xAjnEBOcYF5BgXkGNcQI5xATnGBeQYF5BjXECOcQE5xgXkGBeQY1xAzue4JGnlHuOSpErGJSmXcUmKNXMBw4r9GdhFLbAAAAAASUVORK5CYII=" InformativeScreenshot="1a485bc3f27976794d94d0da17ca65b4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                                                       </uix:NTypeInto.Target>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
                                                                     </uix:NTypeInto>
-                                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Save with Ctrl + S" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendHotkey_20" Key="s" KeyModifiers="Ctrl">
+                                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Save with Ctrl + S" sap:VirtualizedContainerService.HintSize="376,116" sap2010:WorkflowViewState.IdRef="SendHotkey_20" Key="s" KeyModifiers="Ctrl">
                                                                       <ui:SendHotkey.Target>
                                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6e229250-10ff-4823-a46e-967ae2b2329b" Selector="[TextAreaSelector]" WaitForReady="COMPLETE">
                                                                           <ui:Target.TimeoutMS>
@@ -2080,7 +2004,7 @@ FirstOrDefault())]</InArgument>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                     </ui:SendHotkey>
-                                                                    <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_144">
+                                                                    <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="376,362" sap2010:WorkflowViewState.IdRef="Sequence_144">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2098,27 +2022,16 @@ FirstOrDefault())]</InArgument>
 "&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+Find_Match_DropDown_ID+"' class='cancelButton*' /&gt;"]</InArgument>
                                                                         </Assign.Value>
                                                                       </Assign>
-                                                                      <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_33" KeyModifiers="None" MouseButton="Left">
+                                                                      <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_40" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                                                                         <uix:NClick.Target>
-                                                                          <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="963, 628, 83, 23" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen1746' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAbCAYAAAAJUhN7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7ZnbTxpBFIf7r5vUWN9UbgHkslwEQaoGo4VGE8tFY62aNAWhxRdBNE0A31hffp1zFnDRXaNbxqcZ8oV15swy++2Z2TH7od4FFHJQciUyJfdr+ScS6c/QEhnFGyFv5M/scyKXGpKpHMqVKkqlEg4PDxVvYH//AFosiWz+4LlcMv+lUMTW1hay2azCAclkEgufFp/LpdQuFovI5XKWHRWvY25uTsmVhZIrEVu5hUIBGxsbyGQyCofYyt3b22P76+vr8rm6x2O5Ryudto77Ly5w9yDOfiXj3NbYyt3d3X0fued3eBCfm5MIfD4fqu0hoHdwtrZmHe+YC9zqQL8RQCKRsGifPbZyd3Z2OCCVSknl/E5c8aDJYuPxOG9hgsEgVldX8ceU0PrtmYhvibzWoYsuo0q+CUb9qIzrTLPhvkUx5+iKfr26D7FYbPL7MrGVm8/nOWBNDFQmLLB/yTJJLNXRN0EZ5vf74a71gOE1TiJNDER4r+6Bp9zGUHw6x6ObMGjA7S7jWiR+v9EQcTrPBiOuh2bkZCJX07Rn45CBrdzt7W0OGF+oLE55rtY5W0nmVHvLnLodHPnr6Atp7bIH0WjTOBb/Rd6IUwzbFYRCIUQiYnmptEWLuVBcheN6da/oG53+HUnYyt3c3OQAumCZxE+74tJ1dI4CvCz8INl6F6dcP8BlIADXKHOrvke5mvZ7JNeLBqfzL4TDRnbq3b/cdv1tBSsrBi5XGR2W6+EbYDWWWWMrl/a4dLG0Pskm2OgbCcbFEObzVVmGUaXz1K55a4a0knuSuXQcCjVE66iIDC+7XDimNB0XsaZHo9+NzK25OMOtxjFrbOXSToECaH2SDU1TeqAtLS0xlGnhcJhZXl6e1LmENF6D3W7OvoDIajqmODoe96dz8fJgOqfX62WpdA5a363GMWts5dJOgQLowt8DkmHmpfqn7VaxT/82143jZWMrNy12ClEalMgKhTNs5dLDjKYbTSWFM2zl0tOOAmh9UjjDVi6tt7T3pAeFwhmWculNRFTIteqgeB20U7F8E0Hv0IIhjQOsOipehrx9nJ+3fodGUMPCwiKntuJtkDezWGJKrmK2KLnSAP4BTz551BOM710AAAAASUVORK5CYII=" InformativeScreenshot="288e578d12104c3de7e775341840f2d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
-                                                                            <uix:TargetAnchorable.Anchors>
-                                                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                                <uix:Target DesignTimeRectangle="852, 628, 99, 23" ElementType="Text" FriendlyName="'Reconcile'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' type='' check:text='Reconcile' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAbCAYAAABhoZFDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANKSURBVGhD7ZlZU+JAFIXn//8dZd8URFl8mFVAGZVlQFlFIlZJas7c053WQDE+aewq+1Yd09W5SYf73dNE/dIYAk52ysGxWBtwqt/ayOULyGQyThGLdWf9wzye4dS/n6NYLKJWq+H09NQpYrHurD85bMBpivJCzoH5WLH+5EAeITh/lbV2XeAUrciBPBwcC+XgWCwHx2LZA2fyiO1YjWuo1+u7899YvXsfeBzLemM8wsd9N5p1X5M1cOpjwnlANxZDjOotgacJrsrlnflvLb4dZbNZlEo38hRrTFuZD39jtQ5OP5VCpVJBZyGdvJ7hIpdDl12t4qWjVacHQYdxTt0iCO26Lpjm+yZ3hbFyIt0RhL9AV+a0c0YCZKThNFOojlZBUrQuNrIMTjh8zM6zyJ3PZLRCP51GnG5aT9HpLGTOl+5Oa4fJ3JwwpdAtk4clbspXWKx5uoVEoiczgNdPQdX8YYh4vIHJE4cF3QzenxfnNPuyqo/57yLiZxM8ydVD/mIYISDrnNPZ20OXVZRi9OJxHN++dK8OD4Phgxy1y05OTpATd6kpKS63pkol6P5WC3cCZ9lPyG/cl8G4gbkC1sTh4SGOjo6QFqDXPOn1JW+or72dys9waDfR1bue/z1kHRwWvFy+EQQSXg+V64WUxUN3f19/F4kyLRaOxZfvhTHhrbBU2+AU7UIhuNcKvWRTAfH6SbmndhHHAwWyp+bUtrfoBM4JwRHn8Dg5i2E/WDvOZjk+3vn87yEr4VSrVVyxqrKZzC7yuphBsJA832b7B+ENZPvLXWAaanVuVem0ds4zHFX/pDhmqOEz1ndoyZqX284Rl+hnCGI1Uut+zm1NPvTBwYFam29J5u0pmUyqrYdHdi+P7F4WituRmeP2Rpm8RCIhQMpqjnm8hlsSx5znHxbpBKogbuP9uHapVFLimHM8Z/K4fX5KOBQ/ePjDc2xeZw0wyuSY8ybntbzwePva7Tyj/+VFJavgOG3KwbFYDo7FcnAs1k44+XxefQHuusApGrH+5LAFB/j6o6FeNR2gjxHrzvqTw8a/qan27Ro/fv5S5Ggtp2jFurP+5GCYPMMxgAYTD9PZ3Clise5hMNQGHIqW4p7nFLU2OTSGwD+uO5XplR7ZSQAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
-                                                                              </scg:List>
-                                                                            </uix:TargetAnchorable.Anchors>
-                                                                          </uix:TargetAnchorable>
+                                                                          <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="946, 425, 78, 22" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen558' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAaCAYAAAAkJwuaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVGhD7ZjPU9pAFMf7rzuj3pXB8EsSCEZAFIdxEA51dCrQai291BShXgpFLiA9AZdv39skijbsdGxy2535TMjmLdn95O1uJu/sIaD4f5TIgHghsnp2BdMqIZMrKlbAftjTsjfmSSRftAplNBpNXFxc4Pz8XOHD+7MzmDkLZqHiL5JN12p1lMtlHBwcKCTk83msb2z4i+S0rdfrODw89G2seMna2poSGQRSkbVaTYn8R6QiT09PUSqVUCwWQ+P+N57K9L7gG/N27jHFAqN20P/7N1KR1WpV2C4UCqHwdbQgez3E43FojT7mmKC3t4dCe0TDd8pi1KZYR8jCrXTq3PaiTPGDFnwnzileu0f610ErAcuyRJuwkIo8OTkRtnlXCp42HubApJOAYRhioOl0Gru7u+hN5/j1KY1Gf0YBtzDNLgkBxrYGzR4Dsz6uM12SNsX3ZFLEzQctagfMh5/FQ5lhjDvjTojsN2PYowfk349gkIqsVCrC9v7+fgi0MSSRLCeXy4k6lsnkPg9p+G6Z2CTaFdLYgdElpfMBPrYGVPMIm7LZNE0kSegd234qLNB22z3fIyykIo+Pj0WQN8CguWaTIuNMWDcPNOQ5Hm6+UKbydEzikjNy/A26/iwy23NEtuI2LQSOpBtObVoiupSRs34DkQ8/RUbeRm/dmB3nHj59CAqpyKOjIyGSp0UY8ODsiZtAVCadJGKxGDpeZpHQGU3jq3THEXkZRcbNyCbFXfGDcAIxaMaRoCwl9aJMOilomiub2mWzWd8+BIVUJO/YHMQDDgtd1xGJRLC1tSWOfM5r5nJdIpEQa2c0GhXX+FzTNGQyGXH04vhaKpUS59vb22LNZbx2fvcPCqlI3mg4iDscJjxID786r375+Pq3d/76unfu/Q4LqUjejXhKeB1TrEYq0qJpbdBU02l6KORIRfIrg/dup5AjFcnrIwfxAq6Qs1Ikf480jIx40eVdUrEafmVb+T2Sv5AnUroI8muscGA/m5ubq7+QM9l8BevrGyJtFf6wH/a07I15IVLxdpTIgFAiAwH4A+SgPoNvb08jAAAAAElFTkSuQmCC" InformativeScreenshot="06320c9e9d94b34b5056a1978d6558fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                                                         </uix:NClick.Target>
-                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                          </scg:Dictionary>
-                                                                        </sap:WorkflowViewStateService.ViewState>
                                                                       </uix:NClick>
                                                                     </Sequence>
                                                                   </Sequence>
                                                                 </If.Then>
                                                                 <If.Else>
-                                                                  <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                                                                  <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="376,362" sap2010:WorkflowViewState.IdRef="Sequence_146">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2136,22 +2049,10 @@ FirstOrDefault())]</InArgument>
 "&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+Find_Match_DropDown_ID+"' class='cancelButton*' /&gt;"]</InArgument>
                                                                       </Assign.Value>
                                                                     </Assign>
-                                                                    <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_34" KeyModifiers="None" MouseButton="Left">
+                                                                    <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_41" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                                                                       <uix:NClick.Target>
-                                                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="963, 628, 83, 23" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen1746' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAbCAYAAAAJUhN7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7ZnbTxpBFIf7r5vUWN9UbgHkslwEQaoGo4VGE8tFY62aNAWhxRdBNE0A31hffp1zFnDRXaNbxqcZ8oV15swy++2Z2TH7od4FFHJQciUyJfdr+ScS6c/QEhnFGyFv5M/scyKXGpKpHMqVKkqlEg4PDxVvYH//AFosiWz+4LlcMv+lUMTW1hay2azCAclkEgufFp/LpdQuFovI5XKWHRWvY25uTsmVhZIrEVu5hUIBGxsbyGQyCofYyt3b22P76+vr8rm6x2O5Ryudto77Ly5w9yDOfiXj3NbYyt3d3X0fued3eBCfm5MIfD4fqu0hoHdwtrZmHe+YC9zqQL8RQCKRsGifPbZyd3Z2OCCVSknl/E5c8aDJYuPxOG9hgsEgVldX8ceU0PrtmYhvibzWoYsuo0q+CUb9qIzrTLPhvkUx5+iKfr26D7FYbPL7MrGVm8/nOWBNDFQmLLB/yTJJLNXRN0EZ5vf74a71gOE1TiJNDER4r+6Bp9zGUHw6x6ObMGjA7S7jWiR+v9EQcTrPBiOuh2bkZCJX07Rn45CBrdzt7W0OGF+oLE55rtY5W0nmVHvLnLodHPnr6Atp7bIH0WjTOBb/Rd6IUwzbFYRCIUQiYnmptEWLuVBcheN6da/oG53+HUnYyt3c3OQAumCZxE+74tJ1dI4CvCz8INl6F6dcP8BlIADXKHOrvke5mvZ7JNeLBqfzL4TDRnbq3b/cdv1tBSsrBi5XGR2W6+EbYDWWWWMrl/a4dLG0Pskm2OgbCcbFEObzVVmGUaXz1K55a4a0knuSuXQcCjVE66iIDC+7XDimNB0XsaZHo9+NzK25OMOtxjFrbOXSToECaH2SDU1TeqAtLS0xlGnhcJhZXl6e1LmENF6D3W7OvoDIajqmODoe96dz8fJgOqfX62WpdA5a363GMWts5dJOgQLowt8DkmHmpfqn7VaxT/82143jZWMrNy12ClEalMgKhTNs5dLDjKYbTSWFM2zl0tOOAmh9UjjDVi6tt7T3pAeFwhmWculNRFTIteqgeB20U7F8E0Hv0IIhjQOsOipehrx9nJ+3fodGUMPCwiKntuJtkDezWGJKrmK2KLnSAP4BTz551BOM710AAAAASUVORK5CYII=" InformativeScreenshot="288e578d12104c3de7e775341840f2d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
-                                                                          <uix:TargetAnchorable.Anchors>
-                                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                              <uix:Target DesignTimeRectangle="852, 628, 99, 23" ElementType="Text" FriendlyName="'Reconcile'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aaname='Reconcile' type='' check:text='Reconcile' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAbCAYAAABhoZFDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANKSURBVGhD7ZlZU+JAFIXn//8dZd8URFl8mFVAGZVlQFlFIlZJas7c053WQDE+aewq+1Yd09W5SYf73dNE/dIYAk52ysGxWBtwqt/ayOULyGQyThGLdWf9wzye4dS/n6NYLKJWq+H09NQpYrHurD85bMBpivJCzoH5WLH+5EAeITh/lbV2XeAUrciBPBwcC+XgWCwHx2LZA2fyiO1YjWuo1+u7899YvXsfeBzLemM8wsd9N5p1X5M1cOpjwnlANxZDjOotgacJrsrlnflvLb4dZbNZlEo38hRrTFuZD39jtQ5OP5VCpVJBZyGdvJ7hIpdDl12t4qWjVacHQYdxTt0iCO26Lpjm+yZ3hbFyIt0RhL9AV+a0c0YCZKThNFOojlZBUrQuNrIMTjh8zM6zyJ3PZLRCP51GnG5aT9HpLGTOl+5Oa4fJ3JwwpdAtk4clbspXWKx5uoVEoiczgNdPQdX8YYh4vIHJE4cF3QzenxfnNPuyqo/57yLiZxM8ydVD/mIYISDrnNPZ20OXVZRi9OJxHN++dK8OD4Phgxy1y05OTpATd6kpKS63pkol6P5WC3cCZ9lPyG/cl8G4gbkC1sTh4SGOjo6QFqDXPOn1JW+or72dys9waDfR1bue/z1kHRwWvFy+EQQSXg+V64WUxUN3f19/F4kyLRaOxZfvhTHhrbBU2+AU7UIhuNcKvWRTAfH6SbmndhHHAwWyp+bUtrfoBM4JwRHn8Dg5i2E/WDvOZjk+3vn87yEr4VSrVVyxqrKZzC7yuphBsJA832b7B+ENZPvLXWAaanVuVem0ds4zHFX/pDhmqOEz1ndoyZqX284Rl+hnCGI1Uut+zm1NPvTBwYFam29J5u0pmUyqrYdHdi+P7F4WituRmeP2Rpm8RCIhQMpqjnm8hlsSx5znHxbpBKogbuP9uHapVFLimHM8Z/K4fX5KOBQ/ePjDc2xeZw0wyuSY8ybntbzwePva7Tyj/+VFJavgOG3KwbFYDo7FcnAs1k44+XxefQHuusApGrH+5LAFB/j6o6FeNR2gjxHrzvqTw8a/qan27Ro/fv5S5Ggtp2jFurP+5GCYPMMxgAYTD9PZ3Clise5hMNQGHIqW4p7nFLU2OTSGwD+uO5XplR7ZSQAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
-                                                                            </scg:List>
-                                                                          </uix:TargetAnchorable.Anchors>
-                                                                        </uix:TargetAnchorable>
+                                                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="946, 425, 78, 22" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen558' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAaCAYAAAAkJwuaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVGhD7ZjPU9pAFMf7rzuj3pXB8EsSCEZAFIdxEA51dCrQai291BShXgpFLiA9AZdv39skijbsdGxy2535TMjmLdn95O1uJu/sIaD4f5TIgHghsnp2BdMqIZMrKlbAftjTsjfmSSRftAplNBpNXFxc4Pz8XOHD+7MzmDkLZqHiL5JN12p1lMtlHBwcKCTk83msb2z4i+S0rdfrODw89G2seMna2poSGQRSkbVaTYn8R6QiT09PUSqVUCwWQ+P+N57K9L7gG/N27jHFAqN20P/7N1KR1WpV2C4UCqHwdbQgez3E43FojT7mmKC3t4dCe0TDd8pi1KZYR8jCrXTq3PaiTPGDFnwnzileu0f610ErAcuyRJuwkIo8OTkRtnlXCp42HubApJOAYRhioOl0Gru7u+hN5/j1KY1Gf0YBtzDNLgkBxrYGzR4Dsz6uM12SNsX3ZFLEzQctagfMh5/FQ5lhjDvjTojsN2PYowfk349gkIqsVCrC9v7+fgi0MSSRLCeXy4k6lsnkPg9p+G6Z2CTaFdLYgdElpfMBPrYGVPMIm7LZNE0kSegd234qLNB22z3fIyykIo+Pj0WQN8CguWaTIuNMWDcPNOQ5Hm6+UKbydEzikjNy/A26/iwy23NEtuI2LQSOpBtObVoiupSRs34DkQ8/RUbeRm/dmB3nHj59CAqpyKOjIyGSp0UY8ODsiZtAVCadJGKxGDpeZpHQGU3jq3THEXkZRcbNyCbFXfGDcAIxaMaRoCwl9aJMOilomiub2mWzWd8+BIVUJO/YHMQDDgtd1xGJRLC1tSWOfM5r5nJdIpEQa2c0GhXX+FzTNGQyGXH04vhaKpUS59vb22LNZbx2fvcPCqlI3mg4iDscJjxID786r375+Pq3d/76unfu/Q4LqUjejXhKeB1TrEYq0qJpbdBU02l6KORIRfIrg/dup5AjFcnrIwfxAq6Qs1Ikf480jIx40eVdUrEafmVb+T2Sv5AnUroI8muscGA/m5ubq7+QM9l8BevrGyJtFf6wH/a07I15IVLxdpTIgFAiAwH4A+SgPoNvb08jAAAAAElFTkSuQmCC" InformativeScreenshot="06320c9e9d94b34b5056a1978d6558fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                                                                       </uix:NClick.Target>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
                                                                     </uix:NClick>
                                                                   </Sequence>
                                                                 </If.Else>

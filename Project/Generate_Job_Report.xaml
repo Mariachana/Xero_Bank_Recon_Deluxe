@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>723,1719</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723,1653</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Generate_Job_Report_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -80,10 +80,9 @@
       <AssemblyReference>dipoleDIAMOND_Reuseables</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Generate_Job_Report" sap:VirtualizedContainerService.HintSize="426,1654" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. This Process move Work Log form Processing to Archive&#xD;&#xA;2. The Work Log is Read and use as an Attachment for the Report mail&#xD;&#xA;3. The Bot generate a Report Mail and send a Mail to the User " DisplayName="Generate_Job_Report" sap:VirtualizedContainerService.HintSize="304,1588" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="JobReportFilePath" />
       <Variable x:TypeArguments="x:String" Name="TodayDate" />
@@ -105,9 +104,10 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
@@ -167,8 +167,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <df:Validate_or_Create_Folder_Directory DisplayName="Validate Report Folder" FolderPath="[Path.Combine(ArchiveFolderPath,TodayDate)]" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="Validate_or_Create_Folder_Directory_2" />
-    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[JobReportFilePath]" DisplayName="Move Work Log From Processing to Archive" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[in_WorkLogFilePath]">
+    <df:Validate_or_Create_Folder_Directory DisplayName="Validate Report Folder" FolderPath="[Path.Combine(ArchiveFolderPath,TodayDate)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Validate_or_Create_Folder_Directory_2" />
+    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[JobReportFilePath]" DisplayName="Move Work Log From Processing to Archive" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[in_WorkLogFilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -176,7 +176,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MoveFile>
-    <ui:ReadRange AddHeaders="True" DataTable="[workLogCompanyDT]" DisplayName="Read Company Processed Work Log" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_WorkLogCompanies&quot;).ToString]" WorkbookPath="[JobReportFilePath]">
+    <ui:ReadRange AddHeaders="True" DataTable="[workLogCompanyDT]" DisplayName="Read Company Processed Work Log" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_WorkLogCompanies&quot;).ToString]" WorkbookPath="[JobReportFilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -184,7 +184,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:ReadRange AddHeaders="True" DataTable="[WorkLogAccountDT]" DisplayName="Read Account Processed Work Log" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_WorkLogAccounts&quot;).ToString]" WorkbookPath="[JobReportFilePath]">
+    <ui:ReadRange AddHeaders="True" DataTable="[WorkLogAccountDT]" DisplayName="Read Account Processed Work Log" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_WorkLogAccounts&quot;).ToString]" WorkbookPath="[JobReportFilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -192,7 +192,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <Assign DisplayName="Assign Company Total Work Row Count" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Company Total Work Row Count" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TotalNumCompaniesTreated]</OutArgument>
       </Assign.To>
@@ -200,7 +200,7 @@
         <InArgument x:TypeArguments="x:Int32">[workLogCompanyDT.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Account Total Work Row Count" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Assign Account Total Work Row Count" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TotalNumAccountTreated]</OutArgument>
       </Assign.To>
@@ -208,7 +208,7 @@
         <InArgument x:TypeArguments="x:Int32">[WorkLogAccountDT.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:FilterDataTable DataTable="[workLogCompanyDT]" DisplayName="Filter Company Work Log With DONE" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[workLogCompanyDT]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[workLogCompanyDT]" DisplayName="Filter Company Work Log With DONE" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[workLogCompanyDT]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -233,7 +233,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:FilterDataTable DataTable="[WorkLogAccountDT]" DisplayName="Filter Account Work Log With DONE" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[WorkLogAccountDT]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[WorkLogAccountDT]" DisplayName="Filter Account Work Log With DONE" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[WorkLogAccountDT]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -258,7 +258,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <Assign DisplayName="Assign  Company Succesfully Work Row Count" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign  Company Succesfully Work Row Count" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TotalNumCompaniesDone]</OutArgument>
       </Assign.To>
@@ -266,7 +266,7 @@
         <InArgument x:TypeArguments="x:Int32">[workLogCompanyDT.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Account  Succesfully Work Row Count" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Assign Account  Succesfully Work Row Count" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[TotalNumAccountsDone]</OutArgument>
       </Assign.To>
@@ -274,7 +274,7 @@
         <InArgument x:TypeArguments="x:Int32">[WorkLogAccountDT.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Succesfully count Message" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Number of Work that is done successfully: &quot; + TotalNumCompaniesDone.ToString]">
+    <ui:LogMessage DisplayName="Log Succesfully count Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Number of Work that is done successfully: &quot; + TotalNumCompaniesDone.ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -282,7 +282,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:LogMessage DisplayName="Log Total count Message" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Total companies that bot work on: &quot;+TotalNumCompaniesTreated.ToString]">
+    <ui:LogMessage DisplayName="Log Total count Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Total companies that bot work on: &quot;+TotalNumCompaniesTreated.ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -290,8 +290,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ReadTextFile Content="[TemplateMail]" DisplayName="Read Mail Message" FileName="Data\Mail_Templates\02_JobReportMessage.txt" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:MultipleAssign DisplayName="Replace Name in Mail Message body" sap:VirtualizedContainerService.HintSize="384,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:ReadTextFile Content="[TemplateMail]" DisplayName="Read Mail Message" FileName="Data\Mail_Templates\02_JobReportMessage.txt" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadTextFile>
+    <ui:MultipleAssign DisplayName="Replace Name in Mail Message body" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -330,11 +337,11 @@
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <do:Send_Mail_via_Outlook DisplayName="Send Report Mail" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="Send_Mail_via_Outlook_1" MailAttachments="[{JobReportFilePath}]" MailMessage="[TemplateMail]" MailRecipientCc="[in_Config(&quot;ReportEmailCc&quot;).ToString]" MailRecipientTo="[in_Config(&quot;ReportEmailTo&quot;).ToString]" MailSubject="[JobReportSubjectMail]" RobotMailAccount="[in_Config(&quot;RobotEmailAddress&quot;).ToString]" />
+    <do:Send_Mail_via_Outlook DisplayName="Send Report Mail" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Send_Mail_via_Outlook_1" MailAttachments="[{JobReportFilePath}]" MailMessage="[TemplateMail]" MailRecipientCc="[in_Config(&quot;ReportEmailCc&quot;).ToString]" MailRecipientTo="[in_Config(&quot;ReportEmailTo&quot;).ToString]" MailSubject="[JobReportSubjectMail]" RobotMailAccount="[in_Config(&quot;RobotEmailAddress&quot;).ToString]" />
   </Sequence>
 </Activity>
