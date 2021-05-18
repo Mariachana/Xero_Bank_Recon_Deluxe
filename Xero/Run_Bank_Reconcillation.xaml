@@ -1,13 +1,16 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Run_Bank_Reconcillation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Run_Bank_Reconcillation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Sysfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_WorkLogFilePath" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Run_Bank_Reconcillation.in_WorkLogFilePath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Run_Bank_Reconcillation.in_WorkLogFilePath>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>723,1888</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>706,1988</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Run_Bank_Reconcillation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -176,7 +179,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:ReadRange AddHeaders="True" DataTable="[CompaniesToTreatDT]" DisplayName="Read WorkLog - Companies" sap:VirtualizedContainerService.HintSize="598,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[SheetNameWorkLogCompanies]" WorkbookPath="[In_WorkLogFilePath]">
+    <ui:ReadRange AddHeaders="True" DataTable="[CompaniesToTreatDT]" DisplayName="Read WorkLog - Companies" sap:VirtualizedContainerService.HintSize="598,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[SheetNameWorkLogCompanies]" WorkbookPath="[in_WorkLogFilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -262,24 +265,12 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Treat_Single_Company.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sysfig">
-                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Sysfig" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CompanyName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_WorkLogFilePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsTreatedDT">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="AccountsTreatedDT" />
-                          </InArgument>
-                          <InOutArgument x:TypeArguments="x:Int32" x:Key="io_CurrentAccountExcelRowNumber">
-                            <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="CurrentAccountExcelRowNumber" />
-                          </InOutArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sysfig">[in_Sysfig]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_CompanyName">[CompanyName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkLogFilePath">[in_WorkLogFilePath]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AccountsTreatedDT">[AccountsTreatedDT]</InArgument>
+                          <InOutArgument x:TypeArguments="x:Int32" x:Key="io_CurrentAccountExcelRowNumber">[CurrentAccountExcelRowNumber]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
