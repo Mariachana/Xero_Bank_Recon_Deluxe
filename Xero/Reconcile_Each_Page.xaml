@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1499,5427</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1499,5629</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -104,7 +104,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="This Process Recocile Each Statment Line with the Following Rule:&#xA;1. If a transaction item has an ‘Ok’ button, the bot will confirm that two out of following three items match before clicking the button:   &#xA;         i. The Name of the payer or payee&#xA;         ii. The Reference number&#xA;         iii. The Amount&#xA;2. If no two details match exactly or the transaction item does not have an ‘Ok’ button, the bot will perform a ‘Find &amp; Match’ using the Reference Number (or Name if Ref # returns a nil value):&#xA;          i. If there is a corresponding record in Xero with the exact amount, the bot clicks ‘Reconcile’&#xA;          ii. if the amount in the Bank is less than the amount in Xero, and their references match, then split and reconcile and clicks reconcile&#xA;          iii. If there is a corresponding record in Xero and if there is a difference between the amount, the bot will leave a note for the supervisor. However, if there is already a comment in ‘Discuss’, the bot will not overwrite the existing comment!&#xA;3. If no transaction is matched exactly and there is already a comment in ‘Discuss’, the bot will ignore the transaction and will not overwrite the comment.&#xA;           i. If there is no corresponding record in Xero or the transaction doesn’t meet any of the business rules above, the bot will leave a note (e.g. awaiting invoice, no invoice, etc.).  &#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="1509,5362" sap2010:WorkflowViewState.IdRef="Sequence_118">
+  <Sequence sap2010:Annotation.AnnotationText="This Process Recocile Each Statment Line with the Following Rule:&#xA;1. If a transaction item has an ‘Ok’ button, the bot will confirm that two out of following three items match before clicking the button:   &#xA;         i. The Name of the payer or payee&#xA;         ii. The Reference number&#xA;         iii. The Amount&#xA;2. If no two details match exactly or the transaction item does not have an ‘Ok’ button, the bot will perform a ‘Find &amp; Match’ using the Reference Number (or Name if Ref # returns a nil value):&#xA;          i. If there is a corresponding record in Xero with the exact amount, the bot clicks ‘Reconcile’&#xA;          ii. if the amount in the Bank is less than the amount in Xero, and their references match, then split and reconcile and clicks reconcile&#xA;          iii. If there is a corresponding record in Xero and if there is a difference between the amount, the bot will leave a note for the supervisor. However, if there is already a comment in ‘Discuss’, the bot will not overwrite the existing comment!&#xA;3. If no transaction is matched exactly and there is already a comment in ‘Discuss’, the bot will ignore the transaction and will not overwrite the comment.&#xA;           i. If there is no corresponding record in Xero or the transaction doesn’t meet any of the business rules above, the bot will leave a note (e.g. awaiting invoice, no invoice, etc.).  &#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="1509,5564" sap2010:WorkflowViewState.IdRef="Sequence_118">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="PayeeDetailsDT" />
       <Variable x:TypeArguments="x:String" Name="FindMatchRowID" />
@@ -140,13 +140,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1467,5078" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1467,5280" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1433,4862" sap2010:WorkflowViewState.IdRef="Sequence_153">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1433,5064" sap2010:WorkflowViewState.IdRef="Sequence_153">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,20 +171,20 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:FindChildren>
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Statement Line" sap:VirtualizedContainerService.HintSize="1391,4622" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[itemsToReconcile]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Statement Line" sap:VirtualizedContainerService.HintSize="1391,4824" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[itemsToReconcile]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="For Each Statement Line Body" sap:VirtualizedContainerService.HintSize="1355,4487" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                  <Sequence DisplayName="For Each Statement Line Body" sap:VirtualizedContainerService.HintSize="1355,4689" sap2010:WorkflowViewState.IdRef="Sequence_152">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Each Statement Line Sequence" sap:VirtualizedContainerService.HintSize="1313,4393" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                    <Sequence DisplayName="Each Statement Line Sequence" sap:VirtualizedContainerService.HintSize="1313,4595" sap2010:WorkflowViewState.IdRef="Sequence_151">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -212,7 +212,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:GetAttribute>
-                      <Sequence DisplayName="Get Payee ID and Details" sap:VirtualizedContainerService.HintSize="1271,418" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                      <Sequence DisplayName="Get Payee ID and Details" sap:VirtualizedContainerService.HintSize="1271,620" sap2010:WorkflowViewState.IdRef="Sequence_119">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="Payee_Details_DIV_ID" />
                         </Sequence.Variables>
@@ -222,7 +222,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get ID Attribute of Payee Details" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_34">
+                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get ID Attribute of Payee Details" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="GetAttribute_34">
                           <ui:GetAttribute.Result>
                             <OutArgument x:TypeArguments="x:String">[Payee_Details_DIV_ID]</OutArgument>
                           </ui:GetAttribute.Result>
@@ -238,12 +238,12 @@
                           </ui:GetAttribute.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:GetAttribute>
-                        <ui:FindChildren Children="[PayeeDetails]" DisplayName="Find Children Paye Details" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="FindChildren_13" Scope="FIND_CHILDREN">
+                        <ui:FindChildren Children="[PayeeDetails]" DisplayName="Find Children Paye Details" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindChildren_13" Scope="FIND_CHILDREN">
                           <ui:FindChildren.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="40b21ef7-0849-42af-b6d1-a818f6fb1aae" InformativeScreenshot="d0bccd6ad4a2081a27946dcd90c67299" Selector="[&quot;&lt;webctrl parentid='&quot;+Payee_Details_DIV_ID+&quot;' tag='DIV' class='details' /&gt;&quot;]">
                               <ui:Target.TimeoutMS>
@@ -256,23 +256,23 @@
                           </ui:FindChildren.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:FindChildren>
-                        <uix:NGetText DisplayName="Get Payee Name" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_19" InUiElement="[PayeeDetails(1)]">
+                        <uix:NGetText DisplayName="Get Payee Name" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="NGetText_19" InUiElement="[PayeeDetails(1)]">
                           <uix:NGetText.Text>
                             <OutArgument x:TypeArguments="x:String">[PayeeName]</OutArgument>
                           </uix:NGetText.Text>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NGetText>
-                        <uix:NGetText DisplayName="Get Payee Description" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_20" InUiElement="[PayeeDetails(2)]">
+                        <uix:NGetText DisplayName="Get Payee Description" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NGetText_20" InUiElement="[PayeeDetails(2)]">
                           <uix:NGetText.Text>
                             <OutArgument x:TypeArguments="x:String">[PayeeDescrip]</OutArgument>
                           </uix:NGetText.Text>
@@ -369,7 +369,7 @@
                         <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                         <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Payee Name Into Field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" Text="[PayeeName]">
                           <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="738, 478, 126, 19" ElementType="InputBox" FriendlyName="'INPUT searchNameText'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='searchNameText' tag='INPUT' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAXCAYAAADHqJcNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABtSURBVGhD7dKxDYAwDERRps7MtEwQ8BUoQWICvydd5dL/OK85zYRg2RbCGMOabP177Q2hjvTxjUEITQmBEAIhBEIIhBAIIRBCIIRACIEQAiEEQgiEEAghEEIgfkOo1dF6bP17bQvB+k4I9mzOGysKcN7h+rfoAAAAAElFTkSuQmCC" InformativeScreenshot="15f592543931ebf619c88efb719b96b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation | Demo Company (UK)' /&gt;" SearchSteps="Selector, Image">
+                            <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="738, 478, 126, 19" ElementType="InputBox" FriendlyName="'INPUT searchNameText'" FullSelectorArgument="[selector]" FuzzySelectorArgument="&lt;webctrl id='searchNameText' tag='INPUT' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAXCAYAAADHqJcNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABtSURBVGhD7dKxDYAwDERRps7MtEwQ8BUoQWICvydd5dL/OK85zYRg2RbCGMOabP177Q2hjvTxjUEITQmBEAIhBEIIhBAIIRBCIIRACIEQAiEEQgiEEAghEEIgfkOo1dF6bP17bQvB+k4I9mzOGysKcN7h+rfoAAAAAElFTkSuQmCC" InformativeScreenshot="15f592543931ebf619c88efb719b96b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector, Image">
                               <uix:TargetAnchorable.Anchors>
                                 <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                   <uix:Target DesignTimeRectangle="738, 463, 126, 11" ElementType="Text" FriendlyName="'Search by'" FullSelectorArgument="&lt;webctrl aaname='Search by name or reference' parentid='ext-gen83' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Search by name or reference' parentid='ext-gen83' tag='LABEL' type='' check:text='Search by name or reference' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAPCAYAAAAoLRf7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ5SURBVFhH7VY7bkJBDMxp3yVA4goUSJwhRcqkREpBkYaGMn2UNifY2F7P2t5nQEpAItEWI3j2+jee93n4/CplYGAIYUAwhDAgGEIYEAQh7DZTmSZgVR7f4+FfY78ti6eP3Me45P9nOD6thOt7mNmEQEuYNgdzvj+XxfK5HHF9DQwhBOw2N7jZfggTwpnFQ7lBvXy+PT2mst6TjRe5rGf5ehbH/g3B23ytzE82E+ihrKdt2bkYroGaDOlDztVrq/NRHpfbssZTj3K2/jA310KcvykA79cYqx+XGu2+n9q/cZP7ZQaKFy64l6S3fHaeU8+1njJbRPxGCMvVgE4g/PqQJe+JSMRhWX5pkssNxf/Zj1yZ8Ly/LR2/6u8WJITC1vo4aF1Cq1PJ8GSZQLAM9KskB6Gy30iEf34u+vk/OBOfmxtPhNzv+8l7499+9lM26zHmAs58LGoAJ2viqKhJvcoIsgC6m1GQB0JDgPdz/kQI5jeieJD1Hgtz5wnVp9euZvjeaUIAATGX1HmjWJwHQv9dv47kVt/B7B1PgtpHne+U39XjuYKf0NfW2bN+4rcfY85jEwIn8EuoA1BDTaEWxAjvNyVlJoQWp8S/XBaCka9C5P+Si/pL+rhIRutD55E47ccLoXsizMF+iwFfGfHwwx7ueAdwmPs9P3lvp2bvd/DqbScQngi9clCEk/f2YKP3ujTd3dH+jNiD3w+qYD8tCDFGTr1rsmEyMkRQmmPi7wIRwCUh0H8fR5jVC3lr76G+Q7TzIi0vYu1myvwdP0lv6ezKVT2H/N7GmIvqzKvhnhAXN3B9/AEh6N3SXhkDt8AfeSIM3BpDCAOEUr4Btat5AgCxX08AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
