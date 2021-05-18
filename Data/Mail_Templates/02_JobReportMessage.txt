@@ -1,6 +1,6 @@
 Hello Bot SuperVisor,
 
-This is to inform you that I have finished running the Bank Reconciliation. Numberofcompanies Companies Were Treated and TreatedCompanies was Successful  
+This is to inform you that I have finished running the Bank Reconciliation. Numberofcompanies Companies Were Treated and TreatedCompanies was Successful, TreatedAccount Accounts was Treated successful out of NumberofAccount Accounts.
 
 Please find attached the report (or work log) file for the job; and do have a lovely day ahead. Thank you.
 

@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>761,1005</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723,1005</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Logout_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
