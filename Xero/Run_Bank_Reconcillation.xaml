@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>706,1988</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723,1903</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Run_Bank_Reconcillation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -90,7 +90,7 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. This process run Bank Recon for each orgainisation configured and skip the one with status DONE&#xA;2. Update the Organisation that run successful with DONE&#xA;3. Update the Oragniastion that encounter error and move to the next one&#xA;" DisplayName="Run_Bank_Reconcillation" sap:VirtualizedContainerService.HintSize="640,1823" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. This process run Bank Reconcillation for each orgainisation configured and skip the one with status DONE if   there the bot resume a pending task&#xA;2. Update the Work Log that run successful with DONE&#xA;3. Update the Work Log that encounter error and move to the next one&#xA;" DisplayName="Run_Bank_Reconcillation" sap:VirtualizedContainerService.HintSize="640,1838" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="CompaniesToTreatDT" />
       <Variable x:TypeArguments="x:Int32" Name="CurrentCompanyExcelRowNumber" />
