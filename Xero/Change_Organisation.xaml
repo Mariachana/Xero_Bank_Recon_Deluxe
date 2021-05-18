@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1590,3991</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1969,3891</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Change_Organisation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -89,7 +89,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="1. This process Check if the orgainsation to select is currently selected on the dashboard .&#xA;2.  Check if less than three orgainsation or  more &#xA;3. Select the orgainsation based on output of 1 and 2&#xA;" DisplayName="Change_Oraganisation" sap:VirtualizedContainerService.HintSize="1600,3826" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence sap2010:Annotation.AnnotationText="1. This process Check if the orgainsation to select is currently selected on the dashboard .&#xA;2.  Check if less than three orgainsation or  more &#xA;3. Select the orgainsation based on output of 1 and 2&#xA;" DisplayName="Change_Oraganisation" sap:VirtualizedContainerService.HintSize="1979,3826" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="CompanyNameFound" />
       <Variable x:TypeArguments="s:String[]" Name="Array" />
@@ -107,35 +107,35 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Delay DisplayName="Delay 3s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1558,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Page" sap:VirtualizedContainerService.HintSize="1558,3600" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[NAppOpenMode.Never]" Version="V1">
+    <Delay DisplayName="Delay 3s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1937,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Page" sap:VirtualizedContainerService.HintSize="1937,3600" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[NAppOpenMode.Never]" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="When Logged In (Dashboard is Visible)" sap:VirtualizedContainerService.HintSize="1524,3384" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
+          <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="When Logged In (Dashboard is Visible)" sap:VirtualizedContainerService.HintSize="1903,3384" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
             <ui:OnUiElementAppear.Body>
-              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Xgo Log in Page" sap:VirtualizedContainerService.HintSize="1490,3208" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="a2003f29dc2ada3e0a52875e7360eb6e" Selector="&lt;html app='chrome.exe' title='Xero |*' /&gt;">
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Xgo Log in Page" sap:VirtualizedContainerService.HintSize="1869,3208" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="606ff5f32b91b5ed0bacfc1b810eb81e" Selector="&lt;html app='chrome.exe' title='Xero |*' /&gt;">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="To Select Orgainsation" sap:VirtualizedContainerService.HintSize="1456,3062" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Sequence DisplayName="To Select Orgainsation" sap:VirtualizedContainerService.HintSize="1835,3062" sap2010:WorkflowViewState.IdRef="Sequence_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Select Orgaisation To Reconcile" sap:VirtualizedContainerService.HintSize="1414,2970" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <Sequence DisplayName="Select Orgaisation To Reconcile" sap:VirtualizedContainerService.HintSize="1793,2970" sap2010:WorkflowViewState.IdRef="Sequence_21">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="GetThe Current Company" sap:VirtualizedContainerService.HintSize="1372,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="GetThe Current Company" sap:VirtualizedContainerService.HintSize="1751,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9173f517-1d0a-41ed-854e-3674918cb2bf" InformativeScreenshot="6cd35e0f1ae8be2d106a79beb1cd25a1" Selector="&lt;webctrl tag='SPAN' class='xnav-appbutton--text' parentid='header' /&gt;&#xA;">
                               <ui:Target.TimeoutMS>
@@ -156,7 +156,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:GetValue>
-                        <If Condition="[not (CurrentCompanyName = in_Organisation_Name)]" DisplayName="Condition To Select Company Name" sap:VirtualizedContainerService.HintSize="1372,2732" sap2010:WorkflowViewState.IdRef="If_14">
+                        <If Condition="[not (CurrentCompanyName = in_Organisation_Name)]" DisplayName="Condition To Select Company Name" sap:VirtualizedContainerService.HintSize="1751,2732" sap2010:WorkflowViewState.IdRef="If_14">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -164,16 +164,16 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Company Name Not On  Dashboard" sap:VirtualizedContainerService.HintSize="1336,2556" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence DisplayName="Company Name Not On  Dashboard" sap:VirtualizedContainerService.HintSize="1715,2556" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ClickType="Single" DisplayName="Click The Company On Dashboard" sap:VirtualizedContainerService.HintSize="1294,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                              <uix:NClick ClickType="Single" DisplayName="Click The Company On Dashboard" sap:VirtualizedContainerService.HintSize="1673,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
                                 <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="20, 121, 186, 25" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAqCAYAAAAQ/d9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASnSURBVHhe7Z09bhRBEIWdch2uwAkIgBvAATaAjANAQICILAeQERAQIo1kETm2pQ2RLDkgsUzgwNkwPf1b1VXd07szs2vptfTJbE//VFe917NEe3Ly7qIHADQgdgIAdMROAIAO+fDmR3/y8nN/8vwjAMBg/GB8kfqEGEaaBACgxgn/wBsGAB3jj8w00kAAQASmAaARmAaARmAaABqBaQBoBKYBoBGYBoBGYBoAGoFpAGgEpgGgkb1N0932ervtT6U5R81539278EN7jOdYj83VQ9/fX/cb8/nsur8bMnZ3dS6OzZ+7fPv5jNMbk3//3I7ddvm4VZnLNNJB7IEf+u4sf3aU+Avg5pL0+8IdvFjHyGiCpMYzmsbnnazF9zsES5om3tqP4KauFNsWEG8ciq1vLur9TSMaJn3GLrZVWdY0A+Jzb6bYyHOX2G132W/tY9vGRLG5wg01fl1I24QEV00xxHI67L1Jbzj/ZvKNxWLjGNZk48azujP6loqjOC9ZP45NG72Fw1qF/bSzj/1CfgNjfOzWn8E03jCqpsY1Dvi2Wdw0WZKcEdJi8DVCgZPEJAKKe7m1ElPYhKcJFfbLkG+7El6sMRZv5ii+IGhBEESk7PzRCPqYOI6KnRtAiiGLXayhzZsq/gHRVHuapmqYETencBm+/frbLlRpZpw0v8jipmHCtgXLbwlSbDHxuUHCPF84Ny+LpTHGOoqgWNziWScItJijINJyDH59eS0+Vzj/GGceQ0QRrli70vNoms4ZxjS9VhbRsIzXX37ZxZRmnkvzqqxrGnqrkHFpkUTxC4UdIMlTC60IjD2fbBoxPgMVkhUsfRNMNw2bF/plIdtLJza/vrxWng8+ri5KJae7msa1bec/lwyr54jz4sNPs1jWTL80fhKLm4YkiSYob/uZRheVUuBAwcwS6plnNE3tYvHjQpNzJ4tLyCWZV8vXQCb+Sr/6PGoi5MSNKdVDPpfMs/ff+7t7myvz13yWxk1mcdOQ51RUKqSAnrppuKgidRFUi5AWW4zPMKNphFhsPzVHdiYWm7yWlMskdjWPKVpOK7nOzu/25QZx4zStVOvFeLr51v/5+2/8Kz1vYlnT5AkpC8L172oaTUjFGB3aXIf9+uOFJMfC1xDPKsZChWbn5aLNL4j8THZu7JfzLcfvx27NPopYI9oFqJjAkcejj7c5l+tGcjGRJ68+if3NLGkaKjSPK1h6YC7YXU3jP5M9hf003FnEPYaWGoqLMxQ/EYQo2MmmGVoSc7afyxGJ1fcNzY8TY1ByGfqHRuOTUYUrxWZwZ0/zWDaZj4drSDPsSsxlGrGpQvUCi40UaQ/TGILoXKNFqhGFExsXnYOfncW2n2lu+46cI3/zpCaxzexF89RmGn9BKOfljPsLcY1IeZTGlkwzEM6YzC3uuwJ7mwbMjiz0NWi9wQ9z44/GXnlPAkxzfBzMNLvc4Gvf+od+yxhgmuNjddOEr0DT/i/DGeNVv4rPiX2z7RLjrMA0ADQC0wDQCEwDQCMwDQCNwDQANALTANAITANAI5lp8KNOAOiIP+qEnw8EQEf8+UBvHLxxAIgYP6SGMZAPAIAKF/1/1bexrFlY5McAAAAASUVORK5CYII=" InformativeScreenshot="1c149fc6ec21e26a6b6f1671ee59cdd5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector">
+                                  <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="20, 121, 186, 25" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAqCAYAAAAQ/d9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASnSURBVHhe7Z09bhRBEIWdch2uwAkIgBvAATaAjANAQICILAeQERAQIo1kETm2pQ2RLDkgsUzgwNkwPf1b1VXd07szs2vptfTJbE//VFe917NEe3Ly7qIHADQgdgIAdMROAIAO+fDmR3/y8nN/8vwjAMBg/GB8kfqEGEaaBACgxgn/wBsGAB3jj8w00kAAQASmAaARmAaARmAaABqBaQBoBKYBoBGYBoBGYBoAGoFpAGgEpgGgkb1N0932ervtT6U5R81539278EN7jOdYj83VQ9/fX/cb8/nsur8bMnZ3dS6OzZ+7fPv5jNMbk3//3I7ddvm4VZnLNNJB7IEf+u4sf3aU+Avg5pL0+8IdvFjHyGiCpMYzmsbnnazF9zsES5om3tqP4KauFNsWEG8ciq1vLur9TSMaJn3GLrZVWdY0A+Jzb6bYyHOX2G132W/tY9vGRLG5wg01fl1I24QEV00xxHI67L1Jbzj/ZvKNxWLjGNZk48azujP6loqjOC9ZP45NG72Fw1qF/bSzj/1CfgNjfOzWn8E03jCqpsY1Dvi2Wdw0WZKcEdJi8DVCgZPEJAKKe7m1ElPYhKcJFfbLkG+7El6sMRZv5ii+IGhBEESk7PzRCPqYOI6KnRtAiiGLXayhzZsq/gHRVHuapmqYETencBm+/frbLlRpZpw0v8jipmHCtgXLbwlSbDHxuUHCPF84Ny+LpTHGOoqgWNziWScItJijINJyDH59eS0+Vzj/GGceQ0QRrli70vNoms4ZxjS9VhbRsIzXX37ZxZRmnkvzqqxrGnqrkHFpkUTxC4UdIMlTC60IjD2fbBoxPgMVkhUsfRNMNw2bF/plIdtLJza/vrxWng8+ri5KJae7msa1bec/lwyr54jz4sNPs1jWTL80fhKLm4YkiSYob/uZRheVUuBAwcwS6plnNE3tYvHjQpNzJ4tLyCWZV8vXQCb+Sr/6PGoi5MSNKdVDPpfMs/ff+7t7myvz13yWxk1mcdOQ51RUKqSAnrppuKgidRFUi5AWW4zPMKNphFhsPzVHdiYWm7yWlMskdjWPKVpOK7nOzu/25QZx4zStVOvFeLr51v/5+2/8Kz1vYlnT5AkpC8L172oaTUjFGB3aXIf9+uOFJMfC1xDPKsZChWbn5aLNL4j8THZu7JfzLcfvx27NPopYI9oFqJjAkcejj7c5l+tGcjGRJ68+if3NLGkaKjSPK1h6YC7YXU3jP5M9hf003FnEPYaWGoqLMxQ/EYQo2MmmGVoSc7afyxGJ1fcNzY8TY1ByGfqHRuOTUYUrxWZwZ0/zWDaZj4drSDPsSsxlGrGpQvUCi40UaQ/TGILoXKNFqhGFExsXnYOfncW2n2lu+46cI3/zpCaxzexF89RmGn9BKOfljPsLcY1IeZTGlkwzEM6YzC3uuwJ7mwbMjiz0NWi9wQ9z44/GXnlPAkxzfBzMNLvc4Gvf+od+yxhgmuNjddOEr0DT/i/DGeNVv4rPiX2z7RLjrMA0ADQC0wDQCEwDQCMwDQCNwDQANALTANAITANAI5lp8KNOAOiIP+qEnw8EQEf8+UBvHLxxAIgYP6SGMZAPAIAKF/1/1bexrFlY5McAAAAASUVORK5CYII=" InformativeScreenshot="1c149fc6ec21e26a6b6f1671ee59cdd5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard*' /&gt;" SearchSteps="Selector, FuzzySelector">
                                     <uix:TargetAnchorable.Anchors>
                                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                         <uix:Target DesignTimeRectangle="215, 111, 82, 45" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl aaname='Dashboard' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Dashboard' tag='A' type='' check:text='Dashboard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH8AAABICAYAAADfwioGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALaSURBVHhe7ZsxbtwwEEX3aOlyA1/ETQ6zx3BrpE3h2t0WbrcxtrGbBRRoI5FD8UnapRMg2v8HeID9SVHD+UMKLrz79v2hM5rYfGFsvjC73Y9fnREFRaMBikYDFI0GKBoNUDQaoGg0QNFogKLRAEWjAYpGAxSNBigaDVA0GqBoNEDRaICi0QBFowGKRgMUjQYoGg1QNBqgaDRA0WiAotEARaMBikYDFJs5dq/dQnyeukd87u/weDhf+Z6c5+sLjf9f7I9DsscjjjeDYjMr5l/i3D0/0bNfx+bfCIrNLBT16dS9D2P/6gaw+TeCYjMrRX35GEYnpz82xhDvh7fyWbpVJiaX5k/mF4WLeb51z5/DL33MNE5aO8VHt4d5yagU5byY4z6smeo1qUVfh/swP4wnc8H4MXIDgPFjhILkwp5xzavW66NogElzFFE2cW38GLkB6ibqYxhfqMUltm1+LuRoxFiwbEwo9rjZVJRQbLhFYmFxvWRqND+czLRmyJ80WjPlSOut5fiH3Dyc092ZH6lOTtrs9KROPhsDubCheFEH88s868abvXLB2ER1gsn8MseY02xTbNt82GDs7GnEzc5eibmItclz+nyeZaEXmrW6jULjVHGb+cs5lWNfAsVmVsyvCpbnZ2Pq01dTFno0psX80tT2k59NDXtfuvYnOS412h2YD0aH05zmxxM+bhav2NqoFvPnvq9jPmhqfPewZjIovDtpV5kf53NOmzF/PmYMpEibXZq3Xthl8yGK5697d2FSFdeZP/9pG2LT5mPy5TOXKy8Vsvwu5pMxRmykNvOb/86HeeWcPve89tqnKTFpgP65jVz7ZlOgaDRA0WiAotEARaMBikYDFI0GKBoNUDQaoGg0QNFogKLRAEWjAYpGAxSNBigaDVA0GqBoNEDRaICi0QBFowGKRgMUjQYoGg1QNBqMP/w8nIwQNl8Ymy+MzRfm4vvw/58Ouei63zZ1nhc8p6AnAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
@@ -188,9 +188,9 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </uix:NClick>
-                              <ui:UiElementExists DisplayName="Check If Change Organisation Exist" Exists="[ChangeOrganisationExist]" sap:VirtualizedContainerService.HintSize="1294,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                              <ui:UiElementExists DisplayName="Check If Change Organisation Exist" Exists="[ChangeOrganisationExist]" sap:VirtualizedContainerService.HintSize="1673,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                                 <ui:UiElementExists.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="931e9ff6-c7d0-4ca7-9deb-a00ef7b08aea" InformativeScreenshot="a646977e2b07103c67784df1e551c6f6" Selector="&lt;webctrl aaname='Change organisation' tag='BUTTON' /&gt;" TimeoutMS="3000">
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="931e9ff6-c7d0-4ca7-9deb-a00ef7b08aea" InformativeScreenshot="e92814a6face99fc05b8656d221c03e0" Selector="&lt;webctrl aaname='Change organisation' tag='BUTTON' /&gt;" TimeoutMS="3000">
                                     <ui:Target.WaitForReady>
                                       <InArgument x:TypeArguments="ui:WaitForReady" />
                                     </ui:Target.WaitForReady>
@@ -203,7 +203,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:UiElementExists>
-                              <If Condition="[ChangeOrganisationExist]" DisplayName="Check If Exixt" sap:VirtualizedContainerService.HintSize="1294,2112" sap2010:WorkflowViewState.IdRef="If_13">
+                              <If Condition="[ChangeOrganisationExist]" DisplayName="Check If Exixt" sap:VirtualizedContainerService.HintSize="1673,2112" sap2010:WorkflowViewState.IdRef="If_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -211,7 +211,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="More Than Three Company Registered" sap:VirtualizedContainerService.HintSize="376,761" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="More Than Three Company Registered" sap:VirtualizedContainerService.HintSize="797,1187" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="NoCompanyNameFound" />
                                     </Sequence.Variables>
@@ -221,74 +221,67 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NClick ClickType="Single" DisplayName="Click Change organisation" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+                                    <uix:NClick ClickType="Single" DisplayName="Click Change organisation" sap:VirtualizedContainerService.HintSize="755,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
                                       <uix:NClick.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="26, 283, 338, 45" ElementType="Button" FriendlyName="'Change organisation'" FullSelectorArgument="&lt;webctrl aaname='Change organisation' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Change organisation' tag='BUTTON' type='button' check:text='Change organisation' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVYAAAAxCAYAAACBKYHVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAWcSURBVHhe7dxPbiNFFMfx3ABuAjfgDnMBuAHb2cEi21mwZMUqG1iAxI6ZjBCDIqQgITEBzYJ/ERIhxgxCjIEFUuPX9aq7Xv3p7tiVtJ18P1JJ43ZXdVU77+dyYs3BYvF78+jx5w0AYHOSo5Knq9XfzcHlYtk8fPxEnwIAbEJyVPL0xYvVOlgvl80nxwQrAGxDclTytA3WXy9/I1gBYEuSo5KnQbB+pk8BADYhOSp5+lcXrI8IVgDYhuQowQoAFRGsAFAZwQoAlRGsAFAZwQoAlRGsAFAZwQoAlRGsAFAZwQoAlRGsAFDZTgbre18u9F8AsH92LlglVA/uf9G88cH3zR///KdHAWB/7OSO9fX3v2vD9dV3viZcAeydWYL1q19Wzac//DnYJFSrh+vZ03bMsN07XuqT3nlzmD2Oa9e+PqfNUe3fBC2eNfcePGsu9CGvMa7bLMH62rvfJgE31LYP12Vz9EDGiopWCk6uQdHdaidH8WsMXK+9CNY3P/5Je26mLaz7T5sTfWxouPZBSrDeNgQrbtoswTpGdqf+VwFbf0MgCc7Ysjk5WzYXizhYz3WX61sazBfHp8Hz0qIdcffR1o3ZnXd0rif0XPj7tr5W9mNxNM7kj81j/dzzh8e6g5fm5+h39dq6+xKtwc5fWni/9BPDuo+9Z6X7pY+7TxpBS+5dvLbwnLT/4Zkcd33sz0TpXK/vk7xWegbg7VywVg1Vob9XtUUypC/Uvo8WXbDrcQFhiyrZGeu1c8f6ovYFnesXhIwPuCBY3BxGwrXYL1yfX3Mu6HJzteOlO8L4fvX9xtft5xCPIeJAzARk5o00nV9+HHNOsnZ/jzL3zYwN7ECwSnjKH7O8D7953v7w1vou66TwMbRYop2RDdK4MJUWdVd4Wpw21DUw/PjZc3xI9/NOQruVCx8rDRUR98utuTB2HNTxmr3RkFwz58SPC/c4kHtzE/Gax4J1cJzoNR/+uQCcWYPVf2dVfuca+vH5v/qv7W0arHFBD43jCrBvNljjPjZYS4Vpr5cvajFc2PZaIdsvt+b8fRiaS3c9eb5tfv6FeQwGa3hfJwSXD3zfrhCs6fNqQtAP33/cVbMFqw/VV2p+nSqnLY7MjqpoqID6onePfSHr8eyONQiOlt292V1RIFPU/fXiVirscgiOBquuJQ3WNCTtG4uOaeY/FKwj90vPScZvRfdFx4+DcjhY7ethZF6DsZ8LQMwSrG89/LkthJffPm0+Wn/0z32PNWzbyRdEyIbbhAIqhc4GwWoDrmcLdnwNeYVAWxsN1uI13fFuzDgcPbP2LYI11O1K3bxLb0pXC9bc88rMJ38/CFbk3Hiwylenuh3GxLatUgG2fLF2RT+hgAph4s65WrCWxnJz7vuWir8YCiq/9niXlltzfI6K7lcpWOz8KwXrWn+9wvx88AfH03tk1zu8hqE3n3Jf3G03Hqzyh6qX1jtVKaipbXtahHEBRDsgZ0IBJWG81o11xWDt5hbMQQPHHMtdsxDKRqafW0vYL79mP35/3M81OJacs9bN369d+10pWDUgTR9772x4O+5Yf45w6x16jfVaYfgm65rwcwGoGw9WEYZrrb/+T+EDJWxxoUwuoCBIXZPCjcLABIUXB6vTBYIfq+0bhoHQ8bs2taDjfvlx03uxFq3Tf4/VnKsh1DVZm/Zz520SrCKet46tzwp739z1hl4rN5/cevs3Ddfie5u/RwQrcmYJVjFXuO6LtmCjENkNLmAGd8nAHTdbsAr5NoB8K0D+N6s7K961CbPbm8vQzjre8QIIzRqs4lq/arUncr+i2I0d4fhHcQCp2YMVAG4bghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaAyghUAKiNYAaCyPlhXzf9zukr+HQ4pUQAAAABJRU5ErkJggg==" InformativeScreenshot="413aaa67dee2c2b419a2919c7c44798d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="19, 209, 225, 30" ElementType="Button" FriendlyName="'Change organisation'" FullSelectorArgument="&lt;webctrl aaname='Change organisation' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Change organisation' tag='BUTTON' type='button' check:text='Change organisation' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOUAAAAiCAYAAACgJB4aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOFSURBVHhe7ZnPihNBEIfzBvoG+gi+gb6BsC/gI3jdmx5y0EMOHvUiCLl49Si5xmjUgBuWCB4MgoGwILgrXoS2q7p6pmomLUlMJ73s74OB2Z7p6j/U1zVkO+fnF270buIAAIeFPCQfWco3bz9KMwDgUJCHLOVPSAlAEZCH5KNI+UGaAQCHgjyElAAUBKQEoDAgJQCFASkBKAxICUBhQEoACgNSAlAYe5Hy+fulu/Xkk/vx+4+0AABS7K1S3nv5BWICsAZZpOwcj5IXibkJw77uf+KG0u6mJ/bvK8XcdY/Hrr+UPzdhOXNHsm+Lwdh1+vPQDoohi5QPXn9rXXdffGax6FN2Pc5cv+dF1EmjRbzSUv4H2LfiySJlk8n3X+76w/EGQnrUia5ZLOf+8jeSXN1YSXsztwivSN9YXUfuaHDGzaEy+D7xmRK+qsg9/9wfBt2pPDCxUsksBwi/U1cwPR7PQcXq+vZ6zrq/v2I7rVHmY9p1pTTzU9Vz5R5QP2nza7eVUj2r1hnmxXOVZ9W+gGxkk5IEvP/qK9+TlBsJ6eGE0aI1YSljkoSEigmzmPqEC7eS2CEOx4wJx0krSayrhyRzHbcpWftzj4WO7SqWGU8SPB4Q3Ceuzx80w2p71JgcK46v11i/Q3HsoRPmkdqD1vz4fTs3buf35bCIMat2kJMsUpKA13xlJBm3RifSKlRyVSe6PsV1pZA4NqlsYteyqViNahOuOGakOXYd14ynDwGitT4RgMeQ95JrbIqr+mhW7IGOWUup4hHcj94JY0ZZ23MGOdi5lCQkJcHNxxN359lp61q7YlaJYakqQzJhRbL4TCXSdlK252CxY28lJa8lJdyqNTYk8vBYSr7UHuiYkLJMskl549HE3X562rrW/4wNCVHL4tFJmkxYJa7cx0RKSWlicULq5F/1WWcxUjeTvnrfJriel0l27r++lBQnrlvHSe1Ba348bzu3et623cwTZGPnUhI7+XxlQlJwBeArJqgnmbAefhb6dAd1tUtK6eHEpT67/qFHJ7GKZX/oCfJz//6sXktyjXruqq8aO7UH1Ry8jLWUhI5jx4SU+yWLlASJSf8KuXRw0qrkzgQfAvorAAAhm5SXClVV6Koqw075R9UHQAEpASgMSAlAYUBKAAoDUgJQGJASgMKAlAAUBqQEoDAgJQCFASkBKAxICUBhQEoACiNIeeH+At355aXjJXheAAAAAElFTkSuQmCC" InformativeScreenshot="9921c3be31dbc63828d68f6fa0f3b504.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard*' /&gt;" SearchSteps="Selector, Image">
                                           <uix:TargetAnchorable.Anchors>
-                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                              <uix:Target DesignTimeRectangle="27, 208, 201, 38" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' type='' aaname='' check:text='Demo Company (UK)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAqCAYAAAAQ/d9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATWSURBVHhe7Z0/ixRJGMb3A9xH8Bv4ETYyE80vuEhTwWgTb4MLjkuOSwQ1EAYEQcTgkj243WTvwtvdZC8aBCNNXAMRFEzL7q6/b9XzdnfN9PSM8BT8YKe6/rz1vs9TPRvN3t6DM0MIqQB2EkJ0YCchREd8uPPc7N38xezdOCCEtLR+aH2R+kQYBk0ihEjjhD/4hiFEp/VHYRo0kBASoWkIqYSmIaQSmoaQSmgaQiqhaQiphKYhpBKahpBKaBpCKqFpCKlkbdMcXxm9XZkFmrPTHJnTLy780L7Hc8zHweVXY768MQft5ydvzKcmY58uj+DY8rnLt5+fsXjb5t8/t2OXx+W4WZnKNOgg9sBfzemT8tlO4i+At+ei3xdu68XaRToTJDWe0DQ+72KtfL9tsEnTxFv7O7ipB4ptC8g3jsTWtxT1+qaBhkmfZRfbrGzWNA3wuTdTbOK5S+zy+Nws7WPbukRlc8EN1X1dSNuIBA+aooll0ex9kN5w/s3kWxaLjaNZMxvXndWd0bdUHL3zkvXj2LTJWzis1bOfdvauH+Q30MWX3foTmMYbRtVUt0b922b//iPYX83GTVMkyRkhLUa+RihwkphEQHEvt1ZiCpvwNKFgvwJ82/XhxRpj8WaO4guCBoIQIs3OH42gj4njpNhzA6AYithhDW3eVPE3QFOtaZpBw3S4ORVvm+t3/zDvP342v7/8Bz6vYuOmyYRtC1beEqLYMPGlQcI8Xzg3r4ilMsZhFEFlccOzjhBob46CSPtj8OvjtfK54PxdnGUMEUW4sHZ9z6NpTp1h2qbXygINq3Dtx1/N63cf7MJNO1z8DceNZl7TyFtFjEuLBMUPCtsgkqcWWhFY9ny0aWB8LVJIVrDyTTDeNNm80I+FbC+d2Pz6eK0yH/m4YVEqOV3VNK4tj/3nPsPqOcr54dahOVtmyWnavYd/wvGj2LhpRJJkgsq2nml0USkFDvSYGaGeeULTDF0sflxoOHdYXCCXYt5QvhoK8Q/0q8+jJkJO3Ji+euBzlZxcvG5Xgu2n317AOYNs3DTiuRSViiigZ9g0uagiwyIYLEJabBhfy4SmAbHYfmmO4kxZbHgtlMskdjWPKVpOB3JdnN/tmxvEjdO0Mlivhlf//m/X6Gm3f17Aub1s1jRlQvoF4fpXNY0mpN4YHdpch/3644WEY8nXgGeFsUih2XmlaMsLojyTnRv7cb5x/H5s921GEWtEuwAVEzjKePTxNue4biIXgKd//WeenVyMYv/+Y7iGyiZNI4XmcQVLD5wLdlXT+M9iT7CfhjsL3KNpqaFycYbiJ4KAgh1tmqYlMRf7uRyJWH1f0/w4GIOSy9DfNBkfRhUuiq3FnT3NY7/JfDy5hjTDzsRUpoFNFaoXWGyiSGuYpiWIzjVZpCGicGLLRefIz57Ftp5prsypOEf55klNYlu7l8xTnWn8BaGcN6fbH8TVgfKIxvaZpiGcMZnbu+8MrG0aMjlY6HNQe4Nv58bvjD3zngKaZvfYmmlWucHnvvW3/ZZpoWl2j9lNE74CjftfJqeLV/0qPiX2zbZKjJNC0xBSCU1DSCU0DSGV0DSEVELTEFIJTUNIJTQNIZUUpuGPOhGiA3/UiT8fSIgO/PlAbxy+cQiJtH5IDdMiPhBCBjgz3wAi4WVX+dB/kAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="20, 159, 71, 25" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl parentid='header' tag='DIV' class='xnav-appbutton--body' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='header' tag='DIV' class='xnav-appbutton--body' type='' aaname='' check:text='Demo Company (UK)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAdCAYAAAB15PSfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL1SURBVGhD7Zu9biIxEMd5tSuuuDZvcTUproryEhQnUdwrhCYVShsqOppcQ0dHgUTreGyPPTMeL15YTsppLP3E7vhrPv42KcJs9uvdGcZFVKNhSPLDzxc3+/HsZt/mhhG1AJqohGIiMSSgiUoo2kDDMKEYXZhQjC5MKEYXJhSjCxOK0cVYoSz3rmq7V33sfVm59Sk5AO304ebquK/Bcn9264V/fj34YA5uSfvBhvFV/SkPoR+exdypuEoo+02xLT7c0Zv+rVg2buf3PG5X2Tbfnr+uWHzxcyyjhBJFQvMQ6kHrMxU3C8UTipRtsYixpVMC9hTsGm8kCDwEDY2MY/Mbp4MmLrPy63nSe/ApNVaEiz7E5O+28QBAK4egcYuFdQ9uh33Mjn6mdasDJW6B4E+PUBSRJPLtJOyU74+/VXuTKYRSAhHJqALEviSGsA4NmAffuiVUHyg5mfAe9wr7jvChLox/Xmzckgmafl1gcch+4RnngvCEANBOY2S+Exvz5+zn+A8lNwDkTRMQ8vD0x0924VPrV5lWKCn5rNFkYgK4oGDNGBhJPoxrJJffYDWyP6/f5QO3Vz6hkELriy08wxjNZ2lnaxEbE0r0Va0FjmnkB0WCrVssUwilFEYmlcAScJtQWOIyZc27CSUVKfZJu75u6PO+wPplTULqz+9azDCGCQX7wQdlXblmQooEW5dYbhZKCAydjUnK/TQoFuBwkeJzKrh6vcYE4bhqbCuZI3xoxsD26BAKvPu/GVTBA/Krpyr+gD/5nR9OyAXNDQBieNv+bXJRLFcJRbQSFBADjY0EMJDMUiQ5v5HcAB3nmxBUEE5qee0uH6L9eCrzS3xkz73/oxjnDwqlvuE4MJ4XGg9fbjQ2KRRPjJXuL9abgrFC+f9JQhEn8npq4VT44k+2H4isKcobMKFIphRKuoHEbVcz1S1wp9sEMKEYXZhQjC5MKEYXJhSjCxOK0UUlFPsvfEOi/he+/a7HoIAW1N/1GMYQqtEwGO/uE6AeMOkJX+LDAAAAAElFTkSuQmCC" SearchSteps="Selector" />
                                             </scg:List>
                                           </uix:TargetAnchorable.Anchors>
                                         </uix:TargetAnchorable>
                                       </uix:NClick.Target>
                                     </uix:NClick>
-                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search Comapany Name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" Text="[in_Organisation_Name + &quot;[k(enter)]&quot;]">
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search Comapany Name" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="755,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" Text="[in_Organisation_Name + &quot;[k(enter)]&quot;]">
                                       <uix:NTypeInto.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="82, 272, 236, 68" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' aaname='Search organisations' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPAAAABICAYAAADIzHiKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASjSURBVHhe7dg9bttAEIZhXTNdLpCruEvnOxgu3RuBARspUgaGj5AgQNI5YLjc4f7MzlKUKMWa5H2ALSSRy/2Zj6S9e339PdBoNJ9t9/PXr4FGo/lsu08PTwONRvPZdgMAtwgw4BgBBhwjwIBjBBhwjAADjhFgwDECDDhGgAHHCDDgGAEGHCPAgGMEGHCMAAOOEWDAMQIMOEaAAccIMOAYAQYcI8CAYwQYcIwAA44RYMAxAgw4RoABxwgw4BgBBhzbHuDnu+Hd+w91+/g4fJefL8Y0zuvh/pt8/ie9DDfj+l89/JDPp/JjuP9Yrl34PO7z7Yt8xlvZFODvD9dGKGRzLy0s/0WAz4S1u1gbArx0tz/Xk2ADivB4rN3F2hzgQ16j4hNbXrM75zbH6MKZiuluuC+Ou3kufyvOLfufi/D5cbjqHdM1v1Xklq45ib9fPTzGNQkt/Rkh6zS38Xpfb8vfo33zjr/fDV+/1eOvb5LtjXO6VnG89edNc0y4jvxm75n9Cr28v/mc+rj2xrBmzIg2vULnhc4b3hOPLTervQGkIpXPQTyv+G4OaScAOViq/xTuoi8Jw/KbgvRTXk/6yuflgFfBnsNWzDGtWdHfmnmnom/Oa+c8j6tZOyN40zHVWsoxzXzLvev0Y+1v6ievUbtueYxrxoxs4z+x8qaUrQlELygShFiAdfElcm4q0uqcWefc6VgpBvO8/cVhhSuoC036qYJgFWOgC3vdvOM49NNKn1t+XlH4em1nOrD6s+57sZ/5e3uN6r5XjBmVjQEuSWGmljfcLr6gU7yjWPy5peJoimnUK6CSdV6vqArTOKzf9xZerxiXr9mbt30jWQpwfkLba6/JuOS61TnN2qm5mWsbrLihqHMPGzNOGODCtCnjJkiR5k2xW1twockGmk9gtblyvdMHeOH3qj+rOOWG1gS4vSmsmXc8pvM0T9fQgR5JP03/or5hSP96rZq1q+cbx1b3G60NsNq7PWNGdnSA7YLKYmHE3/cdO5FNq4oveNMA/4Un8Mp5Hx3gihw/j7u3bnqtmrVTczPXNjgywBU1ZlSOfwL3Ck9Uha9DOCu/72xkLNzie7NYOoXb9K/PU2Ey9J4u5Q2qV5z1MTMpyPmaK+d9mgCPiustz634vlk7Nd9eLVRzOzbAozXH/Kc2vULPRaY3ziqMpih0eKQIqg2evys3rymmSBd80795njrGpAIXSEHleXeK05hTXIfiu5XzPjzA9tyqm0ozj5F8V62VjKdZ22Ze5frqdeuskVwv9r1izKhs/xu4KLbUOoGYQ5aa3symr7BpqkjNIIpUfNLK/s3z7IJpyXGp704/ej4TGX8xpqkgy2NXzPvwAAd63KGpPvSahbWQ8Zj9TGtlz1fvb3Vj6K1RFeBgxZiRnOefWFgQC7QubuA4BPiMrFe/+JTqvEEAByLAZ8XrIM6LAAOOEWDAMQIMOEaAAccIMOAYAQYcI8CAYwQYcIwAA44RYMAxAgw4RoABxwgw4BgBBhwjwIBjBBhwjAADjhFgwDECDDhGgAHHCDDgGAEGHCPAgGMEGHCMAAOOEWDAsd3T5y8DjUbz2L4MfwBV/iWOXiQf/gAAAABJRU5ErkJggg==" InformativeScreenshot="64edff7b6d865eca56b715f6a086e7f2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard | Demo Company (UK)' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
+                                        <uix:TargetAnchorable BrowserURL="https://go.xero.com/Dashboard/" DesignTimeRectangle="57, 201, 158, 45" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' aaname='Search organisations' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPAAAABICAYAAADIzHiKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASjSURBVHhe7dg9bttAEIZhXTNdLpCruEvnOxgu3RuBARspUgaGj5AgQNI5YLjc4f7MzlKUKMWa5H2ALSSRy/2Zj6S9e339PdBoNJ9t9/PXr4FGo/lsu08PTwONRvPZdgMAtwgw4BgBBhwjwIBjBBhwjAADjhFgwDECDDhGgAHHCDDgGAEGHCPAgGMEGHCMAAOOEWDAMQIMOEaAAccIMOAYAQYcI8CAYwQYcIwAA44RYMAxAgw4RoABxwgw4BgBBhzbHuDnu+Hd+w91+/g4fJefL8Y0zuvh/pt8/ie9DDfj+l89/JDPp/JjuP9Yrl34PO7z7Yt8xlvZFODvD9dGKGRzLy0s/0WAz4S1u1gbArx0tz/Xk2ADivB4rN3F2hzgQ16j4hNbXrM75zbH6MKZiuluuC+Ou3kufyvOLfufi/D5cbjqHdM1v1Xklq45ib9fPTzGNQkt/Rkh6zS38Xpfb8vfo33zjr/fDV+/1eOvb5LtjXO6VnG89edNc0y4jvxm75n9Cr28v/mc+rj2xrBmzIg2vULnhc4b3hOPLTervQGkIpXPQTyv+G4OaScAOViq/xTuoi8Jw/KbgvRTXk/6yuflgFfBnsNWzDGtWdHfmnmnom/Oa+c8j6tZOyN40zHVWsoxzXzLvev0Y+1v6ievUbtueYxrxoxs4z+x8qaUrQlELygShFiAdfElcm4q0uqcWefc6VgpBvO8/cVhhSuoC036qYJgFWOgC3vdvOM49NNKn1t+XlH4em1nOrD6s+57sZ/5e3uN6r5XjBmVjQEuSWGmljfcLr6gU7yjWPy5peJoimnUK6CSdV6vqArTOKzf9xZerxiXr9mbt30jWQpwfkLba6/JuOS61TnN2qm5mWsbrLihqHMPGzNOGODCtCnjJkiR5k2xW1twockGmk9gtblyvdMHeOH3qj+rOOWG1gS4vSmsmXc8pvM0T9fQgR5JP03/or5hSP96rZq1q+cbx1b3G60NsNq7PWNGdnSA7YLKYmHE3/cdO5FNq4oveNMA/4Un8Mp5Hx3gihw/j7u3bnqtmrVTczPXNjgywBU1ZlSOfwL3Ck9Uha9DOCu/72xkLNzie7NYOoXb9K/PU2Ey9J4u5Q2qV5z1MTMpyPmaK+d9mgCPiustz634vlk7Nd9eLVRzOzbAozXH/Kc2vULPRaY3ziqMpih0eKQIqg2evys3rymmSBd80795njrGpAIXSEHleXeK05hTXIfiu5XzPjzA9tyqm0ozj5F8V62VjKdZ22Ze5frqdeuskVwv9r1izKhs/xu4KLbUOoGYQ5aa3symr7BpqkjNIIpUfNLK/s3z7IJpyXGp704/ej4TGX8xpqkgy2NXzPvwAAd63KGpPvSahbWQ8Zj9TGtlz1fvb3Vj6K1RFeBgxZiRnOefWFgQC7QubuA4BPiMrFe/+JTqvEEAByLAZ8XrIM6LAAOOEWDAMQIMOEaAAccIMOAYAQYcI8CAYwQYcIwAA44RYMAxAgw4RoABxwgw4BgBBhwjwIBjBBhwjAADjhFgwDECDDhGgAHHCDDgGAEGHCPAgGMEGHCMAAOOEWDAsd3T5y8DjUbz2L4MfwBV/iWOXiQf/gAAAABJRU5ErkJggg==" InformativeScreenshot="1ac5d796e4516d9624db62888ed6e68b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Dashboard*' /&gt;" SearchSteps="Selector, FuzzySelector, Image">
                                           <uix:TargetAnchorable.Anchors>
-                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                              <uix:Target DesignTimeRectangle="27, 208, 201, 38" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' type='' aaname='' check:text='Demo Company (UK)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAqCAYAAAAQ/d9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATWSURBVHhe7Z0/ixRJGMb3A9xH8Bv4ETYyE80vuEhTwWgTb4MLjkuOSwQ1EAYEQcTgkj243WTvwtvdZC8aBCNNXAMRFEzL7q6/b9XzdnfN9PSM8BT8YKe6/rz1vs9TPRvN3t6DM0MIqQB2EkJ0YCchREd8uPPc7N38xezdOCCEtLR+aH2R+kQYBk0ihEjjhD/4hiFEp/VHYRo0kBASoWkIqYSmIaQSmoaQSmgaQiqhaQiphKYhpBKahpBKaBpCKqFpCKlkbdMcXxm9XZkFmrPTHJnTLy780L7Hc8zHweVXY768MQft5ydvzKcmY58uj+DY8rnLt5+fsXjb5t8/t2OXx+W4WZnKNOgg9sBfzemT8tlO4i+At+ei3xdu68XaRToTJDWe0DQ+72KtfL9tsEnTxFv7O7ipB4ptC8g3jsTWtxT1+qaBhkmfZRfbrGzWNA3wuTdTbOK5S+zy+Nws7WPbukRlc8EN1X1dSNuIBA+aooll0ex9kN5w/s3kWxaLjaNZMxvXndWd0bdUHL3zkvXj2LTJWzis1bOfdvauH+Q30MWX3foTmMYbRtVUt0b922b//iPYX83GTVMkyRkhLUa+RihwkphEQHEvt1ZiCpvwNKFgvwJ82/XhxRpj8WaO4guCBoIQIs3OH42gj4njpNhzA6AYithhDW3eVPE3QFOtaZpBw3S4ORVvm+t3/zDvP342v7/8Bz6vYuOmyYRtC1beEqLYMPGlQcI8Xzg3r4ilMsZhFEFlccOzjhBob46CSPtj8OvjtfK54PxdnGUMEUW4sHZ9z6NpTp1h2qbXygINq3Dtx1/N63cf7MJNO1z8DceNZl7TyFtFjEuLBMUPCtsgkqcWWhFY9ny0aWB8LVJIVrDyTTDeNNm80I+FbC+d2Pz6eK0yH/m4YVEqOV3VNK4tj/3nPsPqOcr54dahOVtmyWnavYd/wvGj2LhpRJJkgsq2nml0USkFDvSYGaGeeULTDF0sflxoOHdYXCCXYt5QvhoK8Q/0q8+jJkJO3Ji+euBzlZxcvG5Xgu2n317AOYNs3DTiuRSViiigZ9g0uagiwyIYLEJabBhfy4SmAbHYfmmO4kxZbHgtlMskdjWPKVpOB3JdnN/tmxvEjdO0Mlivhlf//m/X6Gm3f17Aub1s1jRlQvoF4fpXNY0mpN4YHdpch/3644WEY8nXgGeFsUih2XmlaMsLojyTnRv7cb5x/H5s921GEWtEuwAVEzjKePTxNue4biIXgKd//WeenVyMYv/+Y7iGyiZNI4XmcQVLD5wLdlXT+M9iT7CfhjsL3KNpqaFycYbiJ4KAgh1tmqYlMRf7uRyJWH1f0/w4GIOSy9DfNBkfRhUuiq3FnT3NY7/JfDy5hjTDzsRUpoFNFaoXWGyiSGuYpiWIzjVZpCGicGLLRefIz57Ftp5prsypOEf55klNYlu7l8xTnWn8BaGcN6fbH8TVgfKIxvaZpiGcMZnbu+8MrG0aMjlY6HNQe4Nv58bvjD3zngKaZvfYmmlWucHnvvW3/ZZpoWl2j9lNE74CjftfJqeLV/0qPiX2zbZKjJNC0xBSCU1DSCU0DSGV0DSEVELTEFIJTUNIJTQNIZUUpuGPOhGiA3/UiT8fSIgO/PlAbxy+cQiJtH5IDdMiPhBCBjgz3wAi4WVX+dB/kAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector" />
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="20, 159, 134, 25" FriendlyName="'Demo Company (UK)'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div' parentid='header' tag='DIV' type='' aaname='' check:text='Demo Company (UK)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM0AAAAqCAYAAAAQ/d9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATWSURBVHhe7Z0/ixRJGMb3A9xH8Bv4ETYyE80vuEhTwWgTb4MLjkuOSwQ1EAYEQcTgkj243WTvwtvdZC8aBCNNXAMRFEzL7q6/b9XzdnfN9PSM8BT8YKe6/rz1vs9TPRvN3t6DM0MIqQB2EkJ0YCchREd8uPPc7N38xezdOCCEtLR+aH2R+kQYBk0ihEjjhD/4hiFEp/VHYRo0kBASoWkIqYSmIaQSmoaQSmgaQiqhaQiphKYhpBKahpBKaBpCKqFpCKlkbdMcXxm9XZkFmrPTHJnTLy780L7Hc8zHweVXY768MQft5ydvzKcmY58uj+DY8rnLt5+fsXjb5t8/t2OXx+W4WZnKNOgg9sBfzemT8tlO4i+At+ei3xdu68XaRToTJDWe0DQ+72KtfL9tsEnTxFv7O7ipB4ptC8g3jsTWtxT1+qaBhkmfZRfbrGzWNA3wuTdTbOK5S+zy+Nws7WPbukRlc8EN1X1dSNuIBA+aooll0ex9kN5w/s3kWxaLjaNZMxvXndWd0bdUHL3zkvXj2LTJWzis1bOfdvauH+Q30MWX3foTmMYbRtVUt0b922b//iPYX83GTVMkyRkhLUa+RihwkphEQHEvt1ZiCpvwNKFgvwJ82/XhxRpj8WaO4guCBoIQIs3OH42gj4njpNhzA6AYithhDW3eVPE3QFOtaZpBw3S4ORVvm+t3/zDvP342v7/8Bz6vYuOmyYRtC1beEqLYMPGlQcI8Xzg3r4ilMsZhFEFlccOzjhBob46CSPtj8OvjtfK54PxdnGUMEUW4sHZ9z6NpTp1h2qbXygINq3Dtx1/N63cf7MJNO1z8DceNZl7TyFtFjEuLBMUPCtsgkqcWWhFY9ny0aWB8LVJIVrDyTTDeNNm80I+FbC+d2Pz6eK0yH/m4YVEqOV3VNK4tj/3nPsPqOcr54dahOVtmyWnavYd/wvGj2LhpRJJkgsq2nml0USkFDvSYGaGeeULTDF0sflxoOHdYXCCXYt5QvhoK8Q/0q8+jJkJO3Ji+euBzlZxcvG5Xgu2n317AOYNs3DTiuRSViiigZ9g0uagiwyIYLEJabBhfy4SmAbHYfmmO4kxZbHgtlMskdjWPKVpOB3JdnN/tmxvEjdO0Mlivhlf//m/X6Gm3f17Aub1s1jRlQvoF4fpXNY0mpN4YHdpch/3644WEY8nXgGeFsUih2XmlaMsLojyTnRv7cb5x/H5s921GEWtEuwAVEzjKePTxNue4biIXgKd//WeenVyMYv/+Y7iGyiZNI4XmcQVLD5wLdlXT+M9iT7CfhjsL3KNpqaFycYbiJ4KAgh1tmqYlMRf7uRyJWH1f0/w4GIOSy9DfNBkfRhUuiq3FnT3NY7/JfDy5hjTDzsRUpoFNFaoXWGyiSGuYpiWIzjVZpCGicGLLRefIz57Ftp5prsypOEf55klNYlu7l8xTnWn8BaGcN6fbH8TVgfKIxvaZpiGcMZnbu+8MrG0aMjlY6HNQe4Nv58bvjD3zngKaZvfYmmlWucHnvvW3/ZZpoWl2j9lNE74CjftfJqeLV/0qPiX2zbZKjJNC0xBSCU1DSCU0DSGV0DSEVELTEFIJTUNIJTQNIZUUpuGPOhGiA3/UiT8fSIgO/PlAbxy+cQiJtH5IDdMiPhBCBjgz3wAi4WVX+dB/kAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector" />
                                             </scg:List>
                                           </uix:TargetAnchorable.Anchors>
                                         </uix:TargetAnchorable>
                                       </uix:NTypeInto.Target>
                                     </uix:NTypeInto>
-                                    <ui:UiElementExists DisplayName="Check If Exist" Exists="[NoCompanyNameFound]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                                    <ui:UiElementExists DisplayName="Check If Exist" Exists="[NoCompanyNameFound]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                                       <ui:UiElementExists.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fdd24493-d150-4821-b4a1-b95061e5e5fc" InformativeScreenshot="e693c4c5f17eee89d77726c03300eff6" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' idx='2' tag='svg' /&gt;" TimeoutMS="3000">
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fdd24493-d150-4821-b4a1-b95061e5e5fc" InformativeScreenshot="2cf4944264ce95a4d0e73e323c527b18" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' idx='*' tag='svg' /&gt;" TimeoutMS="3000">
                                           <ui:Target.WaitForReady>
                                             <InArgument x:TypeArguments="ui:WaitForReady" />
                                           </ui:Target.WaitForReady>
                                         </ui:Target>
                                       </ui:UiElementExists.Target>
                                     </ui:UiElementExists>
-                                    <If Condition="[not NoCompanyNameFound]" DisplayName="Check if Company Is Found" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_9">
+                                    <If Condition="[not NoCompanyNameFound]" DisplayName="Check if Company Is Found" sap:VirtualizedContainerService.HintSize="755,477" sap2010:WorkflowViewState.IdRef="If_9">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <If.Then>
-                                        <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select Company From Dropdown" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                            <ui:Click.CursorPosition>
-                                              <ui:CursorPosition Position="Center">
-                                                <ui:CursorPosition.OffsetX>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:CursorPosition.OffsetX>
-                                                <ui:CursorPosition.OffsetY>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:CursorPosition.OffsetY>
-                                              </ui:CursorPosition>
-                                            </ui:Click.CursorPosition>
-                                            <ui:Click.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ae39925-619b-44a2-9716-17601d1c0b76" InformativeScreenshot="d3ef395f3d769cc28175797a671dc4d4" Selector="&lt;webctrl tag='A' class='xnav-verticalmenuitem--body xnav-menuitem-orgpractice' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;a' /&gt;">
-                                                <ui:Target.TimeoutMS>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:Target.TimeoutMS>
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
-                                              </ui:Target>
-                                            </ui:Click.Target>
-                                          </ui:Click>
-                                        </Sequence>
+                                        <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select Company From Dropdown" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ae39925-619b-44a2-9716-17601d1c0b76" InformativeScreenshot="98ce544c5f63c6aed7192fda79d4e589" Selector="&lt;webctrl tag='A' class='xnav-verticalmenuitem--body xnav-menuitem-orgpractice' css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ol&amp;gt;li&amp;gt;a' /&gt;">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:Click.Target>
+                                        </ui:Click>
                                       </If.Then>
                                       <If.Else>
                                         <Sequence DisplayName="Click Dashboard And Throw BRE Sequence" sap:VirtualizedContainerService.HintSize="376,320" sap2010:WorkflowViewState.IdRef="Sequence_29">
@@ -316,22 +309,22 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Only Three Company Registeed" sap:VirtualizedContainerService.HintSize="873,1955" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="2314e19b6b9ee7e63a1786be57e01283" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;">
+                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Only Three Company Registeed" sap:VirtualizedContainerService.HintSize="831,1955" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="329247a32f4421d299a160101d098d8e" Selector="&lt;html app='chrome.exe' title='Xero | Dashboard *' /&gt;">
                                     <ui:BrowserScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1809" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,1809" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:FindChildren Children="[FoundElement]" DisplayName="Get All the Name Company Name" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+                                          <ui:FindChildren Children="[FoundElement]" DisplayName="Get All the Name Company Name" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
                                             <ui:FindChildren.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1aa4dda5-dafb-4ecc-94a2-ea9f06750a04" InformativeScreenshot="12ab413c1e9db7b0f783c3dba2ef1a20" Selector="&lt;webctrl idx='2' tag='OL' /&gt;">
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1aa4dda5-dafb-4ecc-94a2-ea9f06750a04" InformativeScreenshot="2e14d456f615f9aa587f72ef381ad06a" Selector="&lt;webctrl idx='2' tag='OL' /&gt;">
                                                 <ui:Target.TimeoutMS>
                                                   <InArgument x:TypeArguments="x:Int32" />
                                                 </ui:Target.TimeoutMS>
@@ -347,7 +340,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:FindChildren>
-                                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="Checking The Company Name" sap:VirtualizedContainerService.HintSize="797,1054" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FoundElement]">
+                                          <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="Checking The Company Name" sap:VirtualizedContainerService.HintSize="755,1054" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FoundElement]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="ui:UiElement">
                                                 <ActivityAction.Argument>
@@ -446,7 +439,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:ForEach>
-                                          <If Condition="[in_Organisation_Name  = name or in_Organisation_Name  = &quot;Demo Company (UK)&quot;]" DisplayName="Seleect If Company Found " sap:VirtualizedContainerService.HintSize="797,477" sap2010:WorkflowViewState.IdRef="If_12">
+                                          <If Condition="[in_Organisation_Name  = name or in_Organisation_Name  = &quot;Demo Company (UK)&quot;]" DisplayName="Seleect If Company Found " sap:VirtualizedContainerService.HintSize="755,477" sap2010:WorkflowViewState.IdRef="If_12">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -454,35 +447,28 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Company" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                  <ui:Click.CursorPosition>
-                                                    <ui:CursorPosition Position="Center">
-                                                      <ui:CursorPosition.OffsetX>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetX>
-                                                      <ui:CursorPosition.OffsetY>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetY>
-                                                    </ui:CursorPosition>
-                                                  </ui:Click.CursorPosition>
-                                                  <ui:Click.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f05cc39d-c344-467c-b771-1cafdad45bf4" InformativeScreenshot="a26671eac8ac48a3cd83d803271dcef0" Selector="[&quot;&lt;webctrl aaname='&quot;+in_Organisation_Name+&quot;' tag='A' class='xnav-verticalmenuitem--body xnav-menuitem-orgpractice' parentid='header' /&gt;&quot;]">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:Click.Target>
-                                                </ui:Click>
-                                              </Sequence>
+                                              <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Company" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                <ui:Click.CursorPosition>
+                                                  <ui:CursorPosition Position="Center">
+                                                    <ui:CursorPosition.OffsetX>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:CursorPosition.OffsetX>
+                                                    <ui:CursorPosition.OffsetY>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:CursorPosition.OffsetY>
+                                                  </ui:CursorPosition>
+                                                </ui:Click.CursorPosition>
+                                                <ui:Click.Target>
+                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f05cc39d-c344-467c-b771-1cafdad45bf4" InformativeScreenshot="dfe05736264e94612db7b9414da4dc36" Selector="[&quot;&lt;webctrl aaname='&quot;+in_Organisation_Name+&quot;' tag='A' class='xnav-verticalmenuitem--body xnav-menuitem-orgpractice' parentid='header' /&gt;&quot;]">
+                                                    <ui:Target.TimeoutMS>
+                                                      <InArgument x:TypeArguments="x:Int32" />
+                                                    </ui:Target.TimeoutMS>
+                                                    <ui:Target.WaitForReady>
+                                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                    </ui:Target.WaitForReady>
+                                                  </ui:Target>
+                                                </ui:Click.Target>
+                                              </ui:Click>
                                             </If.Then>
                                             <If.Else>
                                               <Sequence DisplayName="Click Dashboard And Throw BRE Sequence" sap:VirtualizedContainerService.HintSize="376,320" sap2010:WorkflowViewState.IdRef="Sequence_24">
