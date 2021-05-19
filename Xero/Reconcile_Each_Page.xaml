@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2004,6559</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2004,6510</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -96,7 +96,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -105,7 +104,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="This Process Recocile Each Statment Line with the Following Rule:&#xA;1. If a transaction item has an ‘Ok’ button, the bot will confirm that two out of following three items match before clicking the button:   &#xA;         i. The Name of the payer or payee&#xA;         ii. The Reference number&#xA;         iii. The Amount&#xA;2. If no two details match exactly or the transaction item does not have an ‘Ok’ button, the bot will perform a ‘Find &amp; Match’ using the Reference Number (or Name if Ref # returns a nil value):&#xA;          i. If there is a corresponding record in Xero with the exact amount, the bot clicks ‘Reconcile’&#xA;          ii. if the amount in the Bank is less than the amount in Xero, and their references match, then split and reconcile and clicks reconcile&#xA;          iii. If there is a corresponding record in Xero and if there is a difference between the amount, the bot will leave a note for the supervisor. However, if there is already a comment in ‘Discuss’, the bot will not overwrite the existing comment!&#xA;3. If no transaction is matched exactly and there is already a comment in ‘Discuss’, the bot will ignore the transaction and will not overwrite the comment.&#xA;           i. If there is no corresponding record in Xero or the transaction doesn’t meet any of the business rules above, the bot will leave a note (e.g. awaiting invoice, no invoice, etc.).  &#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="2014,6494" sap2010:WorkflowViewState.IdRef="Sequence_118">
+  <Sequence sap2010:Annotation.AnnotationText="This Process Recocile Each Statment Line with the Following Rule:&#xA;1. If a transaction item has an ‘Ok’ button, the bot will confirm that two out of following three items match before clicking the button:   &#xA;         i. The Name of the payer or payee&#xA;         ii. The Reference number&#xA;         iii. The Amount&#xA;2. If no two details match exactly or the transaction item does not have an ‘Ok’ button, the bot will perform a ‘Find &amp; Match’ using the Reference Number (or Name if Ref # returns a nil value):&#xA;          i. If there is a corresponding record in Xero with the exact amount, the bot clicks ‘Reconcile’&#xA;          ii. if the amount in the Bank is less than the amount in Xero, and their references match, then split and reconcile and clicks reconcile&#xA;          iii. If there is a corresponding record in Xero and if there is a difference between the amount, the bot will leave a note for the supervisor. However, if there is already a comment in ‘Discuss’, the bot will not overwrite the existing comment!&#xA;3. If no transaction is matched exactly and there is already a comment in ‘Discuss’, the bot will ignore the transaction and will not overwrite the comment.&#xA;           i. If there is no corresponding record in Xero or the transaction doesn’t meet any of the business rules above, the bot will leave a note (e.g. awaiting invoice, no invoice, etc.).  &#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="2014,6345" sap2010:WorkflowViewState.IdRef="Sequence_118">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="PayeeDetailsDT" />
       <Variable x:TypeArguments="x:String" Name="FindMatchRowID" />
@@ -141,37 +140,54 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1972,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_79">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[in_Sisfig]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary (of String, object)]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_80">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[in_Sisfig("CurrencyCode")]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Object">["GBP"]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_81">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[in_Sisfig("MinorAdjustment")]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Object">["YES"]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
-    </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1972,6010" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1972,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,252" sap2010:WorkflowViewState.IdRef="Sequence_154">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_79">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[in_Sisfig]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary (of String, object)]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_80">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_Sisfig("CurrencyCode")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">["GBP"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_81">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Object">[in_Sisfig("MinorAdjustment")]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Object">["YES"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1972,5970" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -869,12 +885,12 @@ FirstOrDefault())]</InArgument>
                                   <Flowchart.StartNode>
                                     <x:Reference>__ReferenceID11</x:Reference>
                                   </Flowchart.StartNode>
-                                  <FlowDecision x:Name="__ReferenceID11" Condition="[ExactRowIndex &gt; -1]" DisplayName="Exact Match Found" sap:VirtualizedContainerService.HintSize="108,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
+                                  <FlowDecision x:Name="__ReferenceID11" Condition="[ExactRowIndex &gt; -1]" DisplayName="Exact Match Found" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <av:Point x:Key="ShapeLocation">250.5,16.5</av:Point>
-                                        <av:Size x:Key="ShapeSize">108,87</av:Size>
+                                        <av:Size x:Key="ShapeSize">107,87</av:Size>
                                         <av:PointCollection x:Key="TrueConnector">250.5,60 110,60 110,107</av:PointCollection>
                                         <av:PointCollection x:Key="FalseConnector">358.5,60 554,60 554,86.5</av:PointCollection>
                                       </scg:Dictionary>
@@ -1906,7 +1922,7 @@ FirstOrDefault())]</InArgument>
                                                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_147">
+                                                            <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="881,1738" sap2010:WorkflowViewState.IdRef="Sequence_147">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="x:String" Name="DiscussText" />
                                                                 <Variable x:TypeArguments="x:String" Name="TextAreaSelector" />
