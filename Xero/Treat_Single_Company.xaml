@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>723,809</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>753,945</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Treat_Single_Company_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -87,9 +87,10 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. This process Invoke Change Organisation Module &#xD;&#xA;2.  The Bot Filter out Account that is blacklisted &#xD;&#xA;3. The Treat Single Bank Account Module Is Invoke&#xA;" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="412,744" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. This process Invoke Change Organisation Module &#xA;2.  The Bot Filter out Account that is blacklisted &#xA;3. The Treat Single Bank Account Module Is Invoke&#xA;" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="412,780" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListBankAccountsName" />
       <Variable x:TypeArguments="sd:DataTable" Name="AccountsExclusionDT" />
@@ -112,10 +113,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:ReadRange AddHeaders="True" DataTable="[AccountsExclusionDT]" DisplayName="Read Exclusion Data" sap:VirtualizedContainerService.HintSize="370,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_ExclusionList&quot;).ToString]" WorkbookPath="[in_Config(&quot;ProcessDataExcelFilePath&quot;).ToString]">
+    <ui:ReadRange AddHeaders="True" DataTable="[AccountsExclusionDT]" DisplayName="Read Exclusion Data" sap:VirtualizedContainerService.HintSize="370,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_ExclusionList&quot;).ToString]" WorkbookPath="[in_Config(&quot;ExternalConfigPathFile&quot;).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

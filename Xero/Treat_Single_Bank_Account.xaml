@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Treat_Single_Bank_Account" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:df="clr-namespace:dipoleDIAMOND_Reuseables.FrameworkCustom;assembly=dipoleDIAMOND_Reuseables" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Treat_Single_Bank_Account" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:dd="clr-namespace:dipoleDIAMOND_Reuseables.DatatableCustom;assembly=dipoleDIAMOND_Reuseables" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_SisFig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -20,10 +20,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>753,2916</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>642,2916</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="45">
+    <scg:List x:TypeArguments="x:String" Capacity="90">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -69,6 +69,7 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>dipoleDIAMOND_Reuseables.DatatableCustom</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,6 +110,7 @@
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -256,14 +258,14 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:AnchorBase>
-              <Sequence DisplayName="Query Log History" sap:VirtualizedContainerService.HintSize="492,66" sap2010:WorkflowViewState.IdRef="Sequence_56">
+              <Sequence DisplayName="Query Log History" sap:VirtualizedContainerService.HintSize="526,429" sap2010:WorkflowViewState.IdRef="Sequence_56">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Initialize StatusResult " sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign DisplayName="Initialize StatusResult " sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[StatusResult]</OutArgument>
                   </Assign.To>
@@ -271,7 +273,7 @@
                     <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[in_AccountsTreatedDT IsNot Nothing AndAlso in_AccountsTreatedDT.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="484,238" sap2010:WorkflowViewState.IdRef="If_6">
+                <If Condition="[in_AccountsTreatedDT IsNot Nothing AndAlso in_AccountsTreatedDT.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="484,237" sap2010:WorkflowViewState.IdRef="If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -279,7 +281,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <df:Select_Value_from_ProcessConfig_DT DisplayName="Select Value from ProcessConfig DT" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Select_Value_from_ProcessConfig_DT_1" NeededFieldName="[in_Config(&quot;ColNameAccounts_Status&quot;).ToString]" NeededValue="[StatusResult]" PrimarySearchFieldName="[in_Config(&quot;ColNameAccounts_CompanyName&quot;).ToString]" PrimarySearchValue="[in_CompanyName]" SecondarySearchFieldName="[in_Config(&quot;ColNameAccounts_AccountName&quot;).ToString]" SecondarySearchValue="[in_BankAccount]" dtInput="[in_AccountsTreatedDT]" />
+                    <dd:DT_Select_Column_Value DisplayName="DT Select Column Value" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DT_Select_Column_Value_1" NeededFieldName="[in_Config(&quot;ColNameAccounts_Status&quot;).ToString]" NeededValue="[StatusResult]" PrimarySearchFieldName="[in_Config(&quot;ColNameAccounts_CompanyName&quot;).ToString]" PrimarySearchValue="[in_CompanyName]" SecondarySearchFieldName="[in_Config(&quot;ColNameAccounts_AccountName&quot;).ToString]" SecondarySearchValue="[in_BankAccount]" dtInput="[in_AccountsTreatedDT]" />
                   </If.Then>
                 </If>
               </Sequence>

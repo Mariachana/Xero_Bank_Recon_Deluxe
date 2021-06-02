@@ -1,7 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Discuss" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_XeroLoginUrl" Type="InArgument(x:String)" />
-    <x:Property Name="in_DiscussText" Type="InArgument(x:String)" />
     <x:Property Name="in_FindMatchDropDownID" Type="InArgument(x:String)" />
     <x:Property Name="in_MainRowID" Type="InArgument(x:String)" />
     <x:Property Name="in_Sisfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -18,7 +17,7 @@
   <this:Discuss.in_Sisfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
   </this:Discuss.in_Sisfig>
-  <sap:VirtualizedContainerService.HintSize>802,1378</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>747,1533</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -96,7 +95,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="602,1213" sap2010:WorkflowViewState.IdRef="Sequence_126">
+  <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="602,1368" sap2010:WorkflowViewState.IdRef="Sequence_126">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DiscussText" />
       <Variable x:TypeArguments="x:String" Name="TextAreaSelector" />
@@ -109,13 +108,13 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="560,1121" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="560,1276" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do  Discuss" sap:VirtualizedContainerService.HintSize="526,900" sap2010:WorkflowViewState.IdRef="Sequence_136">
+          <Sequence DisplayName="Do  Discuss" sap:VirtualizedContainerService.HintSize="526,1020" sap2010:WorkflowViewState.IdRef="Sequence_136">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -139,7 +138,7 @@
                       <OutArgument x:TypeArguments="x:String">[DiscussText]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[in_DiscussText]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[in_Sisfig("DiscussText").ToString]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_64">
@@ -160,15 +159,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <If Condition="[in_Sisfig(&quot;Discuss&quot;).ToString = &quot;YES&quot;]" DisplayName="If Discuss is To &quot;YES&quot;" sap:VirtualizedContainerService.HintSize="484,502" sap2010:WorkflowViewState.IdRef="If_26">
+            <If Condition="[in_Sisfig(&quot;Discuss&quot;).ToString = &quot;YES&quot;]" DisplayName="If Discuss is To &quot;YES&quot;" sap:VirtualizedContainerService.HintSize="484,620" sap2010:WorkflowViewState.IdRef="If_26">
               <If.Then>
-                <Sequence DisplayName="Discuss Sequence" sap:VirtualizedContainerService.HintSize="242,325" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                <Sequence DisplayName="Discuss Sequence" sap:VirtualizedContainerService.HintSize="376,442" sap2010:WorkflowViewState.IdRef="Sequence_134">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" DisplayName="Click Discuss" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_41" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick ClickType="Single" DisplayName="Click Discuss" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_41" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="893, 300, 62, 18" ElementType="Text" FriendlyName="'Discuss *'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen190' tag='A' type='' aaname='Discuss *' check:text='Discuss *' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAWCAYAAAB0S0oJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVFhH7ZhBagJBEEXnTDmEh/AEs/AO7lzOFdy48gRhVmEIQnARCBIIA9G1ZJt1ZUp/lzU9RSDaI4Sugo/0dBf2f/UZwYK8TuUgUALi+e1Ajy8fWYk9hxIQT6+f9PVNWYk9h3IQKAeBchCoG0AcaTWb0sPkosUGe5slletjdH5M7WhR7YznvyshiCU1su4uM5nTaq/P3EP8vRjGH2GMBKJTSEL43NdURpds13MkCNBUenjvlCqjr6mwHsDGPa5I4d1AiDE5w9NDD5tlkwYIs29WUyvrNBoNhBgQcyq2bCSYVz1mIuI+7J0Tod5FN2okELwexj2oqXhPJSJMWZ3l+Mcmz33qmQXzSiUEganFk4I5PUV5kXV7/fOX6ZcdSH427FMJSfhCTgTi/8tBQA4CchCQg4BMEO+H/s9dDmLPoQrrn5scVG/b3rqwSOUnoh+TKSiTqngLCgAAAABJRU5ErkJggg==" InformativeScreenshot="4d0cd13c022877aae62a4cc927b9ba31.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                     </uix:NClick.Target>
@@ -179,7 +178,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NGetText DisplayName="Get Text Area" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NGetText_29">
+                  <uix:NGetText DisplayName="Get Text Area" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_29">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="717, 442, 298, 40" ElementType="InputBox" FriendlyName="'TEXTAREA commentsTextb5…'" FullSelectorArgument="[TextAreaSelector]" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' aaname='' /&gt;" ImageBase64="" InformativeScreenshot="2618efd748935696d4108803390c7bfb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                     </uix:NGetText.Target>
@@ -188,12 +187,12 @@
                     </uix:NGetText.Text>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NGetText>
-                  <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_25">
+                  <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_25">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>

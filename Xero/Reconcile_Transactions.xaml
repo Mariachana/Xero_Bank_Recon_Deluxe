@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>753,2287</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>731,1773</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Reconcile_Matched_Transactions_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -85,7 +85,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. This process get all the page avaliable and navigate through all the page&#xA;2. invoke Reconcile Each Page module" DisplayName="Reconcile_Matched_Transactions" sap:VirtualizedContainerService.HintSize="530,2122" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. This process get all the page avaliable and navigate through all the page&#xA;2. invoke Reconcile Each Page module" DisplayName="Reconcile_Matched_Transactions" sap:VirtualizedContainerService.HintSize="530,1608" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="NumbeofRecon" />
     </Sequence.Variables>
@@ -95,7 +95,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,268" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,190" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -121,18 +121,18 @@
       </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="488,1680" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="488,1383" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Reconcile Matched" sap:VirtualizedContainerService.HintSize="454,1464" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Reconcile Matched" sap:VirtualizedContainerService.HintSize="454,1167" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="PageAvailable" />
               <Variable x:TypeArguments="x:Int32" Name="NumberofNext" />
@@ -143,34 +143,6 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Number Of Reconcile" sap:VirtualizedContainerService.HintSize="412,166" sap2010:WorkflowViewState.IdRef="NGetText_1">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="392, 426, 11, 10" ElementType="Text" FriendlyName="'18'" FullSelectorArgument="&lt;webctrl id='itemsToRecCount' tag='SPAN' aaname='*' innertext='*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='itemsToRecCount' tag='SPAN' type='' /&gt;" InformativeScreenshot="dafcd1742e596ea688c2ac2d4da4b21e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="346, 426, 60, 10" ElementType="Text" FriendlyName="'Reconcile (29)'" FullSelectorArgument="&lt;webctrl aaname='Reconcile*' parentid='frmMain' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Reconcile*' parentid='frmMain' tag='A' type='' check:text='Reconcile (29)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAUCAYAAAAEEYpkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIESURBVFhH7ZYNjsIgEIX3Tp7LXqXxJvUkxmOY9A4sWN4wPAaqqxvMLi+ZxELn72NK/HJDXTTAd9IA30kDfCcN8J30t8DfFjcdDu5wXNwal57V9eT9Q4zTNa68oqubQyxv8yUuRWXg1/O0JSVjp88RNfYq+Mu89aygl0wmt9ziZhByKst5ocbZ/0qywSOxBKVkn6qXwK9uOZa9ruc5PeNgBCL5CK8cMrhO51RVG7ycli4GyWB5klQc76fpLPxk0mb1Dh22GbfSuAZPfrr5TPBtXjGVL0x6SWyyqTfqaoNH0eKAwDERBxSAKD68rwGhQPr8BA49cx3VuBXw0Q+wcX9bV6c1lYUEdG3CUQ/n4P4fueP1BCBRBiC8txVSbawAR+/yPgGsA2uD3/ziXpBRB4TerUOBUEc5QPCrgS9rqU88n24QCi8svEMQtIyGswlrgm/EbYJPEAr7CXjVe/aOcNJW1vo4eP1Mn65VeAFBy/DLpvhXwVt+pbJBYCm4zatIvoB0pWxCLXtXjQCCAxJazYS1+FwADnshGSeu3PEmeK/duBZ4L+PA72v6GYIv7z0MnYZJi+vy2gHvpRJvAdGsNnUQaFaMYfO61x74IDPuDvigws+bBZ5j3WX1Gi3GEGZ3075J1teUgf/34gF4i+zrZ4AnyT+Xt8Dnfz1JA3wnDfCdNMB3kXPflupIu10xxrkAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NGetText.Target>
-              <uix:NGetText.Text>
-                <OutArgument x:TypeArguments="x:String">[NumbeOfRecon]</OutArgument>
-              </uix:NGetText.Text>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NGetText>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="412,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;The Number of Transaction to Reconcillation is &quot; +NumbeOfRecon]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:LogMessage>
             <uix:NGetText DisplayName="Get Number of Pages Available" sap:VirtualizedContainerService.HintSize="412,166" sap2010:WorkflowViewState.IdRef="NGetText_2">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=BD9E85E00478433DAE9F0B3C4F04BFE4" DesignTimeRectangle="384, 683, 5, 10" FriendlyName="'3'" FullSelectorArgument="&lt;webctrl id='mainPagerTotalPages' tag='STRONG' aaname='*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainPagerTotalPages' tag='STRONG' type='' /&gt;" InformativeScreenshot="3875fefa44e4108b2ec2c50e25246826.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector, FuzzySelector">

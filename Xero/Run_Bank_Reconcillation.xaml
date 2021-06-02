@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Run_Bank_Reconcillation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Run_Bank_Reconcillation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:dd="clr-namespace:dipoleDIAMOND_Reuseables.DatatableCustom;assembly=dipoleDIAMOND_Reuseables" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Sysfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -10,10 +10,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>723,1903</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>844,2074</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Run_Bank_Reconcillation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="36">
+    <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -50,10 +50,11 @@
       <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>dipoleDIAMOND_Reuseables.DatatableCustom</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -88,9 +89,10 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>dipoleDIAMOND_Reuseables</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. This process run Bank Reconcillation for each orgainisation configured and skip the one with status DONE if   there the bot resume a pending task&#xA;2. Update the Work Log that run successful with DONE&#xA;3. Update the Work Log that encounter error and move to the next one&#xA;" DisplayName="Run_Bank_Reconcillation" sap:VirtualizedContainerService.HintSize="640,1838" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. This process run Bank Reconcillation for each orgainisation configured and skip the one with status DONE if   there the bot resume a pending task&#xA;2. Update the Work Log that run successful with DONE&#xA;3. Update the Work Log that encounter error and move to the next one&#xA;" DisplayName="Run_Bank_Reconcillation" sap:VirtualizedContainerService.HintSize="640,1909" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="CompaniesToTreatDT" />
       <Variable x:TypeArguments="x:Int32" Name="CurrentCompanyExcelRowNumber" />
@@ -103,6 +105,8 @@
       <Variable x:TypeArguments="x:String" Name="CompanyStatus" />
       <Variable x:TypeArguments="x:String" Name="ColNameCompanyName" />
       <Variable x:TypeArguments="sd:DataTable" Name="AccountsTreatedDT" />
+      <Variable x:TypeArguments="x:String" Name="ColNameAccountName" />
+      <Variable x:TypeArguments="x:String" Name="ColNameAccountStatus" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -111,9 +115,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Assign WorkFlow Variables" sap:VirtualizedContainerService.HintSize="598,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Assign WorkFlow Variables" sap:VirtualizedContainerService.HintSize="598,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:Int32">[CurrentCompanyExcelRowNumber]</OutArgument>
@@ -146,12 +150,28 @@
               <InArgument x:TypeArguments="x:String">[in_Config("ColNameCompanies_CompanyName").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[ColNameAccountName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("ColNameAccounts_CompanyName").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[ColNameCompanyStatus]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">[in_Config("ColNameCompanies_Status").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[ColNameAccountStatus]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("ColNameAccounts_Status").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -174,34 +194,34 @@
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:ReadRange AddHeaders="True" DataTable="[CompaniesToTreatDT]" DisplayName="Read WorkLog - Companies" sap:VirtualizedContainerService.HintSize="598,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[SheetNameWorkLogCompanies]" WorkbookPath="[in_WorkLogFilePath]">
+    <ui:ReadRange AddHeaders="True" DataTable="[CompaniesToTreatDT]" DisplayName="Read WorkLog - Companies" sap:VirtualizedContainerService.HintSize="598,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="[SheetNameWorkLogCompanies]" WorkbookPath="[in_WorkLogFilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:ReadRange AddHeaders="True" DataTable="[AccountsTreatedDT]" DisplayName="Read WorkLog - Accounts" sap:VirtualizedContainerService.HintSize="598,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[Nothing]" SheetName="[SheetNameWorkLogAccounts]" WorkbookPath="[In_WorkLogFilePath]">
+    <ui:ReadRange AddHeaders="True" DataTable="[AccountsTreatedDT]" DisplayName="Read WorkLog - Accounts" sap:VirtualizedContainerService.HintSize="598,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[Nothing]" SheetName="[SheetNameWorkLogAccounts]" WorkbookPath="[In_WorkLogFilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CompaniesToTreatDT]" DisplayName="For Each Company..." sap:VirtualizedContainerService.HintSize="598,1081" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CompaniesToTreatDT]" DisplayName="For Each Company..." sap:VirtualizedContainerService.HintSize="598,1457" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <TryCatch DisplayName="Try to Run Bank Recon..." sap:VirtualizedContainerService.HintSize="564,961" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try to Run Bank Recon..." sap:VirtualizedContainerService.HintSize="564,1337" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,16 +229,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Run Bank Recon For Current Company" sap:VirtualizedContainerService.HintSize="526,734" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Run Bank Recon For Current Company" sap:VirtualizedContainerService.HintSize="526,1110" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Preliminaries" sap:VirtualizedContainerService.HintSize="484,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Preliminaries" sap:VirtualizedContainerService.HintSize="484,414" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -248,7 +268,7 @@
                   </Assign>
                   <ui:ShouldStop DisplayName="Should Stop" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="ShouldStop_1" />
                 </Sequence>
-                <If Condition="[CompanyStatus &lt;&gt; &quot;DONE&quot;]" DisplayName="If Company Not Yet Treated" sap:VirtualizedContainerService.HintSize="484,536" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[CompanyStatus &lt;&gt; &quot;DONE&quot;]" DisplayName="If Company Not Yet Treated" sap:VirtualizedContainerService.HintSize="484,564" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,14 +276,18 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Treat Single Company Sequence" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Treat Single Company Sequence" sap:VirtualizedContainerService.HintSize="242,387" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="sd:DataTable" Name="UpdatedAccountsTreatedDT" />
+                        <Variable x:TypeArguments="x:Int32" Name="DoneCount" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Treat_Single_Company.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Treat_Single_Company" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Treat_Single_Company.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sysfig">[in_Sysfig]</InArgument>
@@ -274,19 +298,38 @@
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <ui:WriteCell Cell="[ColLetterCompanyStatus + CurrentCompanyExcelRowNumber.ToString]" DisplayName="Update Company Treated in Work Log" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="[SheetNameWorkLogCompanies]" Text="DONE" WorkbookPath="[In_WorkLogFilePath]">
+                      <ui:ReadRange AddHeaders="True" DataTable="[UpdatedAccountsTreatedDT]" DisplayName="Read WorkLog - Accounts" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="[Nothing]" SheetName="[SheetNameWorkLogAccounts]" WorkbookPath="[In_WorkLogFilePath]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:WriteCell>
+                      </ui:ReadRange>
+                      <dd:DT_Count_Selected_Rows DisplayName="DT Count Selected Rows" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DT_Count_Selected_Rows_1" NumberOfRowsFound="[DONECOUNT]" PrimarySearchFieldName="[ColNameAccountName]" PrimarySearchValue="[CompanyName]" SecondarySearchFieldName="[ColNameAccountStatus]" SecondarySearchValue="DONE" dtInput="[UpdatedAccountsTreatedDT]" />
+                      <If Condition="[DONECOUNT &gt;= 1]" DisplayName="If DONECOUNT" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <ui:WriteCell Cell="[ColLetterCompanyStatus + CurrentCompanyExcelRowNumber.ToString]" DisplayName="Update Company Treated in Work Log" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="[SheetNameWorkLogCompanies]" Text="DONE" WorkbookPath="[In_WorkLogFilePath]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                        </If.Then>
+                      </If>
                     </Sequence>
                   </If.Then>
                 </If>
@@ -304,10 +347,10 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Exception Protocol: Treat Single Company" sap:VirtualizedContainerService.HintSize="376,338" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Exception Protocol: Treat Single Company" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>

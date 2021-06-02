@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>795,545</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>929,2144</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Create_WorkLog_To_Processing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -78,7 +78,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="The Purpose is check the present of a work log in the processing work folder&#xA;1. if work Log exist in processing work Folder then the Bot proceeed&#xA;2. If work Log is not found, It create a new work Log into the processing work folder and copy companies to treat to work log" DisplayName="Create_WorkLog_in_Processing" sap:VirtualizedContainerService.HintSize="376,480" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="The Purpose is check the present of a work log in the processing work folder&#xA;1. if work Log exist in processing work Folder then the Bot proceeed&#xA;2. If work Log is not found, It create a new work Log into the processing work folder and copy companies to treat to work log" DisplayName="Create_WorkLog_in_Processing" sap:VirtualizedContainerService.HintSize="939,1979" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="WorkLogExist" />
       <Variable x:TypeArguments="sd:DataTable" Name="CompaniesToTreatDT" />
@@ -90,7 +90,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="897,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,407" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
@@ -177,7 +177,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:PathExists DisplayName="Work Log Exist" Exists="[WorkLogExist]" sap:VirtualizedContainerService.HintSize="334,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_WorkLogFilePath]" PathType="File">
+    <ui:PathExists DisplayName="Work Log Exist" Exists="[WorkLogExist]" sap:VirtualizedContainerService.HintSize="897,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_WorkLogFilePath]" PathType="File">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,10 +185,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:PathExists>
-    <If Condition="[WorkLogExist]" DisplayName="Check If there Is a Pending Job" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[WorkLogExist]" DisplayName="Check If there Is a Pending Job" sap:VirtualizedContainerService.HintSize="897,1610" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -211,14 +211,14 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Create New Work Log" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Create New Work Log" sap:VirtualizedContainerService.HintSize="476,1452" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="TempFolderPath" />
             <Variable x:TypeArguments="x:String" Name="TempWorkLogFilePath" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -261,7 +261,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CopyFile>
-          <ui:ReadRange AddHeaders="True" DataTable="[CompaniesToTreatDT]" DisplayName="Read Template Excel File" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_Companies&quot;).ToString]" WorkbookPath="[in_Config(&quot;ProcessDataExcelFilePath&quot;).ToString]">
+          <ui:ReadRange AddHeaders="True" DataTable="[CompaniesToTreatDT]" DisplayName="Read Template Excel File" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="[Nothing]" SheetName="[in_Config(&quot;SheetName_Companies&quot;).ToString]" WorkbookPath="[in_Config(&quot;ExternalConfigPathFile&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
