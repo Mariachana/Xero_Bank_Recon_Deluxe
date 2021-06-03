@@ -331,7 +331,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Error Mail " sap:VirtualizedContainerService.HintSize="346,559" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Error Mail " sap:VirtualizedContainerService.HintSize="346,556" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="MessageBody" />
                 <Variable x:TypeArguments="x:String" Name="ErrorMessageSubject" />
