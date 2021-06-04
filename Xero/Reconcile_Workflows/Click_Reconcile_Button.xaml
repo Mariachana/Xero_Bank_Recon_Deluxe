@@ -1,30 +1,16 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReconcileExactMatchFound" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Click_Reconcile_Button" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_ExactRowIndex" Type="InArgument(x:Int32)" />
     <x:Property Name="in_FindMatchDropDownID" Type="InArgument(x:String)" />
     <x:Property Name="in_MainRowID" Type="InArgument(x:String)" />
-    <x:Property Name="in_AmountChildren" Type="InArgument(scg:IEnumerable(ui:UiElement))" />
     <x:Property Name="in_XeroLoginUrl" Type="InArgument(x:String)" />
-    <x:Property Name="in_PayeeDate" Type="InArgument(s:DateTime)" />
-    <x:Property Name="in_TransactionDT" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_Sisfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <this:ReconcileExactMatchFound.in_XeroLoginUrl>
+  <this:Click_Reconcile_Button.in_XeroLoginUrl>
     <InArgument x:TypeArguments="x:String" />
-  </this:ReconcileExactMatchFound.in_XeroLoginUrl>
-  <this:ReconcileExactMatchFound.in_PayeeDate>
-    <InArgument x:TypeArguments="s:DateTime" />
-  </this:ReconcileExactMatchFound.in_PayeeDate>
-  <this:ReconcileExactMatchFound.in_TransactionDT>
-    <InArgument x:TypeArguments="sd:DataTable" />
-  </this:ReconcileExactMatchFound.in_TransactionDT>
-  <this:ReconcileExactMatchFound.in_Sisfig>
-    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
-  </this:ReconcileExactMatchFound.in_Sisfig>
-  <sap:VirtualizedContainerService.HintSize>774,1227</sap:VirtualizedContainerService.HintSize>
+  </this:Click_Reconcile_Button.in_XeroLoginUrl>
+  <sap:VirtualizedContainerService.HintSize>694,777</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System</x:String>
@@ -32,7 +18,6 @@
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Drawing</x:String>
-      <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
@@ -40,25 +25,20 @@
       <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>System.ComponentModel</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
-      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>System.Xml.Serialization</x:String>
-      <x:String>System.Security</x:String>
       <x:String>System.Activities.Expressions</x:String>
       <x:String>System.Diagnostics</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
       <x:String>System.Net.Mail</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -95,90 +75,65 @@
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="&#xA;" DisplayName="Reconcile Each Page" sap:VirtualizedContainerService.HintSize="784,1062" sap2010:WorkflowViewState.IdRef="Sequence_233">
+  <Sequence DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="476,612" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="Selector" />
-      <Variable x:TypeArguments="s:DateTime" Name="DateResult" />
+      <Variable x:TypeArguments="x:String" Name="selector" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="742,928" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="434,520" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do Click Check Box" sap:VirtualizedContainerService.HintSize="708,712" sap2010:WorkflowViewState.IdRef="Sequence_232">
+          <Sequence DisplayName="Click Reconcile Sequence" sap:VirtualizedContainerService.HintSize="376,304" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign DateResult" sap:VirtualizedContainerService.HintSize="666,61" sap2010:WorkflowViewState.IdRef="Assign_188">
+            <Assign DisplayName="Assign Reconcile Selector" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="Assign_187">
               <Assign.To>
-                <OutArgument x:TypeArguments="s:DateTime">[DateResult]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[selector]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="s:DateTime">[date.parse(in_TransactionDT(in_ExactRowIndex)("Date").ToString)]</InArgument>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;webctrl id='"+in_FindMatchDropDownID+"' parentid='"+in_MainRowID+"' parentname='frmMain' tag='DIV' /&gt;"+
+"&lt;webctrl tag='A' aaname='Reconcile' class='reconcileButton*green*' id='ext-gen*' parentid='"+in_FindMatchDropDownID+"' /&gt;"]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <If Condition="[in_PayeeDate &gt;= DateResult]" DisplayName="Reconcile Date Validation" sap:VirtualizedContainerService.HintSize="666,517" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence DisplayName="If True" sap:VirtualizedContainerService.HintSize="421,358" sap2010:WorkflowViewState.IdRef="Sequence_234">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click_CheckBox" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Click_CheckBox.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)" x:Key="in_AmountChildren">[in_AmountChildren]</InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_RowIndex">[in_ExactRowIndex]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_XeroLoginUrl]</InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click_Reconcile_Button" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Click_Reconcile_Button.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_FindMatchDropDownID">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FindMatchDropDownID" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_MainRowID">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MainRowID" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_XeroLoginUrl" />
-                      </InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Discuss workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Discuss.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_XeroLoginUrl]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FindMatchDropDownID">[in_FindMatchDropDownID]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_MainRowID">[in_MainRowID]</InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sisfig">[in_Sisfig]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeWorkflowFile>
-              </If.Else>
-            </If>
+            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Reconcile" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="35375bbc-45dc-4770-a72e-f933be304e30" InformativeScreenshot="a5de707024ffe26983bb56fa0a9d6e9c" Selector="[selector]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

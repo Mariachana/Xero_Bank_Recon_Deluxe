@@ -17,7 +17,7 @@
   <this:Discuss.in_Sisfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
   </this:Discuss.in_Sisfig>
-  <sap:VirtualizedContainerService.HintSize>747,1533</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>694,1384</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -92,10 +92,9 @@
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="602,1368" sap2010:WorkflowViewState.IdRef="Sequence_126">
+  <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="602,1219" sap2010:WorkflowViewState.IdRef="Sequence_126">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DiscussText" />
       <Variable x:TypeArguments="x:String" Name="TextAreaSelector" />
@@ -108,20 +107,20 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="560,1276" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="434,558" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do  Discuss" sap:VirtualizedContainerService.HintSize="526,1020" sap2010:WorkflowViewState.IdRef="Sequence_136">
+          <Sequence DisplayName="Do  Discuss" sap:VirtualizedContainerService.HintSize="242,342" sap2010:WorkflowViewState.IdRef="Sequence_136">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_23">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_23">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
@@ -154,20 +153,26 @@
               </ui:MultipleAssign.AssignOperations>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <If Condition="[in_Sisfig(&quot;Discuss&quot;).ToString = &quot;YES&quot;]" DisplayName="If Discuss is To &quot;YES&quot;" sap:VirtualizedContainerService.HintSize="484,620" sap2010:WorkflowViewState.IdRef="If_26">
+            <If Condition="[in_Sisfig(&quot;Discuss&quot;).ToString = &quot;YES&quot;]" DisplayName="If Discuss is To &quot;YES&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_26">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Discuss Sequence" sap:VirtualizedContainerService.HintSize="376,442" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                <Sequence DisplayName="Discuss Sequence" sap:VirtualizedContainerService.HintSize="376,440" sap2010:WorkflowViewState.IdRef="Sequence_134">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" DisplayName="Click Discuss" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_41" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick ClickType="Single" DisplayName="Click Discuss" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_41" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="893, 300, 62, 18" ElementType="Text" FriendlyName="'Discuss *'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen190' tag='A' type='' aaname='Discuss *' check:text='Discuss *' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAWCAYAAAB0S0oJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVFhH7ZhBagJBEEXnTDmEh/AEs/AO7lzOFdy48gRhVmEIQnARCBIIA9G1ZJt1ZUp/lzU9RSDaI4Sugo/0dBf2f/UZwYK8TuUgUALi+e1Ajy8fWYk9hxIQT6+f9PVNWYk9h3IQKAeBchCoG0AcaTWb0sPkosUGe5slletjdH5M7WhR7YznvyshiCU1su4uM5nTaq/P3EP8vRjGH2GMBKJTSEL43NdURpds13MkCNBUenjvlCqjr6mwHsDGPa5I4d1AiDE5w9NDD5tlkwYIs29WUyvrNBoNhBgQcyq2bCSYVz1mIuI+7J0Tod5FN2okELwexj2oqXhPJSJMWZ3l+Mcmz33qmQXzSiUEganFk4I5PUV5kXV7/fOX6ZcdSH427FMJSfhCTgTi/8tBQA4CchCQg4BMEO+H/s9dDmLPoQrrn5scVG/b3rqwSOUnoh+TKSiTqngLCgAAAABJRU5ErkJggg==" InformativeScreenshot="4d0cd13c022877aae62a4cc927b9ba31.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                     </uix:NClick.Target>
@@ -233,7 +238,7 @@
                 </Sequence>
               </If.Then>
             </If>
-            <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="484,66" sap2010:WorkflowViewState.IdRef="Sequence_135">
+            <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_135">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="CancelExist" />
               </Sequence.Variables>
@@ -243,7 +248,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Cancel  Selector" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign DisplayName="Assign Cancel  Selector" sap:VirtualizedContainerService.HintSize="484,64" sap2010:WorkflowViewState.IdRef="Assign_4">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[selector]</OutArgument>
                 </Assign.To>
@@ -254,7 +259,7 @@
 "&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+in_FindMatchDropDownID+"' class='cancelButton*' /&gt;"]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:UiElementExists DisplayName="Cancel Element Exists ?" Exists="[CancelExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+              <ui:UiElementExists DisplayName="Cancel Element Exists ?" Exists="[CancelExist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                 <ui:UiElementExists.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0e46fca1-9837-4074-b359-5664b0ca31a5" InformativeScreenshot="b15201a01e0f6a47afe1213909a7e466" Selector="[Selector]" TimeoutMS="4000">
                     <ui:Target.WaitForReady>
@@ -263,18 +268,24 @@
                   </ui:Target>
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <If Condition="[CancelExist]" DisplayName="If CancelExist" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_27">
+              <If Condition="[CancelExist]" DisplayName="If CancelExist" sap:VirtualizedContainerService.HintSize="484,237" sap2010:WorkflowViewState.IdRef="If_27">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_42" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick ClickType="Single" DisplayName="Click Cancel Button" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_42" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://go.xero.com/BankRec/BankRec.aspx?accountID=586E0D4FD1B645008ED087C5B21A35C1" DesignTimeRectangle="946, 425, 78, 22" ElementType="Text" FriendlyName="'Cancel'" FullSelectorArgument="[Selector]" FuzzySelectorArgument="&lt;webctrl id='ext-gen558' tag='A' type='' aaname='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAaCAYAAAAkJwuaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVGhD7ZjPU9pAFMf7rzuj3pXB8EsSCEZAFIdxEA51dCrQai291BShXgpFLiA9AZdv39skijbsdGxy2535TMjmLdn95O1uJu/sIaD4f5TIgHghsnp2BdMqIZMrKlbAftjTsjfmSSRftAplNBpNXFxc4Pz8XOHD+7MzmDkLZqHiL5JN12p1lMtlHBwcKCTk83msb2z4i+S0rdfrODw89G2seMna2poSGQRSkbVaTYn8R6QiT09PUSqVUCwWQ+P+N57K9L7gG/N27jHFAqN20P/7N1KR1WpV2C4UCqHwdbQgez3E43FojT7mmKC3t4dCe0TDd8pi1KZYR8jCrXTq3PaiTPGDFnwnzileu0f610ErAcuyRJuwkIo8OTkRtnlXCp42HubApJOAYRhioOl0Gru7u+hN5/j1KY1Gf0YBtzDNLgkBxrYGzR4Dsz6uM12SNsX3ZFLEzQctagfMh5/FQ5lhjDvjTojsN2PYowfk349gkIqsVCrC9v7+fgi0MSSRLCeXy4k6lsnkPg9p+G6Z2CTaFdLYgdElpfMBPrYGVPMIm7LZNE0kSegd234qLNB22z3fIyykIo+Pj0WQN8CguWaTIuNMWDcPNOQ5Hm6+UKbydEzikjNy/A26/iwy23NEtuI2LQSOpBtObVoiupSRs34DkQ8/RUbeRm/dmB3nHj59CAqpyKOjIyGSp0UY8ODsiZtAVCadJGKxGDpeZpHQGU3jq3THEXkZRcbNyCbFXfGDcAIxaMaRoCwl9aJMOilomiub2mWzWd8+BIVUJO/YHMQDDgtd1xGJRLC1tSWOfM5r5nJdIpEQa2c0GhXX+FzTNGQyGXH04vhaKpUS59vb22LNZbx2fvcPCqlI3mg4iDscJjxID786r375+Pq3d/76unfu/Q4LqUjejXhKeB1TrEYq0qJpbdBU02l6KORIRfIrg/dup5AjFcnrIwfxAq6Qs1Ikf480jIx40eVdUrEafmVb+T2Sv5AnUroI8muscGA/m5ubq7+QM9l8BevrGyJtFf6wH/a07I15IVLxdpTIgFAiAwH4A+SgPoNvb08jAAAAAElFTkSuQmCC" InformativeScreenshot="06320c9e9d94b34b5056a1978d6558fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Xero | Bank Reconciliation*' /&gt;" SearchSteps="Selector" />
                     </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
                 </If.Then>
               </If>
