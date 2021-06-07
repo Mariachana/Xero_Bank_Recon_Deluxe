@@ -97,7 +97,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -751,15 +750,9 @@
                         </ui:InvokeWorkflowFile>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="ActivateClickOK" DisplayName="Reconcile_Create_With_OK" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_48" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Reconcile_Create_With_OK.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="MainRowID">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="MainRowID" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sisfig">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Sisfig" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_XeroLoginUrl" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="MainRowID">[MainRowID]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sisfig">[in_Sisfig]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_XeroLoginUrl]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
