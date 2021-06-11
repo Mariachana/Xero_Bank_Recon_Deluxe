@@ -10,6 +10,8 @@
     <x:Property Name="in_AmountChildren" Type="InArgument(scg:IEnumerable(ui:UiElement))" />
     <x:Property Name="in_XeroLoginUrl" Type="InArgument(x:String)" />
     <x:Property Name="in_PayeeDate" Type="InArgument(s:DateTime)" />
+    <x:Property Name="io_ReconcileCounter" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="io_DiscussCounter" Type="InOutArgument(x:Int32)" />
   </x:Members>
   <this:Reconcile_minor_Adjustment.in_MinorRowIndex>
     <InArgument x:TypeArguments="x:Int32" />
@@ -41,7 +43,7 @@
   <this:Reconcile_minor_Adjustment.in_PayeeDate>
     <InArgument x:TypeArguments="s:DateTime" />
   </this:Reconcile_minor_Adjustment.in_PayeeDate>
-  <sap:VirtualizedContainerService.HintSize>694,1260</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1100,1443</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -79,7 +81,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -116,9 +118,10 @@
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Do Minor Adjustment and Reconcile" sap:VirtualizedContainerService.HintSize="605,1095" sap2010:WorkflowViewState.IdRef="Sequence_282">
+  <Sequence DisplayName="Do Minor Adjustment and Reconcile" sap:VirtualizedContainerService.HintSize="1110,1278" sap2010:WorkflowViewState.IdRef="Sequence_282">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TableRowID" />
       <Variable x:TypeArguments="x:String" Name="selector" />
@@ -130,19 +133,19 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="563,1003" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="1068,1186" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="529,787" sap2010:WorkflowViewState.IdRef="Sequence_283">
+          <Sequence sap:VirtualizedContainerService.HintSize="1034,930" sap2010:WorkflowViewState.IdRef="Sequence_283">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get ROW ID" sap:VirtualizedContainerService.HintSize="487,51" sap2010:WorkflowViewState.IdRef="GetAttribute_49">
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="id" DisplayName="Get ROW ID" sap:VirtualizedContainerService.HintSize="992,51" sap2010:WorkflowViewState.IdRef="GetAttribute_49">
               <ui:GetAttribute.Result>
                 <OutArgument x:TypeArguments="x:String">[TableRowID]</OutArgument>
               </ui:GetAttribute.Result>
@@ -163,7 +166,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetAttribute>
-            <Assign DisplayName="Assign DateResult" sap:VirtualizedContainerService.HintSize="487,61" sap2010:WorkflowViewState.IdRef="Assign_237">
+            <Assign DisplayName="Assign DateResult" sap:VirtualizedContainerService.HintSize="992,61" sap2010:WorkflowViewState.IdRef="Assign_237">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:DateTime">[DateResult]</OutArgument>
               </Assign.To>
@@ -171,16 +174,16 @@
                 <InArgument x:TypeArguments="s:DateTime">[date.parse(in_TransactionDT(in_MinorRowIndex)("Date").ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[in_PayeeDate &gt;= DateResult]" DisplayName="Reconcile Date Validation" sap:VirtualizedContainerService.HintSize="487,501" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_PayeeDate &gt;= DateResult]" DisplayName="Reconcile Date Validation" sap:VirtualizedContainerService.HintSize="992,644" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="If True" sap:VirtualizedContainerService.HintSize="242,342" sap2010:WorkflowViewState.IdRef="Sequence_284">
+                <Sequence DisplayName="If True" sap:VirtualizedContainerService.HintSize="421,403" sap2010:WorkflowViewState.IdRef="Sequence_284">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click_CheckBox" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Click_CheckBox.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click_CheckBox" sap:VirtualizedContainerService.HintSize="379,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Click_CheckBox.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)" x:Key="in_AmountChildren">[in_AmountChildren]</InArgument>
                       <InArgument x:TypeArguments="x:Int32" x:Key="in_RowIndex">[in_MinorRowIndex]</InArgument>
@@ -193,7 +196,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <Sequence DisplayName="Minor Adjustment" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_281">
+                  <Sequence DisplayName="Minor Adjustment" sap:VirtualizedContainerService.HintSize="379,66" sap2010:WorkflowViewState.IdRef="Sequence_281">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="ui:UiElement" Name="Adjustment_Element" />
                     </Sequence.Variables>
@@ -319,15 +322,16 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:OnUiElementAppear>
                   </Sequence>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click_Reconcile_Button" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Click_Reconcile_Button.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click_Reconcile_Button" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Click_Reconcile_Button.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_FindMatchDropDownID">[in_FindMatchDropDownID]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_MainRowID">[in_MainRowID]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_XeroLoginUrl]</InArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ReconcileCounter">[io_ReconcileCounter]</InOutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -335,20 +339,48 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Discuss workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Discuss.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_XeroLoginUrl]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FindMatchDropDownID">[in_FindMatchDropDownID]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_MainRowID">[in_MainRowID]</InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sisfig">[in_Sisfig]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
+                <Sequence DisplayName="Date over due Sequence" sap:VirtualizedContainerService.HintSize="526,485" sap2010:WorkflowViewState.IdRef="Sequence_285">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeWorkflowFile>
+                  <If Condition="[in_Sisfig(&quot;Discuss_DateOverDue&quot;).ToString is &quot;&quot;]" DisplayName="If Discuss over due  is Empty" sap:VirtualizedContainerService.HintSize="484,239" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Assign DisplayName="Assign Defult Discuss" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_238">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[in_Sisfig("Discuss_DateOverDue")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_Sisfig("Discuss_DefaultText").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                  </If>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Discuss workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Xero\Reconcile_Workflows\Discuss.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_XeroLoginUrl">[in_XeroLoginUrl]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FindMatchDropDownID">[in_FindMatchDropDownID]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_MainRowID">[in_MainRowID]</InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Sisfig">[in_Sisfig]</InArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="io_DiscussCounter">[io_DiscussCounter]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_DiscussText">[in_Sisfig("Discuss_DateOverDue").ToString]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
               </If.Else>
             </If>
           </Sequence>
