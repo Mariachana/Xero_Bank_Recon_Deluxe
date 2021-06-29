@@ -2,10 +2,10 @@
   <x:Members>
     <x:Property Name="in_XeroLoginUrl" Type="InArgument(x:String)" />
     <x:Property Name="in_FindMatchDropDownID" Type="InArgument(x:String)" />
-    <x:Property Name="in_MainRowID" Type="InArgument(x:String)" />
     <x:Property Name="in_Sisfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="io_DiscussCounter" Type="InOutArgument(x:Int32)" />
     <x:Property Name="in_DiscussText" Type="InArgument(x:String)" />
+    <x:Property Name="in_MainRowID" Type="InArgument(x:String)" />
   </x:Members>
   <this:Discuss.in_XeroLoginUrl>
     <InArgument x:TypeArguments="x:String" />
@@ -13,15 +13,15 @@
   <this:Discuss.in_FindMatchDropDownID>
     <InArgument x:TypeArguments="x:String" />
   </this:Discuss.in_FindMatchDropDownID>
-  <this:Discuss.in_MainRowID>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Discuss.in_MainRowID>
   <this:Discuss.in_Sisfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
   </this:Discuss.in_Sisfig>
   <this:Discuss.in_DiscussText>
     <InArgument x:TypeArguments="x:String" />
   </this:Discuss.in_DiscussText>
+  <this:Discuss.in_MainRowID>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Discuss.in_MainRowID>
   <sap:VirtualizedContainerService.HintSize>714,2939</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -97,6 +97,7 @@
       <AssemblyReference>System.Web</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="680,2774" sap2010:WorkflowViewState.IdRef="Sequence_126">
@@ -259,8 +260,8 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;webctrl id='"+in_MainRowID+"' parentid='statementLines' parentname='frmMain' tag='DIV' /&gt;"+
-"&lt;webctrl id='"+in_FindMatchDropDownID+"' parentid='"+in_MainRowID+"' parentname='frmMain' tag='DIV' /&gt;"+
-"&lt;webctrl parentid='"+in_FindMatchDropDownID+"' parentname='frmMain' tag='DIV' idx='*' /&gt;"+
+"&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' id='"+in_FindMatchDropDownID+"' parentid='"+in_MainRowID+"' parentname='frmMain' tag='DIV' /&gt;"+
+"&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='"+in_FindMatchDropDownID+"' parentname='frmMain' tag='DIV' idx='*' /&gt;"+
 "&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+in_FindMatchDropDownID+"' class='cancelButton*' /&gt;"]</InArgument>
                 </Assign.Value>
               </Assign>
