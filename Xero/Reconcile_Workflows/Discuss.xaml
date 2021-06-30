@@ -22,7 +22,7 @@
   <this:Discuss.in_MainRowID>
     <InArgument x:TypeArguments="x:String" />
   </this:Discuss.in_MainRowID>
-  <sap:VirtualizedContainerService.HintSize>714,2939</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>714,2591</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="60">
@@ -100,7 +100,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="680,2774" sap2010:WorkflowViewState.IdRef="Sequence_126">
+  <Sequence DisplayName="Click and input Discuss Text" sap:VirtualizedContainerService.HintSize="680,2426" sap2010:WorkflowViewState.IdRef="Sequence_126">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TextAreaSelector" />
       <Variable x:TypeArguments="x:String" Name="ResultText" />
@@ -112,13 +112,13 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="638,2682" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Xero Url" sap:VirtualizedContainerService.HintSize="638,2334" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do  Discuss" sap:VirtualizedContainerService.HintSize="604,2466" sap2010:WorkflowViewState.IdRef="Sequence_136">
+          <Sequence DisplayName="Do  Discuss" sap:VirtualizedContainerService.HintSize="604,2118" sap2010:WorkflowViewState.IdRef="Sequence_136">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,7 +155,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <If Condition="[in_Sisfig(&quot;Discuss&quot;).ToString.ToUpper = &quot;YES&quot;]" DisplayName="If Discuss is To &quot;YES&quot;" sap:VirtualizedContainerService.HintSize="562,1374" sap2010:WorkflowViewState.IdRef="If_26">
+            <If Condition="[in_Sisfig(&quot;Discuss&quot;).ToString.ToUpper = &quot;YES&quot;]" DisplayName="If Discuss is To &quot;YES&quot;" sap:VirtualizedContainerService.HintSize="562,1029" sap2010:WorkflowViewState.IdRef="If_26">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,7 +163,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Discuss Sequence" sap:VirtualizedContainerService.HintSize="526,1196" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                <Sequence DisplayName="Discuss Sequence" sap:VirtualizedContainerService.HintSize="526,851" sap2010:WorkflowViewState.IdRef="Sequence_134">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,7 +203,7 @@
                       <InArgument x:TypeArguments="x:String">[ResultText.Trim]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="484,589" sap2010:WorkflowViewState.IdRef="If_25">
+                  <If Condition="[ResultText.Length = 0]" DisplayName="Check if Text Area is Empty" sap:VirtualizedContainerService.HintSize="484,244" sap2010:WorkflowViewState.IdRef="If_25">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -211,10 +211,10 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Input Text To Text Area" sap:VirtualizedContainerService.HintSize="376,411" sap2010:WorkflowViewState.IdRef="Sequence_133">
+                      <Sequence DisplayName="Input Text To Text Area" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_133">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -244,7 +244,7 @@
                 </Sequence>
               </If.Then>
             </If>
-            <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="562,688" sap2010:WorkflowViewState.IdRef="Sequence_135">
+            <Sequence DisplayName="Click Cancel" sap:VirtualizedContainerService.HintSize="562,685" sap2010:WorkflowViewState.IdRef="Sequence_135">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="CancelExist" />
               </Sequence.Variables>
@@ -254,15 +254,12 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Cancel  Selector" sap:VirtualizedContainerService.HintSize="484,64" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign DisplayName="Assign Cancel  Selector" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_4">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[selector]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;webctrl id='"+in_MainRowID+"' parentid='statementLines' parentname='frmMain' tag='DIV' /&gt;"+
-"&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' id='"+in_FindMatchDropDownID+"' parentid='"+in_MainRowID+"' parentname='frmMain' tag='DIV' /&gt;"+
-"&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='"+in_FindMatchDropDownID+"' parentname='frmMain' tag='DIV' idx='*' /&gt;"+
-"&lt;webctrl id='ext-gen*' tag='A' aaname='Cancel' parentid='"+in_FindMatchDropDownID+"' class='cancelButton*' /&gt;"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">["&lt;webctrl id='"+in_FindMatchDropDownID+"' parentid='"+in_MainRowID+"' parentname='frmMain' tag='DIV' class='findMatch' /&gt;&lt;webctrl aaname='Cancel' parentid='"+in_FindMatchDropDownID+"' parentname='frmMain' tabindex='0' tag='BUTTON' type='button' /&gt;&lt;webctrl aaname='Cancel' parentid='"+in_FindMatchDropDownID+"' tag='SPAN' /&gt;"]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:UiElementExists DisplayName="Cancel Element Exists ?" Exists="[CancelExist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
@@ -296,7 +293,7 @@
                 </If.Then>
               </If>
             </Sequence>
-            <Assign DisplayName="Assign io_DiscussCounter" sap:VirtualizedContainerService.HintSize="526,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign DisplayName="Assign io_DiscussCounter" sap:VirtualizedContainerService.HintSize="562,61" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[io_DiscussCounter]</OutArgument>
               </Assign.To>
